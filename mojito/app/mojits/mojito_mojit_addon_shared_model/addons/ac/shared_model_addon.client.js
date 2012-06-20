@@ -8,7 +8,7 @@ YUI.add('mojito_mojit_addon_shared_model', function(Y, NAME) {
         YUI.mojito.cache.models = YUI.mojito.cache.models || {};
 
         this.ac = ac;
-        this.models = YUI.Mojito.cache.models;
+        this.models = YUI.mojito.cache.models;
     }
 
     Addon.prototype = {

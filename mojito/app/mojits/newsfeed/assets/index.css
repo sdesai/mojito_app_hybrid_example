@@ -45,3 +45,8 @@
 .newsfeed .tools {
     text-align: center;
 }
+
+.newsfeed .footer {
+    height: 35px;
+    background: url(./spinner.gif) no-repeat center;
+}

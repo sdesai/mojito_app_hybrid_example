@@ -65,21 +65,22 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
             this.config = config;
         },
 
-        /**
-         * Method that will be invoked by the mojit controller to obtain data.
-         *
-         * @param callback {function(err,data)} The callback function to call when the
-         *        data has been retrieved.
-         */
-        getFeed: function(callback) {
+        getFeed: function(offset, callback) {
 
-            Y.YQL(this.config.query, function (data) {
+            var limit = 10;
+
+            if (!offset || offset < 0) {
+                offset = 0;
+            }
+
+            Y.YQL(this.config.query + ' limit ' + limit + ' offset ' + (offset + 1), function (data) {
 
                 var items,
                     feed = [];
 
                 if (!data.query || !data.query.results || !data.query.results.item) {
                     callback('Error');
+                    return;
                 }
 
                 items = data.query.results.item;

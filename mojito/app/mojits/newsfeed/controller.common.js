@@ -6,11 +6,33 @@ YUI.add('newsfeed', function(Y, NAME) {
 
     Y.mojito.controllers[NAME] = {
 
-        index: function(ac) {
+        index: function (ac) {
 
-            ac.model.load('newsfeed').getFeed(function(err, items) {
+            var cfg = {
+                children: {
+                    feed: {
+                        type: 'yahoo.hybrid.newsfeed',
+                        action: 'feed'
+                    }
+                }
+            };
+
+            ac.composite.execute(cfg, function (data) {
+                ac.done(data);
+            });
+        },
+
+        feed: function (ac) {
+
+            var offset = ac.params.merged('offset') || 0;
+
+            ac.model.load('newsfeed').getFeed(offset, function(err, items) {
 
                 var data = {};
+
+                if (err) {
+                    items = [];
+                }
 
                 data.items = items;
 

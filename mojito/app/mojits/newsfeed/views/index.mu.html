@@ -1,22 +1,6 @@
 <div id="{{mojit_view_id}}" class="newsfeed">
     <ul>
-        {{#items}}
-        <li>
-            
-            <div class="body">
-                {{#images}}
-                <img src="{{src}}" alt="{{title}}" align="right">
-                {{/images}}
-                <h3><a href="{{url}}">{{title}}</a></h3>
-                {{body}}
-            </div>
-            <div class="date">
-                {{date}}
-            </div>
-            <div class="tools">
-                <!--<a href="#remove">X</a>-->
-            </div>
-        </li>
-        {{/items}}
+    {{{feed}}}
     </ul>
+    <div class="footer"></div>
 </div>

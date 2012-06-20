@@ -6,12 +6,79 @@ YUI.add('newsfeedbinderindex', function(Y, NAME) {
 
     Y.namespace('mojito.binders')[NAME] = {
 
+        list: null,
+
+        updating: false,
+
         init: function(mp) {
             this.mp = mp;
         },
 
         bind: function(node) {
-            // no code here yet
+
+            var self = this;
+
+            self.list = node.one('ul');
+
+            Y.on('scroll', function (e) {
+                self.atBottom(e.target);
+            });
+        },
+
+        atBottom: function (node) {
+
+            var self = this,
+                top,
+                bottom,
+                footer;
+
+            top = node.get('docScrollY');
+            bottom = top + node.get('winHeight');
+
+            /*
+             * We do this as "node" is not standard
+             */
+            Y.use('node', function (YY) {
+
+                footer = parseInt(YY.one('.footer').getY()) - 10;
+
+//self.debug(bottom + ' ' + footer);
+
+                if (!self.updating && bottom >= footer) {
+                    self.updating = true;
+                    self.loadMoreBefore();
+                }
+            });
+        },
+
+        loadMoreBefore: function () {
+
+            var self = this,
+                params = {
+                    body: {
+                        offset: self.list.get('children').size()
+                    }
+                };
+
+            this.mp.invoke('feed', {params: params}, function (err, data) {
+
+                if (err || !data) {
+                    Y.one('.footer').remove();
+                    return;
+                }
+
+                self.list.append(data);
+                self.updating = false;
+            })
+        },
+
+        debug: function (data) {
+
+            if (!Y.one('.debug')) {
+                Y.one('body').append('<div class="debug"></div>');
+            }
+
+            Y.one('.debug').setContent(data);
         }
 
     };
