@@ -20,8 +20,29 @@ YUI.add('newsfeedbinderindex', function(Y, NAME) {
 
             self.list = node.one('ul');
 
+            self.fillToBottom(node);
+
             Y.on('scroll', function (e) {
                 self.atBottom(e.target);
+            });
+        },
+
+        fillToBottom: function (node) {
+
+            var self = this,
+                height = node.get('winHeight'),
+                footer;
+
+            /*
+             * We do this as "node" is not standard
+             */
+            Y.use('node', function (YY) {
+
+                do {
+                    self.atBottom(node);
+                    footer = parseInt(YY.one('.footer').getY()) - 20;
+                } while (footer <= height)
+
             });
         },
 
@@ -40,7 +61,7 @@ YUI.add('newsfeedbinderindex', function(Y, NAME) {
              */
             Y.use('node', function (YY) {
 
-                footer = parseInt(YY.one('.footer').getY()) - 10;
+                footer = parseInt(YY.one('.footer').getY()) - 20;
 
 //self.debug(bottom + ' ' + footer);
 

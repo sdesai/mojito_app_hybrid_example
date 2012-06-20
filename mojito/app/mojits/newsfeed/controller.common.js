@@ -22,6 +22,10 @@ YUI.add('newsfeed', function(Y, NAME) {
             });
         },
 
+        indexHybrid: function (ac) {
+            ac.done({}, 'index');
+        },
+
         feed: function (ac) {
 
             var offset = ac.params.merged('offset') || 0;

@@ -11,5 +11,12 @@
             "path": "/index.html",
             "call": "yahoo.hybrid.specs.index"
         }
+    },
+    {
+        "settings": [ "device:hybrid" ],
+
+        "default": {
+            "call": "yahoo.hybrid.specs.indexHybrid"
+        }
     }
 ]
