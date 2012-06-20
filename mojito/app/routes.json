@@ -1,0 +1,10 @@
+[
+    {
+        "settings": [ "master" ],
+
+        "default": {
+            "path": "/",
+            "call": "godfather.index"
+        }
+    }
+]

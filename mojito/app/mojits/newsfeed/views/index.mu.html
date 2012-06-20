@@ -1,0 +1,18 @@
+<div id="{{mojit_view_id}}" class="newsfeed">
+    <ul>
+        {{#items}}
+        <li>
+            <h3><a href="{{url}}">{{title}}</a></h3>
+            <p>
+                {{#images}}
+                <img src="{{src}}" alt="{{title}}" align="right">
+                {{/images}}
+                {{body}}
+            </p>
+            <div class="tools">
+                <!--<a href="#remove">X</a>-->
+            </div>
+        </li>
+        {{/items}}
+    </ul>
+</div>
