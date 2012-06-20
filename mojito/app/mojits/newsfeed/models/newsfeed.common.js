@@ -18,16 +18,39 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
             pTag2:          /<\/p[^>]*>/gi
         };
 
+    /*
+     * An ordered array of cached objects
+     */
+
     var cache = [];
 
+    /*
+     * @method inCache
+     * @param {string} key
+     * @param {string} match
+     * @retrun {boolean}
+     */
+    
     function inCache(key, match) {
         return getCacheValue(key, match) ? true : false;
     }
+
+    /*
+     * @method getCacheSize
+     * @retrun {int}
+     */
 
     function getCacheSize() {
         return cache.length;
     }
 
+    /*
+     * @method setCacheValue
+     * @param {string} key
+     * @param {string} match
+     * @param {object} value
+     */
+    
     function setCacheValue(key, match, value) {
 
         Y.Array.each(cache, function (object, pos) {
@@ -39,6 +62,13 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
         cache.push(value);
     }
 
+    /*
+     * @method getCacheValue
+     * @param {string} key
+     * @param {string} match
+     * @retrun {object}
+     */
+    
     function getCacheValue(key, match) {
 
         var ret = null;
@@ -52,6 +82,14 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
         return ret;
     }
 
+    /*
+     * @method getCacheSlice
+     * @param {string} query
+     * @param {int} limit
+     * @param {int} offset
+     * @param {function} cb
+     */
+    
     function getCacheSlice(query, limit, offset, cb) {
 
         if (getCacheSize() < limit + offset) {
@@ -59,13 +97,19 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
             query = query + ' limit 100';
 
             fillCache(query, function () {
-                cb(cache.slice(offset, offset + limit));
+                cb(cache.slice(offset, offset + limit - 1));
             });
         } else {
-            cb(cache.slice(offset, offset + limit));
+            cb(cache.slice(offset, offset + limit - 1));
         }
     }
 
+    /*
+     * @method fillCache
+     * @param {string} query
+     * @param {function} cb
+     */
+    
     function fillCache(query, cb) {
 
         Y.YQL(query, function (data) {
@@ -79,9 +123,7 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
 
             items = data.query.results.item;
 
-            /*
-             * Walk over the items and cache any we don't have
-             */
+            // Walk over the items and cache and add any we don't have
             Y.Array.each(items, function (item) {
 
                 var read;
@@ -100,10 +142,27 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
                 }
             });
 
+            // Sort the cache by "date"
+            cache.sort(function (a, b) {
+                if (a.date > b.date) {
+                    return -1;
+                }
+                if (a.date < b.date) {
+                  return 1;
+                }
+                return 0;
+            });
+
             cb();
         });
     }
 
+    /*
+     * @method poorMansReadability
+     * @param {string} html
+     * @retrun {object}
+     */
+    
     function poorMansReadability(html){
 
         var data = {},
@@ -153,7 +212,7 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
 
         getFeed: function(offset, callback) {
 
-            // If the offset is not a number or lower than zero
+            // If the offset is not a number or lower than zero fix it
             if (!offset || offset < 0) {
                 offset = 0;
             }
