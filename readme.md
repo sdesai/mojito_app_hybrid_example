@@ -11,6 +11,7 @@ Then install Mojito.
 Now run the example.
 
 > cd mojito/app
+> 
 > mojito start
 
 Go to http://localhost:8666
