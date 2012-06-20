@@ -1,24 +1,13 @@
 [
     {
         "settings": [ "master" ],
-        "specs": {
-            "godfather": {
-                "type": "HTMLFrameMojit",
-                "config": {
-                    "deploy": true,
-                    "child": {
-                        "type": "newsfeed"
-                    },
-                    "assets": {
-                        "top": {
-                            "css": [
-                                "http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css",
-                                "http://yui.yahooapis.com/3.5.1/build/cssfonts/cssfonts-min.css"
-                            ]
-                        }
-                    }
-                }
-            }
+
+        "shareYUIInstance": true,
+
+        "staticHandling": {
+            "prefix": "",
+            "appName": "yahoo.hybrid.app",
+            "frameworkName": "yahoo.hybrid.mojtio"
         }
     },
     {

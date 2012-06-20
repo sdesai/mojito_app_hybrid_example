@@ -2,13 +2,17 @@
     <ul>
         {{#items}}
         <li>
-            <h3><a href="{{url}}">{{title}}</a></h3>
-            <p>
+            
+            <div class="body">
                 {{#images}}
                 <img src="{{src}}" alt="{{title}}" align="right">
                 {{/images}}
+                <h3><a href="{{url}}">{{title}}</a></h3>
                 {{body}}
-            </p>
+            </div>
+            <div class="date">
+                {{date}}
+            </div>
             <div class="tools">
                 <!--<a href="#remove">X</a>-->
             </div>

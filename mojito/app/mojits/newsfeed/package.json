@@ -1,0 +1,9 @@
+{
+    "name": "yahoo.hybrid.newsfeed",
+
+    "yahoo": {
+        "mojito": {
+            "version": "*"
+        }
+    }
+}
