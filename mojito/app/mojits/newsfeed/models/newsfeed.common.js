@@ -18,6 +18,92 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
             pTag2:          /<\/p[^>]*>/gi
         };
 
+    var cache = [];
+
+    function inCache(key, match) {
+        return getCacheValue(key, match) ? true : false;
+    }
+
+    function getCacheSize() {
+        return cache.length;
+    }
+
+    function setCacheValue(key, match, value) {
+
+        Y.Array.each(cache, function (object, pos) {
+            if (object[key] === match) {
+                cache[pos] = value;
+            }
+        });
+
+        cache.push(value);
+    }
+
+    function getCacheValue(key, match) {
+
+        var ret = null;
+
+        Y.Array.each(cache, function (object) {
+            if (object[key] === match) {
+                ret = object;
+            }
+        });
+
+        return ret;
+    }
+
+    function getCacheSlice(query, limit, offset, cb) {
+
+        if (getCacheSize() < limit + offset) {
+            
+            query = query + ' limit 100';
+
+            fillCache(query, function () {
+                cb(cache.slice(offset, offset + limit));
+            });
+        } else {
+            cb(cache.slice(offset, offset + limit));
+        }
+    }
+
+    function fillCache(query, cb) {
+
+        Y.YQL(query, function (data) {
+
+            var items;
+
+            if (!data.query || !data.query.results || !data.query.results.item) {
+                cb();
+                return;
+            }
+
+            items = data.query.results.item;
+
+            /*
+             * Walk over the items and cache any we don't have
+             */
+            Y.Array.each(items, function (item) {
+
+                var read;
+
+                if (inCache('url', item.link) === false) {
+
+                    read = poorMansReadability(item.description);
+
+                    setCacheValue('url', item.link, {
+                        title: item.title,
+                        body: read.body,
+                        images: read.images,
+                        url: item.link,
+                        date: item.pubDate
+                    });
+                }
+            });
+
+            cb();
+        });
+    }
+
     function poorMansReadability(html){
 
         var data = {},
@@ -62,47 +148,20 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
     Y.mojito.models.newsfeed = {
 
         init: function(config) {
-            this.config = config;
+            this.cfg = config;
         },
 
         getFeed: function(offset, callback) {
 
-            var limit = 10;
-
+            // If the offset is not a number or lower than zero
             if (!offset || offset < 0) {
                 offset = 0;
             }
 
-            Y.YQL(this.config.query + ' limit ' + limit + ' offset ' + (offset + 1), function (data) {
-
-                var items,
-                    feed = [];
-
-                if (!data.query || !data.query.results || !data.query.results.item) {
-                    callback('Error');
-                    return;
-                }
-
-                items = data.query.results.item;
-
-                Y.Array.each(items, function (item) {
-                    var read = poorMansReadability(item.description);
-
-                    feed.push({
-                        title: item.title,
-                        body: read.body,
-                        images: read.images,
-                        url: item.link,
-                        date: item.pubDate
-                    });
-
-                });
-
+            getCacheSlice(this.cfg.query, this.cfg.pageSize, offset, function (feed) {
                 callback(null, feed);
             });
-
         }
-
     };
 
 }, '0.0.1', {

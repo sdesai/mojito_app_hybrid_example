@@ -53,6 +53,10 @@ YUI.add('newsfeedbinderindex', function(Y, NAME) {
                 bottom,
                 footer;
 
+            if (self.updating === true) {
+                return;
+            }
+
             top = node.get('docScrollY');
             bottom = top + node.get('winHeight');
 
@@ -65,19 +69,20 @@ YUI.add('newsfeedbinderindex', function(Y, NAME) {
 
 //self.debug(bottom + ' ' + footer);
 
-                if (!self.updating && bottom >= footer) {
+                if (bottom >= footer) {
                     self.updating = true;
-                    self.loadMoreBefore();
+                    self.loadMore(self.list, function () {
+                        self.updating = false;
+                    });
                 }
             });
         },
 
-        loadMoreBefore: function () {
+        loadMore: function (list, cb) {
 
-            var self = this,
-                params = {
+            var params = {
                     body: {
-                        offset: self.list.get('children').size()
+                        offset: list.get('children').size()
                     }
                 };
 
@@ -88,8 +93,8 @@ YUI.add('newsfeedbinderindex', function(Y, NAME) {
                     return;
                 }
 
-                self.list.append(data);
-                self.updating = false;
+                list.append(data);
+                cb();
             })
         },
 
