@@ -9,21 +9,25 @@ YUI.add('newsfeed', function(Y, NAME) {
         index: function (ac) {
 
             var cfg = {
-                children: {
-                    feed: {
-                        type: 'yahoo.hybrid.newsfeed',
-                        action: 'feed'
+                    children: {
+                        feed: {
+                            type: 'yahoo.hybrid.newsfeed',
+                            action: 'feed'
+                        }
                     }
-                }
-            };
+                };
+
+            if (ac.params.route('showSplash')) {
+                cfg.children.feed.action = 'splash';
+            }
 
             ac.composite.execute(cfg, function (data) {
                 ac.done(data);
             });
         },
 
-        indexHybrid: function (ac) {
-            ac.done({}, 'index');
+        splash: function (ac) {
+            ac.done('Splash...');
         },
 
         feed: function (ac) {

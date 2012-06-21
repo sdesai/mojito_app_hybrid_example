@@ -13,10 +13,12 @@
         }
     },
     {
-        "settings": [ "device:hybrid" ],
+        "settings": [ "environment:dev" ],
 
         "default": {
-            "call": "yahoo.hybrid.specs.indexHybrid"
+            "param": {
+                "showSplash": true
+            }
         }
     }
 ]
