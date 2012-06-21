@@ -2,7 +2,11 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 
-YUI.add('newsfeedapp', function(Y, NAME) {
+/*global YUI: true*/
+
+'use strict';
+
+YUI.add('newsfeedapp', function (Y, NAME) {
 
     Y.mojito.controllers[NAME] = {
 

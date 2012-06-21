@@ -1,16 +1,20 @@
 /*
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
-/*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('newsfeedbinderindex', function(Y, NAME) {
+
+/*global YUI: true*/
+
+'use strict';
+
+YUI.add('newsfeedbinderindex', function (Y, NAME) {
 
     Y.namespace('mojito.binders')[NAME] = {
 
-        init: function(mp) {
+        init: function (mp) {
             this.mp = mp;
         },
 
-        bind: function(node) {
+        bind: function (node) {
 
             var scrollview;
 

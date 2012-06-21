@@ -2,12 +2,16 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 
-YUI.add('newsfeedappbinderindex', function(Y, NAME) {
+/*global YUI: true, window: true, document: true*/
+
+'use strict';
+
+YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
     Y.namespace('mojito.binders')[NAME] = {
 
-        init: function(mp) {
-            
+        init: function (mp) {
+
             this.mp = mp;
             this.scrollable = null;
             this.height = NaN;
@@ -15,15 +19,15 @@ YUI.add('newsfeedappbinderindex', function(Y, NAME) {
             this.position = 0;
 
             /* This code prevents users from dragging the page */
-            var preventDefaultScroll = function(event) {
-              event.preventDefault();
-              window.scroll(0,0);
-              return false;
+            var preventDefaultScroll = function (event) {
+                event.preventDefault();
+                window.scroll(0, 0);
+                return false;
             };
             document.addEventListener('touchmove', preventDefaultScroll, false);
         },
 
-        bind: function(node) {
+        bind: function (node) {
 
             var self = this;
 
@@ -35,10 +39,10 @@ YUI.add('newsfeedappbinderindex', function(Y, NAME) {
                 // Now tell all the children what size they should be
                 node.all('li.page').each(function (item) {
                     item.setStyle('height', (self.height - 4) + "px");
-                    item.setStyle('width', (self.width - 0) + "px");
+                    item.setStyle('width', (self.width) + "px");
                 });
 
-                function slide(scroll, distance){
+                function slide(scroll, distance) {
                     scroll.transition({
                         duration: 0.2, // seconds
                         transform: 'translateX(' + distance + 'px)',
@@ -49,19 +53,19 @@ YUI.add('newsfeedappbinderindex', function(Y, NAME) {
                 /*
                  * The big one! We look for "flicks" to move the page.
                  */
-                node.on("gesturemovestart", function(e) {
+                node.on("gesturemovestart", function (e) {
 
                     var item = e.currentTarget;
 
                     // Prevent Text Selection in IE
-                    item.once("selectstart", function(e) {
+                    item.once("selectstart", function (e) {
                         e.preventDefault();
                     });
 
                     item.setData("swipeStartX", e.pageX);
                     item.setData("swipeStartY", e.pageY);
 
-                    item.once("gesturemoveend", function(e) {
+                    item.once("gesturemoveend", function (e) {
 
                         var swipeStartX = item.getData("swipeStartX"),
                             swipeStartY = item.getData("swipeStartY"),
@@ -90,14 +94,14 @@ YUI.add('newsfeedappbinderindex', function(Y, NAME) {
             });
         },
 
-        setScreenSize: function (node, cb){
+        setScreenSize: function (node, cb) {
 
             var self = this;
 
-            self.height = parseInt(node.get('winHeight'));
-            self.width = parseInt(node.get('winWidth'));
+            self.height = parseInt(node.get('winHeight'), 10);
+            self.width = parseInt(node.get('winWidth'), 10);
 
-            self.scrollable.setStyle('height', (self.height - 0) + "px");
+            self.scrollable.setStyle('height', (self.height) + "px");
             self.scrollable.setStyle('width', (self.width * node.all('li.page').size()) + "px");
 
             cb();

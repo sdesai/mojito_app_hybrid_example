@@ -2,7 +2,11 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 
-YUI.add('newsfeed', function(Y, NAME) {
+/*global YUI: true*/
+
+'use strict';
+
+YUI.add('newsfeed', function (Y, NAME) {
 
     Y.mojito.controllers[NAME] = {
 
@@ -41,7 +45,7 @@ YUI.add('newsfeed', function(Y, NAME) {
             var offset = ac.params.merged('offset') || 0,
                 query = ac.config.get('query');
 
-            ac.model.load('newsfeed').getFeed(query, offset, function(err, items) {
+            ac.model.load('newsfeed').getFeed(query, offset, function (err, items) {
 
                 var data = {};
 

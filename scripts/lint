@@ -1,0 +1,2 @@
+echo Running JSLint
+find ./mojito -name "*.js" -print0 | xargs -0 jslint

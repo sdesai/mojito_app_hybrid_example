@@ -1,5 +1,12 @@
+/*
+ * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
+ */
 
-YUI.add('mojito_mojit_addon_shared_model', function(Y, NAME) {
+/*global YUI: true*/
+
+'use strict';
+
+YUI.add('mojito_mojit_addon_shared_model', function (Y, NAME) {
 
     function Addon(command, adapter, ac) {
 
@@ -15,9 +22,9 @@ YUI.add('mojito_mojit_addon_shared_model', function(Y, NAME) {
 
         namespace: 'model',
 
-        load: function(name) {
-            if(!this.models[name]){
-                if(this.ac.models[name]){
+        load: function (name) {
+            if (!this.models[name]) {
+                if (this.ac.models[name]) {
                     this.models[name] = this.ac.models[name];
                 } else {
                     Y.log('Model "' + name + '" not found.', 'debug', NAME);
