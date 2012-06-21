@@ -17,6 +17,12 @@ YUI.add('newsfeed', function(Y, NAME) {
                     }
                 };
 
+            if (ac.config.get('query')) {
+                cfg.children.feed.config = {
+                    query: ac.config.get('query')
+                };
+            }
+
             if (ac.params.route('showSplash')) {
                 cfg.children.feed.action = 'splash';
             }
@@ -32,9 +38,10 @@ YUI.add('newsfeed', function(Y, NAME) {
 
         feed: function (ac) {
 
-            var offset = ac.params.merged('offset') || 0;
+            var offset = ac.params.merged('offset') || 0,
+                query = ac.config.get('query');
 
-            ac.model.load('newsfeed').getFeed(offset, function(err, items) {
+            ac.model.load('newsfeed').getFeed(query, offset, function(err, items) {
 
                 var data = {};
 

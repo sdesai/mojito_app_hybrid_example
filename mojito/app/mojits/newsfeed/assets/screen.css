@@ -1,5 +1,4 @@
 .newsfeed {
-    font-family: 'Lato', sans-serif;
     background: #eee;
 }
 
@@ -15,6 +14,7 @@
     color: #000;
     font-size: 120%;
     font-weight: 700;
+    text-align: left;
     margin-bottom: 0.3em;
 }
 
@@ -27,8 +27,8 @@
     color: #555;
     font-size: 100%;
     font-weight: 300;
-    line-height:1.4em;
-    text-align:justify;
+    line-height: 1.4em;
+    text-align: justify;
 }
 
 .newsfeed img {

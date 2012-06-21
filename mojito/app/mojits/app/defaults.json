@@ -3,12 +3,10 @@
         "settings": [ "master" ],
 
         "config": {
-            "pageSize": 8,
-            "query": "select title, description, link, pubDate from rss where url='http://rss.news.yahoo.com/rss/topstories'",
             "assets": {
                 "top": {
                     "css": [
-                        "http://fonts.googleapis.com/css?family=Lato:300,700",
+                        "http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css",
                         "./screen.css"
                     ]
                 }

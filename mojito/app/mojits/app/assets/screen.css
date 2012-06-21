@@ -1,0 +1,13 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.screen {
+    overflow: hidden;
+}
+
+ul li.page {
+    overflow: hidden;
+    vertical-align: top;
+    display: inline-block;
+}

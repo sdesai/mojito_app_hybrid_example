@@ -22,7 +22,21 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
      * An ordered array of cached objects
      */
 
-    var cache = [];
+    var cache = {};
+
+    /*
+     * @method getCacheSize
+     * @retrun {int}
+     */
+
+    function getCacheSize(id) {
+
+        if (!cache[id]) {
+            return 0;
+        }
+
+        return cache[id].length;
+    }
 
     /*
      * @method inCache
@@ -31,17 +45,8 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
      * @retrun {boolean}
      */
     
-    function inCache(key, match) {
-        return getCacheValue(key, match) ? true : false;
-    }
-
-    /*
-     * @method getCacheSize
-     * @retrun {int}
-     */
-
-    function getCacheSize() {
-        return cache.length;
+    function inCache(id, key, match) {
+        return getCacheValue(id, key, match) ? true : false;
     }
 
     /*
@@ -51,15 +56,19 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
      * @param {object} value
      */
     
-    function setCacheValue(key, match, value) {
+    function setCacheValue(id, key, match, value) {
 
-        Y.Array.each(cache, function (object, pos) {
+        if (!cache[id]) {
+            cache[id] = [];
+        }
+
+        Y.Array.each(cache[id], function (object, pos) {
             if (object[key] === match) {
-                cache[pos] = value;
+                cache[id][pos] = value;
             }
         });
 
-        cache.push(value);
+        cache[id].push(value);
     }
 
     /*
@@ -68,12 +77,16 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
      * @param {string} match
      * @retrun {object}
      */
-    
-    function getCacheValue(key, match) {
+
+    function getCacheValue(id, key, match) {
 
         var ret = null;
 
-        Y.Array.each(cache, function (object) {
+        if (!cache[id]) {
+            return ret;
+        }
+
+        Y.Array.each(cache[id], function (object) {
             if (object[key] === match) {
                 ret = object;
             }
@@ -92,15 +105,12 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
     
     function getCacheSlice(query, limit, offset, cb) {
 
-        if (getCacheSize() < limit + offset) {
-            
-            query = query + ' limit 100';
-
+        if (getCacheSize(query) < limit + offset) {
             fillCache(query, function () {
-                cb(cache.slice(offset, offset + limit - 1));
+                cb(cache[query].slice(offset, offset + limit - 1));
             });
         } else {
-            cb(cache.slice(offset, offset + limit - 1));
+            cb(cache[query].slice(offset, offset + limit - 1));
         }
     }
 
@@ -112,7 +122,7 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
     
     function fillCache(query, cb) {
 
-        Y.YQL(query, function (data) {
+        Y.YQL(query + ' limit 100', function (data) {
 
             var items;
 
@@ -128,11 +138,11 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
 
                 var read;
 
-                if (inCache('url', item.link) === false) {
+                if (inCache(query, 'url', item.link) === false) {
 
                     read = poorMansReadability(item.description);
 
-                    setCacheValue('url', item.link, {
+                    setCacheValue(query, 'url', item.link, {
                         title: item.title,
                         body: read.body,
                         images: read.images,
@@ -143,7 +153,7 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
             });
 
             // Sort the cache by "date"
-            cache.sort(function (a, b) {
+            cache[query].sort(function (a, b) {
                 if (a.date > b.date) {
                     return -1;
                 }
@@ -210,15 +220,17 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
             this.cfg = config;
         },
 
-        getFeed: function(offset, callback) {
+        getFeed: function(query, offset, callback) {
 
             // If the offset is not a number or lower than zero fix it
             if (!offset || offset < 0) {
                 offset = 0;
             }
 
-            getCacheSlice(this.cfg.query, this.cfg.pageSize, offset, function (feed) {
+            getCacheSlice(query, this.cfg.pageSize, offset, function (feed) {
                 callback(null, feed);
+
+                Y.log(cache);
             });
         }
     };

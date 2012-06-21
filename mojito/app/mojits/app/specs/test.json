@@ -6,7 +6,7 @@
         "config": {
             "deploy": true,
             "child": {
-                "type": "yahoo.hybrid.specs"
+                "type": "yahoo.hybrid.newsfeed"
             },
             "assets": {
                 "top": {
