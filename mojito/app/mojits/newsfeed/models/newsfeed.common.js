@@ -229,8 +229,6 @@ YUI.add('newsfeedmodel', function(Y, NAME) {
 
             getCacheSlice(query, this.cfg.pageSize, offset, function (feed) {
                 callback(null, feed);
-
-                Y.log(cache);
             });
         }
     };

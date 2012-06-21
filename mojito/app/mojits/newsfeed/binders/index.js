@@ -17,6 +17,13 @@ YUI.add('newsfeedbinderindex', function(Y, NAME) {
             /* Create the scrollview */
             scrollview = new Y.ScrollView({
                 srcNode: node,
+                bounce: 0,
+                deceleration: 0.8,
+                flick: {
+                    minDistance: 10,
+                    minVelocity: 0.3,
+                    axis: "y"
+                },
                 height: node.get('winHeight') + 'px' // HACK
             });
 

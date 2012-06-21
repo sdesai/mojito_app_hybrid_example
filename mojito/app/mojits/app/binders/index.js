@@ -40,7 +40,7 @@ YUI.add('newsfeedappbinderindex', function(Y, NAME) {
 
                 function slide(scroll, distance){
                     scroll.transition({
-                        duration: 0.5, // seconds
+                        duration: 0.2, // seconds
                         transform: 'translateX(' + distance + 'px)',
                         'z-index': '1000'
                     });
