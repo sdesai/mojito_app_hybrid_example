@@ -29,7 +29,8 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
         bind: function (node) {
 
-            var self = this;
+            var self = this,
+                scrollview;
 
             self.scrollable = node.one(".scrollable");
 
@@ -42,55 +43,25 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                     item.setStyle('width', (self.width) + "px");
                 });
 
-                function slide(scroll, distance) {
-                    scroll.transition({
-                        duration: 0.2, // seconds
-                        transform: 'translateX(' + distance + 'px)',
-                        'z-index': '1000'
-                    });
-                }
-
-                /*
-                 * The big one! We look for "flicks" to move the page.
-                 */
-                node.on("gesturemovestart", function (e) {
-
-                    var item = e.currentTarget;
-
-                    // Prevent Text Selection in IE
-                    item.once("selectstart", function (e) {
-                        e.preventDefault();
-                    });
-
-                    item.setData("swipeStartX", e.pageX);
-                    item.setData("swipeStartY", e.pageY);
-
-                    item.once("gesturemoveend", function (e) {
-
-                        var swipeStartX = item.getData("swipeStartX"),
-                            swipeStartY = item.getData("swipeStartY"),
-                            swipeEndX = e.pageX,
-                            swipeEndY = e.pageY,
-                            isSwipeLeft = (swipeStartX - swipeEndX) > 60,
-                            isSwipeRight = (swipeEndX - swipeStartX) > 60,
-                            isSwipeVert = Math.abs(swipeEndY - swipeStartY) < 30;
-
-                        if (isSwipeLeft && isSwipeVert) {
-                            if (self.position < node.all('li.page').size() - 1) {
-                                self.position = self.position + 1;
-                                slide(self.scrollable, self.position * self.width * -1);
-                            }
-                        }
-
-                        if (isSwipeRight && isSwipeVert) {
-                            if (self.position > 0) {
-                                self.position = self.position - 1;
-                                slide(self.scrollable, self.position * self.width * -1);
-                            }
-                        }
-                    });
-
+                /* Create the scrollview */
+                scrollview = new Y.ScrollView({
+                    srcNode: self.scrollable,
+                    bounce: 0,
+//                    deceleration: 0.8,
+                    flick: {
+                        minDistance: 10,
+                        minVelocity: 0.3,
+                        axis: "x"
+                    },
+                    width: (self.width) + "px" // 4px deduction for some reason
                 });
+
+                /* Plug in pagination support */
+                scrollview.plug(Y.Plugin.ScrollViewPaginator, {
+                    selector: 'li.page' // elements definining page boundaries
+                });
+
+                scrollview.render();
             });
         },
 
