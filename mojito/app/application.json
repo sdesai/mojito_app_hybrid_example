@@ -2,7 +2,7 @@
     {
         "settings": [ "master" ],
 
-        "shareYUIInstance": false,
+        "shareYUIInstance": true,
 
         "staticHandling": {
             "prefix": "",

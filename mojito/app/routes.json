@@ -4,12 +4,17 @@
 
         "default": {
             "path": "/",
-            "call": "yahoo.hybrid.specs.index"
+            "call": "yahoo.hybrid.app.index"
+        },
+
+        "default_test": {
+            "path": "/test",
+            "call": "yahoo.hybrid.app:test.index"
         },
 
         "default_index": {
             "path": "/index.html",
-            "call": "yahoo.hybrid.specs.index"
+            "call": "yahoo.hybrid.app.index"
         }
     },
     {

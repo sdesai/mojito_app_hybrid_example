@@ -3,10 +3,11 @@
         "settings": [ "master" ],
 
         "type": "HTMLFrameMojit",
+        "shareYUIInstance": true,
         "config": {
             "deploy": true,
             "child": {
-                "type": "yahoo.hybrid.newsfeed"
+                "type": "yahoo.hybrid.nav"
             },
             "assets": {
                 "top": {
