@@ -44,7 +44,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                     item.setStyle('height', (self.height) + 'px');
                 });
 
-                self.addScrollviews(node, function () {
+                self.addScrollviews(node, self.changeTitle, function () {
                     Y.log('Scrollviews added');
                 });
             });
@@ -65,7 +65,13 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             cb();
         },
 
-        addScrollviews: function (node, cb) {
+        changeTitle: function (titles, lastPage, currPage) {
+
+            titles.get('children').item(lastPage).removeClass('current');
+            titles.get('children').item(currPage).addClass('current');
+        },
+
+        addScrollviews: function (node, onChange, cb) {
 
             var self = this,
                 horizSwiper,
@@ -170,11 +176,9 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
                 vertSwiper.syncUI();
 
-                vertSwiper.scrollTo(0, 0);
+                vertSwiper.scrollTo(0, 0); // re-set the scrollview to the top
 
-                self.titles.get('children').item(lastPage).removeClass('current');
-                self.titles.get('children').item(currPage).addClass('current');
-
+                onChange(self.titles, lastPage, currPage);
             });
 
             cb();

@@ -1,4 +1,6 @@
-
+.nav-content {
+    background: #eee url(./bg-grid.jpeg);
+}
 .horizontal {
     white-space: nowrap;
     font-family: 'Lato', sans-serif;
@@ -6,14 +8,17 @@
 .titles{
     color: #555;
     background: #000;
+    text-align: center;
 }
 .titles div {
     font-weight: bold;
     display: inline-block;
-    padding: 1em;
+    padding: 0.8em;
 }
 .titles .current {
     color: #fff;
+    padding-top: 0.6em;
+    border-bottom: 0.6em solid green;
 }
 .screen {
     white-space: normal;

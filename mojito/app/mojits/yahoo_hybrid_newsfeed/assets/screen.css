@@ -1,13 +1,21 @@
 .newsfeed {
-    background: #eee;
+    margin: 0.5em 0em 0.5em 0em;
 }
 
 .newsfeed li {
     position: relative;
     overflow: hidden;
+}
+
+.newsfeed .card {
+    overflow: hidden;
+    background: #fff;
+    margin: 0.5em 1em 0.5em 1em;
     padding: 0.6em 0.8em 0.6em 0.8em;
-    /*border-bottom: 1px solid #aaa;*/
-    /*border-top: 2px solid #fff;*/
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    border-left: 1px solid #ddd;
 }
 
 .newsfeed h3 {
@@ -15,7 +23,7 @@
     font-size: 120%;
     font-weight: 700;
     text-align: left;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.5em;
 }
 
 .newsfeed h3 a{
@@ -34,6 +42,7 @@
 .newsfeed img {
     border: 2px solid #ccc;
     margin: 0em 0em 0.3em 0.7em;
+    clear: both;
 }
 
 .newsfeed .date {

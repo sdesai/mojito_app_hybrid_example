@@ -1,17 +1,19 @@
 {{#items}}
 <li>
-    <div class="body">
-        {{#images}}
-        <img src="{{src}}" alt="{{title}}" align="right">
-        {{/images}}
-        <h3><a href="{{url}}">{{title}}</a></h3>
-        {{body}}
-    </div>
-    <div class="date">
-        {{date}}
-    </div>
-    <div class="tools">
-        <!--<a href="#remove">X</a>-->
+    <div class="card">
+        <div class="body">
+            {{#images}}
+            <img src="{{src}}" alt="{{title}}" align="right">
+            {{/images}}
+            <h3><a href="{{url}}">{{title}}</a></h3>
+            {{body}}
+        </div>
+        <div class="date">
+            {{date}}
+        </div>
+        <div class="tools">
+            <!--<a href="#remove">X</a>-->
+        </div>
     </div>
 </li>
 {{/items}}
