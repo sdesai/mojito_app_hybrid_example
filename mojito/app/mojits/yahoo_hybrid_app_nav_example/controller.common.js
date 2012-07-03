@@ -29,8 +29,11 @@ YUI.add('newsfeedapp', function (Y, NAME) {
 
                     Y.Object.each(data, function (content) {
 
+                        var idname = 'screen' + id;
+
                         slots.push({
-                            id: 'screen' + id,
+                            id: idname,
+                            title: cfg.children[idname].title,
                             content: content,
                             first: (id === 0)
                         });

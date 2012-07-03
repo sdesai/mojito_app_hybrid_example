@@ -15,6 +15,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
         init: function (mp) {
 
             this.mp = mp;
+            this.titles = null;
             this.scrollable = null;
             this.height = NaN;
             this.width = NaN;
@@ -32,7 +33,8 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
             var self = this;
 
-            self.scrollable = node;
+            self.titles = node.one('.titles');
+            self.scrollable = node.one('.horizontal');
 
             self.setScreenSize(node, function () {
 
@@ -50,9 +52,12 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
         setScreenSize: function (node, cb) {
 
-            var self = this;
+            var self = this,
+                titleHeight;
 
-            self.height = parseInt(node.get('winHeight'), 10);
+            titleHeight = parseInt(self.titles.getStyle('height'), 10);
+
+            self.height = parseInt(node.get('winHeight'), 10) - titleHeight;
             self.width = parseInt(node.get('winWidth'), 10);
 
             self.scrollable.setStyle('height', (self.height) + 'px');
@@ -62,7 +67,8 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
         addScrollviews: function (node, cb) {
 
-            var horizSwiper,
+            var self = this,
+                horizSwiper,
                 vertSwiper,
                 startX,
                 startY,
@@ -165,6 +171,10 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 vertSwiper.syncUI();
 
                 vertSwiper.scrollTo(0, 0);
+
+                self.titles.get('children').item(lastPage).removeClass('current');
+                self.titles.get('children').item(currPage).addClass('current');
+
             });
 
             cb();

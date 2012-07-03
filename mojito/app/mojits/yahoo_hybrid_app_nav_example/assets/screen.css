@@ -1,6 +1,19 @@
+
 .horizontal {
     white-space: nowrap;
     font-family: 'Lato', sans-serif;
+}
+.titles{
+    color: #555;
+    background: #000;
+}
+.titles div {
+    font-weight: bold;
+    display: inline-block;
+    padding: 1em;
+}
+.titles .current {
+    color: #fff;
 }
 .screen {
     white-space: normal;

@@ -1,11 +1,18 @@
-<div id="{{mojit_view_id}}" class="horizontal">
-    {{#slots}}<div class="screen" id="{{id}}">
-        <div class="frame">
-            {{#first}}<div class="vertical">{{/first}}
-                <div class="content">
-                    {{{content}}}
-                </div>
-            {{#first}}</div>{{/first}}
-        </div>
-    </div>{{/slots}}
+<div id="{{mojit_view_id}}">
+    <div class="titles">
+        {{#slots}}<div{{#first}} class="current"{{/first}}>
+            {{title}}
+        </div>{{/slots}}
+    </div>
+    <div class="horizontal">
+        {{#slots}}<div class="screen" id="{{id}}">
+            <div class="frame">
+                {{#first}}<div class="vertical">{{/first}}
+                    <div class="content">
+                        {{{content}}}
+                    </div>
+                {{#first}}</div>{{/first}}
+            </div>
+        </div>{{/slots}}
+    </div>
 </div>
