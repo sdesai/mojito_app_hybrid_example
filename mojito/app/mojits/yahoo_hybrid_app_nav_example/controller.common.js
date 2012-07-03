@@ -39,7 +39,22 @@ YUI.add('newsfeedapp', function (Y, NAME) {
                 };
 
             ac.composite.execute(cfg, function (data, meta) {
-                ac.done(data, meta);
+
+                var slots = [],
+                    id = 0;
+
+                Y.Object.each(data, function (content) {
+
+                    slots.push({
+                        id: 'screen' + id,
+                        content: content,
+                        first: (id === 0)
+                    });
+
+                    id = id + 1;
+                });
+
+                ac.done({slots: slots}, meta);
             });
         }
 

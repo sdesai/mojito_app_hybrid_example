@@ -1,13 +1,9 @@
-body {
+.horizontal {
+    white-space: nowrap;
     font-family: 'Lato', sans-serif;
 }
-
 .screen {
-    overflow: hidden;
-}
-
-ul li.page {
-    overflow: hidden;
-    vertical-align: top;
+    white-space: normal;
     display: inline-block;
+    vertical-align: text-top;
 }

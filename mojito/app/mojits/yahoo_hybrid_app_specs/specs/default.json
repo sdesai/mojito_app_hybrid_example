@@ -7,7 +7,7 @@
         "config": {
             "deploy": true,
             "child": {
-                "type": "yahoo.hybrid.nav"
+                "type": "yahoo.hybrid.app_nav_example"
             },
             "assets": {
                 "top": {

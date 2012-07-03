@@ -2,6 +2,8 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 
+/*jslint nomen: true */
+
 /*global YUI: true, window: true, document: true*/
 
 'use strict';
@@ -16,7 +18,6 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             this.scrollable = null;
             this.height = NaN;
             this.width = NaN;
-            this.position = 0;
 
             /* This code prevents users from dragging the page */
             var preventDefaultScroll = function (event) {
@@ -29,39 +30,20 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
         bind: function (node) {
 
-            var self = this,
-                scrollview;
+            var self = this;
 
-            self.scrollable = node.one(".scrollable");
+            self.scrollable = Y.one('.horizontal');
 
-            // First make sure we have the screen size set right
             self.setScreenSize(node, function () {
 
-                // Now tell all the children what size they should be
-                node.all('li.page').each(function (item) {
-                    item.setStyle('height', (self.height - 4) + "px");
-                    item.setStyle('width', (self.width) + "px");
+                // Now tell all the children what width they should be
+                node.all('.screen').each(function (item) {
+                    item.setStyle('width', (self.width) + 'px');
                 });
 
-                /* Create the scrollview */
-                scrollview = new Y.ScrollView({
-                    srcNode: self.scrollable,
-                    bounce: 0,
-//                    deceleration: 0.8,
-                    flick: {
-                        minDistance: 10,
-                        minVelocity: 0.3,
-                        axis: "x"
-                    },
-                    width: (self.width) + "px" // 4px deduction for some reason
+                self.addScrollviews(node, function () {
+                    Y.log('Scrollviews added');
                 });
-
-                /* Plug in pagination support */
-                scrollview.plug(Y.Plugin.ScrollViewPaginator, {
-                    selector: 'li.page' // elements definining page boundaries
-                });
-
-                scrollview.render();
             });
         },
 
@@ -72,11 +54,118 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             self.height = parseInt(node.get('winHeight'), 10);
             self.width = parseInt(node.get('winWidth'), 10);
 
-            self.scrollable.setStyle('height', (self.height) + "px");
-            self.scrollable.setStyle('width', (self.width * node.all('li.page').size()) + "px");
+            self.scrollable.setStyle('height', (self.height) + 'px');
+
+            cb();
+        },
+
+        addScrollviews: function (node, cb) {
+
+            var horizSwiper,
+                vertSwiper,
+                startX,
+                startY,
+                screens,
+                CACHED_VERT_CONTENT;
+
+            function overrideGMS(sv, customCode) {
+                var orig = sv._onGestureMoveStart;
+
+                sv._onGestureMoveStart = function (e) {
+                    customCode.apply(this, arguments);
+                    orig.apply(this, arguments);
+                };
+            }
+
+            function overrideGM(sv, customCode) {
+                var orig = sv._onGestureMove;
+
+                sv._onGestureMove = function (e) {
+                    customCode.apply(this, arguments);
+                    orig.apply(this, arguments);
+                };
+            }
+
+            function overrideGME(sv, customCode) {
+                var orig = sv._onGestureMoveEnd;
+
+                sv._onGestureMoveEnd = function (e) {
+                    customCode.apply(this, arguments);
+                    orig.apply(this, arguments);
+                };
+            }
+
+            horizSwiper = new Y.ScrollView({
+                srcNode: this.scrollable,
+                width: this.width,
+                flick: {
+                    minDistance: 40,
+                    minVelocity: 0.5,
+                    axis: 'x'
+                }
+            });
+
+            horizSwiper.plug(Y.Plugin.ScrollViewPaginator, {
+                selector: '.screen'
+            });
+
+            horizSwiper.render();
+
+            vertSwiper = new Y.ScrollView({
+                srcNode: ".vertical",
+                height: this.height,
+                flick: {
+                    minDistance: 40,
+                    minVelocity: 0.5,
+                    axis: "y"
+                }
+            });
+
+            overrideGMS(vertSwiper, function (e) {
+                startX = e.pageX;
+                startY = e.pageY;
+            });
+
+            overrideGM(vertSwiper, function (e) {
+                if (!horizSwiper.get("disabled") && (Math.abs(e.pageX - startX) < Math.abs(e.pageY - startY))) {
+                    horizSwiper.set("disabled", true);
+                }
+            });
+
+            overrideGME(vertSwiper, function (e) {
+                horizSwiper.set("disabled", false);
+                vertSwiper.set("disabled", false);
+            });
+
+            vertSwiper.render();
+
+            // Here we grab all the screens and cache them
+            screens = node.all(".screen");
+            CACHED_VERT_CONTENT = [];
+
+            screens.each(function (node, i) {
+                CACHED_VERT_CONTENT.push(node.one(".content"));
+            });
+
+            horizSwiper.pages.on("indexChange", function (e) {
+
+                var lastPage = e.prevVal,
+                    currPage = e.newVal,
+                    newContainer;
+
+                vertSwiper.get("boundingBox").get("parentNode").append(CACHED_VERT_CONTENT[lastPage]);
+                vertSwiper.get("contentBox").append(CACHED_VERT_CONTENT[currPage]);
+
+                newContainer = node.one("#screen" + currPage + " .frame");
+                newContainer.insert(vertSwiper.get("boundingBox"));
+
+                vertSwiper.syncUI();
+            });
 
             cb();
         }
     };
 
-}, '0.0.1', {requires: ['mojito-client', 'node', 'transition', 'scrollview', 'scrollview-paginator']});
+}, '0.0.1', {
+    requires: ['mojito-client', 'node', 'scrollview-base', 'scrollview-paginator']
+});

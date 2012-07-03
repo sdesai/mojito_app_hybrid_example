@@ -19,4 +19,4 @@ YUI.add('newsfeedbinderindex', function (Y, NAME) {
         }
     };
 
-}, '0.0.1', {requires: ['mojito-client', 'node', 'scrollview']});
+}, '0.0.1', {requires: ['mojito-client', 'node']});

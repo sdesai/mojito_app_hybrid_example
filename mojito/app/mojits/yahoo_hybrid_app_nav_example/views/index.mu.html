@@ -1,7 +1,11 @@
-<div id="{{mojit_view_id}}" class="screen">
-    <div class="scrollable">
-        <ul>
-            <li class="page">{{{slot1}}}</li><li class="page">{{{slot2}}}</li><li class="page">{{{slot3}}}</li>
-        </ul>
-    </div>
+<div id="{{mojit_view_id}}" class="horizontal">
+    {{#slots}}<div class="screen" id="{{id}}">
+        <div class="frame">
+            {{#first}}<div class="vertical">{{/first}}
+                <div class="content">
+                    {{{content}}}
+                </div>
+            {{#first}}</div>{{/first}}
+        </div>
+    </div>{{/slots}}
 </div>

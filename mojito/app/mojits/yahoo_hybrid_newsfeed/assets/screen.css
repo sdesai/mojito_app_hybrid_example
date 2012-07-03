@@ -4,10 +4,10 @@
 
 .newsfeed li {
     position: relative;
-    padding: 0.6em 0.8em 0.6em 0.8em;
-    border-bottom: 1px solid #aaa;
-    border-top: 2px solid #fff;
     overflow: hidden;
+    padding: 0.6em 0.8em 0.6em 0.8em;
+    /*border-bottom: 1px solid #aaa;*/
+    /*border-top: 2px solid #fff;*/
 }
 
 .newsfeed h3 {
