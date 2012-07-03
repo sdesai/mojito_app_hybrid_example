@@ -14,30 +14,35 @@ YUI.add('newsfeedapp', function (Y, NAME) {
 
             var cfg = {children: {}};
 
-            Y.Array.each(ac.config.get('screens'), function (screen, id) {
-                cfg.children['screen' + id] = screen;
-            });
+            ac.model.load('user').getConfig('user_id', function (error, screens) {
 
-            ac.composite.execute(cfg, function (data, meta) {
-
-                var slots = [],
-                    id = 0;
-
-                Y.Object.each(data, function (content) {
-
-                    slots.push({
-                        id: 'screen' + id,
-                        content: content,
-                        first: (id === 0)
-                    });
-
-                    id = id + 1;
+                // Add the screens as composite children
+                Y.Array.each(screens, function (screen, id) {
+                    cfg.children['screen' + id] = screen;
                 });
 
-                ac.done({slots: slots}, meta);
+                // Now execute the composite
+                ac.composite.execute(cfg, function (data, meta) {
+
+                    var slots = [],
+                        id = 0;
+
+                    Y.Object.each(data, function (content) {
+
+                        slots.push({
+                            id: 'screen' + id,
+                            content: content,
+                            first: (id === 0)
+                        });
+
+                        id = id + 1;
+                    });
+
+                    ac.done({slots: slots}, meta);
+                });
             });
         }
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito_mojit_addon_shared_model']});
+}, '0.0.1', {requires: ['mojito', 'yahoo_hybrid_app_usermodel', 'mojito_mojit_addon_shared_model']});
