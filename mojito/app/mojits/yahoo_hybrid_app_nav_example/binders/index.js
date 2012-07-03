@@ -163,6 +163,8 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 newContainer.insert(vertSwiper.get("boundingBox"));
 
                 vertSwiper.syncUI();
+
+                vertSwiper.scrollTo(0, 0);
             });
 
             cb();

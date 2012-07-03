@@ -7,7 +7,39 @@
         "config": {
             "deploy": true,
             "child": {
-                "type": "yahoo.hybrid.app_nav_example"
+                "type": "yahoo.hybrid.app_nav_example",
+                "config": {
+                    "screens": [
+                        {
+                            "type": "yahoo.hybrid.newsfeed",
+                            "action": "index",
+                            "config": {
+                                "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/stock-markets'"
+                            }
+                        },
+                        {
+                            "type": "yahoo.hybrid.newsfeed",
+                            "action": "index",
+                            "config": {
+                                "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/business'"
+                            }
+                        },
+                        {
+                            "type": "yahoo.hybrid.newsfeed",
+                            "action": "index",
+                            "config": {
+                                "query": "select title, description, link, pubDate from rss where url='http://rss.news.yahoo.com/rss/topstories'"
+                            }
+                        },
+                        {
+                            "type": "yahoo.hybrid.newsfeed",
+                            "action": "index",
+                            "config": {
+                                "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/tech'"
+                            }
+                        }
+                    ]
+                }
             },
             "assets": {
                 "top": {

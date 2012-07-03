@@ -12,31 +12,11 @@ YUI.add('newsfeedapp', function (Y, NAME) {
 
         index: function (ac) {
 
-            var cfg = {
-                    children: {
-                        slot1: {
-                            type: 'yahoo.hybrid.newsfeed',
-                            action: 'index',
-                            config: {
-                                query: 'select title, description, link, pubDate from rss where url="http://news.yahoo.com/rss/business"'
-                            }
-                        },
-                        slot2: {
-                            type: 'yahoo.hybrid.newsfeed',
-                            action: 'index',
-                            config: {
-                                query: 'select title, description, link, pubDate from rss where url="http://rss.news.yahoo.com/rss/topstories"'
-                            }
-                        },
-                        slot3: {
-                            type: 'yahoo.hybrid.newsfeed',
-                            action: 'index',
-                            config: {
-                                query: 'select title, description, link, pubDate from rss where url="http://news.yahoo.com/rss/tech"'
-                            }
-                        }
-                    }
-                };
+            var cfg = {children: {}};
+
+            Y.Array.each(ac.config.get('screens'), function (screen, id) {
+                cfg.children['screen' + id] = screen;
+            });
 
             ac.composite.execute(cfg, function (data, meta) {
 
