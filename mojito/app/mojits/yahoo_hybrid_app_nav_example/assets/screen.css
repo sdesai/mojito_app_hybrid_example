@@ -6,4 +6,5 @@
     white-space: normal;
     display: inline-block;
     vertical-align: text-top;
+    overflow: hidden;
 }

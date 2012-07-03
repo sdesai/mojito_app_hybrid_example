@@ -32,13 +32,14 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
             var self = this;
 
-            self.scrollable = Y.one('.horizontal');
+            self.scrollable = node;
 
             self.setScreenSize(node, function () {
 
                 // Now tell all the children what width they should be
                 node.all('.screen').each(function (item) {
                     item.setStyle('width', (self.width) + 'px');
+                    item.setStyle('height', (self.height) + 'px');
                 });
 
                 self.addScrollviews(node, function () {
@@ -98,6 +99,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             horizSwiper = new Y.ScrollView({
                 srcNode: this.scrollable,
                 width: this.width,
+                bounce: false,
                 flick: {
                     minDistance: 40,
                     minVelocity: 0.5,
@@ -114,6 +116,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             vertSwiper = new Y.ScrollView({
                 srcNode: ".vertical",
                 height: this.height,
+                bounce: false,
                 flick: {
                     minDistance: 40,
                     minVelocity: 0.5,
