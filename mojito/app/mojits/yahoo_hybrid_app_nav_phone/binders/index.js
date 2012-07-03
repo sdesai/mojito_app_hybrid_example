@@ -181,6 +181,10 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 onChange(self.titles, lastPage, currPage);
             });
 
+            Y.on('more-data', function () {
+                vertSwiper.syncUI();
+            });
+
             cb();
         }
     };

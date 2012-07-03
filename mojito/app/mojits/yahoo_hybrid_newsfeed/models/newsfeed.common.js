@@ -221,14 +221,24 @@ YUI.add('newsfeedmodel', function (Y, NAME) {
             this.cfg = config;
         },
 
-        getFeed: function (query, offset, callback) {
+        getFeed: function (query, offset, limit, callback) {
 
-            // If the offset is not a number or lower than zero fix it
+            // If "limit" has no value use the default
+            if (!query) {
+                query = this.cfg.defaultQuery;
+            }
+
+            // If "offset" is not a number or lower than zero fix it
             if (!offset || offset < 0) {
                 offset = 0;
             }
 
-            getCacheSlice(query, this.cfg.pageSize, offset, function (feed) {
+            // If "limit" is not a number fix it
+            if (!limit) {
+                limit = this.cfg.defaultPageSize;
+            }
+
+            getCacheSlice(query, limit, offset, function (feed) {
                 callback(null, feed);
             });
         }

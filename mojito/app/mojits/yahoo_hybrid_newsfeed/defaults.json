@@ -3,8 +3,8 @@
         "settings": [ "master" ],
 
         "config": {
-            "pageSize": 8,
-            "query": "select title, description, link, pubDate from rss where url='http://rss.news.yahoo.com/rss/topstories'",
+            "defaultPageSize": 8,
+            "defaultQuery": "select title, description, link, pubDate from rss where url='http://rss.news.yahoo.com/rss/topstories'",
             "assets": {
                 "top": {
                     "css": [

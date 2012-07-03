@@ -42,10 +42,11 @@ YUI.add('newsfeed', function (Y, NAME) {
 
         feed: function (ac) {
 
-            var offset = ac.params.merged('offset') || 0,
-                query = ac.config.get('query');
+            var query = ac.config.get('query'),
+                offset = ac.params.merged('offset'),
+                limit = ac.config.get('limit');
 
-            ac.model.load('newsfeed').getFeed(query, offset, function (err, items) {
+            ac.model.load('newsfeed').getFeed(query, offset, limit, function (err, items) {
 
                 var data = {};
 
