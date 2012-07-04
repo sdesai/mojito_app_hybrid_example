@@ -14,31 +14,46 @@
     overflow: hidden;
     position: relative;
     background: #fff;
-    margin: 0.5em 1em 0.5em 1em;
     padding: 0.6em 0.8em 0.6em 0.8em;
-    border-top: 1px solid #ddd;
-    border-right: 1px solid #bbb;
-    border-bottom: 1px solid #bbb;
-    border-left: 1px solid #ddd;
+    border: 1em solid #ccc;
     /* Fixed height to make it look clean */
-    height: 20em;
+    height: 18em;
+}
+
+.newsfeed li .card {
+    margin: 0.5em 1em 0.5em 1em;
 }
 
 .newsfeed li:nth-child(3n-1) .card {
     margin: 0.5em 0em 0.5em 0em;
 }
 
+.newsfeed .no-images {
+    background: #111;
+}
+
 .newsfeed h3 {
     color: #000;
-    font-size: 120%;
-    font-weight: 700;
+    font-size: 200%;
+    font-weight: bold;
+    line-height: 130%;
     text-align: left;
     margin-bottom: 0.5em;
+}
+
+.newsfeed h3.small {
+    font-size: 140%;
+    line-height: 140%;
 }
 
 .newsfeed h3 a{
     color: #000;
     text-decoration: none;
+}
+
+.newsfeed li:nth-child(7n) h3 a {
+    color: #0091FE;
+    font-size: 110%;
 }
 
 .newsfeed .body {
@@ -59,11 +74,12 @@
 
 .newsfeed .date {
     position: absolute;
-    bottom: 1em;
+    bottom: 0em;
+    padding: 0.8em 0em 1em 0em;
+    width: 200%;
     color: #06799F;
     font-size: 80%;
     background: #fff;
-    /*margin-top: 0.5em;*/
 }
 
 .newsfeed .tools {
@@ -80,4 +96,12 @@
 .newsfeed .spinner {
     text-indent: -3000px;
     background: url(./spinner.gif) no-repeat center;
+}
+
+.newsfeed .has-images {
+    border-top: 0.1em solid #ddd;
+    border-right: 0.1em solid #bbb;
+    border-bottom: 0.1em solid #bbb;
+    border-left: 0.1em solid #ddd;
+    height: 19.8em;
 }

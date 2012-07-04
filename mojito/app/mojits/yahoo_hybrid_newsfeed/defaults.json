@@ -9,6 +9,7 @@
                 "top": {
                     "css": [
                         "http://fonts.googleapis.com/css?family=Lato:300,700",
+                        "./tablet.css",
                         "./desktop.css"
                     ]
                 }
