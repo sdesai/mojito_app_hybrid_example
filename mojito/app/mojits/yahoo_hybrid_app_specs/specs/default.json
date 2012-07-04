@@ -18,14 +18,5 @@
                 }
             }
         }
-    },
-    {
-        "settings": [ "device:android" ],
-
-        "config": {
-            "child": {
-                "type": "yahoo.hybrid.app_nav_phone"
-            }
-        }
     }
 ]

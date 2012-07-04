@@ -6,7 +6,7 @@
 
 'use strict';
 
-YUI.add('newsfeedapp', function (Y, NAME) {
+YUI.add('yahoo_hybrid_app_nav_phone', function (Y, NAME) {
 
     Y.mojito.controllers[NAME] = {
 

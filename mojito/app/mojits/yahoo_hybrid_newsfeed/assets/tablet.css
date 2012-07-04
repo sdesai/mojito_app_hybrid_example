@@ -1,0 +1,83 @@
+.newsfeed {
+    margin: 0.5em 0em 0.5em 0em;
+}
+
+.newsfeed li {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 33.3%;
+}
+
+.newsfeed .card {
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    margin: 0.5em 1em 0.5em 1em;
+    padding: 0.6em 0.8em 0.6em 0.8em;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    border-left: 1px solid #ddd;
+    /* Fixed height to make it look clean */
+    height: 20em;
+}
+
+.newsfeed li:nth-child(3n-1) .card {
+    margin: 0.5em 0em 0.5em 0em;
+}
+
+.newsfeed h3 {
+    color: #000;
+    font-size: 120%;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 0.5em;
+}
+
+.newsfeed h3 a{
+    color: #000;
+    text-decoration: none;
+}
+
+.newsfeed .body {
+    color: #555;
+    font-size: 100%;
+    font-weight: 300;
+    line-height: 1.4em;
+    text-align: justify;
+}
+
+.newsfeed img {
+    height: 90px;
+    width: 140px;
+    border: 2px solid #ccc;
+    margin: 0em 0em 0.3em 0.7em;
+    clear: both;
+}
+
+.newsfeed .date {
+    position: absolute;
+    bottom: 1em;
+    color: #06799F;
+    font-size: 80%;
+    background: #fff;
+    /*margin-top: 0.5em;*/
+}
+
+.newsfeed .tools {
+    text-align: center;
+}
+
+.newsfeed .footer {
+    padding: 1em;
+    color: #555;
+    font-weight: bold;
+    text-align: center;
+}
+
+.newsfeed .spinner {
+    text-indent: -3000px;
+    background: url(./spinner.gif) no-repeat center;
+}

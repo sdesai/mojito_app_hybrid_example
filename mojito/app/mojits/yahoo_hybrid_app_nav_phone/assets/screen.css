@@ -6,6 +6,7 @@
     font-family: 'Lato', sans-serif;
 }
 .titles{
+    white-space: nowrap;
     color: #555;
     background: #000;
     text-align: center;
