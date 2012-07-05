@@ -4,7 +4,10 @@
             {{#images}}
             <img src="{{src}}" alt="{{title}}" align="right">
             {{/images}}
-            <h3{{#images}} class="small"{{/images}}><a href="{{url}}">{{title}}</a></h3>
+            <h3{{#images}} class="small"{{/images}}>
+                <!-- Disabled URL for testing -->
+                <a href="#{{url}}">{{title}}</a>
+            </h3>
             {{body}}
         </div>
         <div class="date">

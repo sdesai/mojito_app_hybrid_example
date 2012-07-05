@@ -20,9 +20,17 @@ YUI.add('yahoo_hybrid_app_usermodel', function (Y, NAME) {
                     {
                         "type": "yahoo.hybrid.newsfeed",
                         "action": "index",
-                        "title": "Stock Markets",
+                        "title": "Top Stories",
                         "config": {
-                            "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/stock-markets'"
+                            "query": "select title, description, link, pubDate from rss where url='http://rss.news.yahoo.com/rss/topstories'"
+                        }
+                    },
+                    {
+                        "type": "yahoo.hybrid.newsfeed",
+                        "action": "index",
+                        "title": "Tech",
+                        "config": {
+                            "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/tech'"
                         }
                     },
                     {
@@ -36,17 +44,9 @@ YUI.add('yahoo_hybrid_app_usermodel', function (Y, NAME) {
                     {
                         "type": "yahoo.hybrid.newsfeed",
                         "action": "index",
-                        "title": "Top Stories",
+                        "title": "Stock Markets",
                         "config": {
-                            "query": "select title, description, link, pubDate from rss where url='http://rss.news.yahoo.com/rss/topstories'"
-                        }
-                    },
-                    {
-                        "type": "yahoo.hybrid.newsfeed",
-                        "action": "index",
-                        "title": "Tech",
-                        "config": {
-                            "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/tech'"
+                            "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/stock-markets'"
                         }
                     }
                 ];
