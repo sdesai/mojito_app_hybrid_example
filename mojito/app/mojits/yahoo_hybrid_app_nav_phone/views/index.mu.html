@@ -1,7 +1,7 @@
 <div id="{{mojit_view_id}}" class="nav-content">
     <div class="titles">
         {{#slots}}<div{{#first}} class="current"{{/first}}>
-            {{title}}
+            <a href="#{{title}}" data-screen="{{screen}}">{{title}}</a>
         </div>{{/slots}}
     </div>
     <div class="horizontal">

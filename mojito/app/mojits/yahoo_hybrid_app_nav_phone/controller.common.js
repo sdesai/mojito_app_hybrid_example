@@ -25,20 +25,21 @@ YUI.add('yahoo_hybrid_app_nav_phone', function (Y, NAME) {
                 ac.composite.execute(cfg, function (data, meta) {
 
                     var slots = [],
-                        id = 0;
+                        screen = 0;
 
                     Y.Object.each(data, function (content) {
 
-                        var idname = 'screen' + id;
+                        var screenName = 'screen' + screen;
 
                         slots.push({
-                            id: idname,
-                            title: cfg.children[idname].title,
+                            id: screenName,
+                            screen: screen,
+                            title: cfg.children[screenName].title,
                             content: content,
-                            first: (id === 0)
+                            first: (screen === 0)
                         });
 
-                        id = id + 1;
+                        screen = screen + 1;
                     });
 
                     ac.done({slots: slots}, meta);

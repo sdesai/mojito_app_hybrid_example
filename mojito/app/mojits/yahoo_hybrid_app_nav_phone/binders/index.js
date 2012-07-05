@@ -36,6 +36,9 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             self.titles = node.one('.titles');
             self.scrollable = node.one('.horizontal');
 
+            /*
+             * Add a scrollview to the screens
+             */
             self.setScreenSize(node, function () {
 
                 // Now tell all the children what width they should be
@@ -48,6 +51,24 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                     Y.log('Scrollviews added');
                 });
             });
+
+            /*
+             * Add click handler to titles
+             */
+            self.titles.delegate('click', function (e) {
+
+                var srceen = e.currentTarget.getAttribute('data-screen');
+
+                /*
+                 * Update the user before we do anything
+                 */
+                self.changeTitle(self.titles, srceen);
+
+                setTimeout(function () {
+                    Y.fire('scroll-to', srceen);
+                }, 0);
+
+            }, 'a');
         },
 
         setScreenSize: function (node, cb) {
@@ -65,9 +86,9 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             cb();
         },
 
-        changeTitle: function (titles, lastPage, currPage) {
+        changeTitle: function (titles, currPage) {
 
-            titles.get('children').item(lastPage).removeClass('current');
+            titles.get('children').removeClass('current');
             titles.get('children').item(currPage).addClass('current');
         },
 
@@ -178,11 +199,21 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
                 vertSwiper.scrollTo(0, 0); // re-set the scrollview to the top
 
-                onChange(self.titles, lastPage, currPage);
+                onChange(self.titles, currPage);
+
             });
 
             Y.on('more-data', function () {
                 vertSwiper.syncUI();
+            });
+
+            Y.on('scroll-to', function (position) {
+                horizSwiper.pages.scrollTo(position, '0.5', 'ease-in');
+
+                /*
+                 * This is required to trigger the "indexChange" event.
+                 */
+                horizSwiper.pages.set('index', position);
             });
 
             cb();
