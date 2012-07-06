@@ -59,7 +59,7 @@ YUI.add('yahoo_hybrid_app_nav_phone', function (Y, NAME) {
         },
 
         /*
-         * This funciton does nothing but a show the loading page.
+         * This funciton does nothing but show the loading page.
          * 
          * Once running on the client it then invokes "index" and populates
          * the page at runtime.

@@ -2,6 +2,8 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 
+/*jslint regexp: true */
+
 /*global YUI: true*/
 
 'use strict';
