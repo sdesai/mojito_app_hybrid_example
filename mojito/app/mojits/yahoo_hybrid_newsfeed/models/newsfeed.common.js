@@ -223,11 +223,15 @@ YUI.add('newsfeedmodel', function (Y, NAME) {
             this.cfg = config;
         },
 
-        getFeed: function (query, offset, limit, callback) {
+        getFeed: function (feedId, offset, limit, callback) {
 
-            // If "limit" has no value use the default
-            if (!query) {
-                query = this.cfg.defaultQuery;
+            // Convert the "feedId" in a YQL statment
+            var query = Y.Object.getValue(this.cfg, ['feeds', feedId, 'query']);
+
+            // If "query" has no value return an error
+            if (typeof query === 'undefined') {
+                callback('No feed id given.');
+                return;
             }
 
             // If "offset" is not a number or lower than zero fix it

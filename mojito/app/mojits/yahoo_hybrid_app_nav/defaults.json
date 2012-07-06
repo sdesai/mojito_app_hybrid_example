@@ -3,6 +3,7 @@
         "settings": [ "master" ],
 
         "config": {
+            "jit": 2,
             "assets": {
                 "top": {
                     "css": [

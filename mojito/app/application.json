@@ -9,7 +9,7 @@
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojtio"
         },
-        "log":{
+        "-log":{
             "client":{
                 "level":" debug",
                 "yui": true,

@@ -22,7 +22,7 @@ YUI.add('yahoo_hybrid_app_usermodel', function (Y, NAME) {
                         "action": "index",
                         "title": "Top Stories",
                         "config": {
-                            "query": "select title, description, link, pubDate from rss where url='http://rss.news.yahoo.com/rss/topstories'"
+                            "feedId": "topstories"
                         }
                     },
                     {
@@ -30,7 +30,7 @@ YUI.add('yahoo_hybrid_app_usermodel', function (Y, NAME) {
                         "action": "index",
                         "title": "Tech",
                         "config": {
-                            "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/tech'"
+                            "feedId": "tech"
                         }
                     },
                     {
@@ -38,7 +38,7 @@ YUI.add('yahoo_hybrid_app_usermodel', function (Y, NAME) {
                         "action": "index",
                         "title": "Business",
                         "config": {
-                            "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/business'"
+                            "feedId": "business",
                         }
                     },
                     {
@@ -46,7 +46,7 @@ YUI.add('yahoo_hybrid_app_usermodel', function (Y, NAME) {
                         "action": "index",
                         "title": "Stock Markets",
                         "config": {
-                            "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/stock-markets'"
+                            "feedId": "stock-markets",
                         }
                     }
                 ];

@@ -62,6 +62,7 @@ YUI.add('newsfeedbinderindex', function (Y, NAME) {
             var footer,
                 params = {
                     body: {
+                        feedId: node.one('.card').getAttribute('data-feed_id'),
                         offset: node.one('ul').get('children').size()
                     }
                 };

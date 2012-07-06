@@ -6,7 +6,7 @@
 
 'use strict';
 
-YUI.add('yahoo_hybrid_app_nav_phone', function (Y, NAME) {
+YUI.add('yahoo_hybrid_app_nav', function (Y, NAME) {
 
     Y.mojito.controllers[NAME] = {
 
@@ -29,30 +29,44 @@ YUI.add('yahoo_hybrid_app_nav_phone', function (Y, NAME) {
 
             ac.model.load('user').getConfig('user_id', function (error, screens) {
 
+                var jitStart = ac.config.get('jit') || 100;
+
                 // Add the screens as composite children
                 Y.Array.each(screens, function (screen, id) {
-                    cfg.children['screen' + id] = screen;
+
+                    // Here we use the JIT loader for future screens
+                    if (id < jitStart) {
+                        cfg.children['screen' + id] = screen;
+                    } else {
+                        cfg.children['screen' + id] = {
+                            type: 'yahoo.hybrid.app_nav',
+                            action: 'jit',
+                            title: screen.title,
+                            config: {
+                                jit: JSON.stringify(screen)
+                            }
+                        };
+                    }
                 });
 
                 // Now execute the composite
                 ac.composite.execute(cfg, function (data, meta) {
 
-                    var slots = [],
+                    var slots = [screens.length - 1],
                         screen = 0;
 
-                    Y.Object.each(data, function (content) {
+                    Y.Object.each(data, function (content, screenName) {
 
-                        var screenName = 'screen' + screen;
+                        // We do this to keep the ordering of the screen.
+                        var screen = parseInt(screenName.slice(6), 10);
 
-                        slots.push({
+                        slots[screen] = {
                             id: screenName,
                             screen: screen,
                             title: cfg.children[screenName].title,
                             content: content,
                             first: (screen === 0)
-                        });
-
-                        screen = screen + 1;
+                        };
                     });
 
                     ac.done({slots: slots}, meta);
@@ -68,6 +82,31 @@ YUI.add('yahoo_hybrid_app_nav_phone', function (Y, NAME) {
          */
         loader: function (ac) {
             ac.done({}, 'loader');
+        },
+
+        /*
+         * This function returns JITs the mojit config it's given
+         */
+        jit: function (ac) {
+
+            var data = {};
+
+            data.jit = ac.config.get('jit');
+
+            ac.done(data);
+        },
+
+        runJit: function (ac) {
+
+            var cfg = {
+                    children: {
+                        html: ac.params.body('config')
+                    }
+                };
+
+            ac.composite.execute(cfg, function (data, meta) {
+                ac.done(data.html, meta);
+            });
         }
 
     };

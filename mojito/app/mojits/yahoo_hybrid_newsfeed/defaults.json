@@ -4,7 +4,7 @@
 
         "config": {
             "limit": 13,
-            "defaultQuery": "select title, description, link, pubDate from rss where url='http://rss.news.yahoo.com/rss/topstories'",
+            "feedId": "topstories",
             "assets": {
                 "top": {
                     "css": [
@@ -12,6 +12,24 @@
                         "./tablet.css",
                         "./desktop.css"
                     ]
+                }
+            },
+            "feeds": {
+                "topstories": {
+                    "title": "Top Stories",
+                    "query": "select title, description, link, pubDate from rss where url='http://rss.news.yahoo.com/rss/topstories'"
+                },
+                "tech": {
+                    "title": "Tech",
+                    "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/tech'"
+                },
+                "business": {
+                    "title": "Business",
+                    "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/business'"
+                },
+                "stock-markets": {
+                    "title": "Stock Markets",
+                    "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/stock-markets'"
                 }
             }
         }

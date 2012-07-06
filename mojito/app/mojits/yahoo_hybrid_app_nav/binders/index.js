@@ -100,6 +100,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 startX,
                 startY,
                 screens,
+                vertContentArea,
                 CACHED_VERT_CONTENT;
 
             function overrideGMS(sv, customCode) {
@@ -140,6 +141,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 }
             });
 
+            // Add pages
             horizSwiper.plug(Y.Plugin.ScrollViewPaginator, {
                 selector: '.screen'
             });
@@ -172,6 +174,24 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 horizSwiper.set("disabled", false);
                 vertSwiper.set("disabled", false);
             });
+
+            vertContentArea = vertSwiper.get("contentBox");
+
+            vertContentArea.delegate("click", function (e) {
+                // Prevent links from navigating as part of a scroll gesture
+                if (Math.abs(vertSwiper.lastScrolledAmt) > 2) {
+                    e.preventDefault();
+                }
+            }, "a");
+
+            vertContentArea.delegate("mousedown", function (e) {
+                // Prevent default anchor drag behavior, on browsers which let you drag anchors to the desktop
+                e.preventDefault();
+            }, "a");
+
+            // Add Scrollbars
+//            vertSwiper.plug(Y.Plugin.ScrollViewScrollbars);
+//            vertSwiper.scrollbars.show();
 
             vertSwiper.render();
 
@@ -221,5 +241,5 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
     };
 
 }, '0.0.1', {
-    requires: ['mojito-client', 'node', 'scrollview-base', 'scrollview-paginator']
+    requires: ['mojito-client', 'node', 'scrollview-base', 'scrollview-paginator', 'scrollview-scrollbars']
 });

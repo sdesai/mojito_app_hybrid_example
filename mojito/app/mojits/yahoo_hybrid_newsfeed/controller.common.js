@@ -16,44 +16,35 @@ YUI.add('newsfeed', function (Y, NAME) {
                     children: {
                         feed: {
                             type: 'yahoo.hybrid.newsfeed',
-                            action: 'feed'
+                            action: 'feed',
+                            config: {
+                                feedId: ac.config.get('feedId')
+                            }
                         }
                     }
                 };
-
-            if (ac.config.get('query')) {
-                cfg.children.feed.config = {
-                    query: ac.config.get('query')
-                };
-            }
-
-            if (ac.params.route('showSplash')) {
-                cfg.children.feed.action = 'splash';
-            }
 
             ac.composite.execute(cfg, function (data) {
                 ac.done(data);
             });
         },
 
-        splash: function (ac) {
-            ac.done('Splash...');
-        },
-
         feed: function (ac) {
 
-            var query = ac.config.get('query'),
+            var feedId = ac.params.merged('feedId') || ac.config.get('feedId'),
                 offset = ac.params.merged('offset'),
                 limit = ac.config.get('limit');
 
-            ac.model.load('newsfeed').getFeed(query, offset, limit, function (err, items) {
+            ac.model.load('newsfeed').getFeed(feedId, offset, limit, function (err, items) {
 
                 var data = {};
 
                 if (err) {
+                    Y.log('Newsfeed "' + feedId + '" was empty.');
                     items = [];
                 }
 
+                data.feed_id = feedId;
                 data.items = items;
 
                 ac.done(data);
