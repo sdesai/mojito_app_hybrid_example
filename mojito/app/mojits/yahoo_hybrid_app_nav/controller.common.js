@@ -18,7 +18,9 @@ YUI.add('yahoo_hybrid_app_nav_phone', function (Y, NAME) {
             var cfg = {children: {}};
 
             /*
-             * Quick hack around for context "device:phone" not working in the configs.
+             * Hack for context "device:phone" not working in spec configs.
+             *
+             * This will trigger on all requests that are not found as a device.
              */
             if (ac.context.runtime === 'server' && ac.context.device !== '') {
                 this.loader(ac);

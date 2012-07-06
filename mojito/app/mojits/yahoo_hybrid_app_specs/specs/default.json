@@ -7,33 +7,17 @@
         "config": {
             "deploy": true,
             "child": {
-                "type": "yahoo.hybrid.app_nav"
+                "type": "yahoo.hybrid.app_nav",
+                "action": "index"
             },
             "assets": {
                 "top": {
+                    "blob": [],
                     "css": [
                         "http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css",
                         "http://yui.yahooapis.com/3.5.1/build/cssfonts/cssfonts-min.css"
                     ]
                 }
-            }
-        }
-    },
-    {
-        "settings": [ "device:phone" ],
-
-        "config": {
-            "child": {
-                "action": "loader"
-            }
-        }
-    },
-    {
-        "settings": [ "build:webapp" ],
-
-        "config": {
-            "child": {
-                "action": "loader"
             }
         }
     }
