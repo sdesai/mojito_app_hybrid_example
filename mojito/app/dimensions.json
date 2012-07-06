@@ -3,6 +3,15 @@
     {
         "dimensions": [
             {
+                "build": {
+                    "webserver": {
+                        "webapp": {
+                            "hybrid": null
+                        }
+                    }
+                }
+            },
+            {
                 "runtime": {
                     "common": {
                         "client": null,

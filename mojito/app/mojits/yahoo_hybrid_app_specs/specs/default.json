@@ -7,7 +7,7 @@
         "config": {
             "deploy": true,
             "child": {
-                "type": "yahoo.hybrid.app_nav_phone"
+                "type": "yahoo.hybrid.app_nav"
             },
             "assets": {
                 "top": {
@@ -16,6 +16,24 @@
                         "http://yui.yahooapis.com/3.5.1/build/cssfonts/cssfonts-min.css"
                     ]
                 }
+            }
+        }
+    },
+    {
+        "settings": [ "device:phone" ],
+
+        "config": {
+            "child": {
+                "action": "loader"
+            }
+        }
+    },
+    {
+        "settings": [ "build:webapp" ],
+
+        "config": {
+            "child": {
+                "action": "loader"
             }
         }
     }

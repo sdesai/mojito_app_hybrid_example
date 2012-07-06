@@ -10,9 +10,20 @@ YUI.add('yahoo_hybrid_app_nav_phone', function (Y, NAME) {
 
     Y.mojito.controllers[NAME] = {
 
+        /*
+         * This funciton is the main entry point to the app
+         */
         index: function (ac) {
 
             var cfg = {children: {}};
+
+            /*
+             * Hack around device:phone not working
+             */
+            if (ac.context.runtime === 'server' && ac.context.device !== '') {
+                this.loader(ac);
+                return;
+            }
 
             ac.model.load('user').getConfig('user_id', function (error, screens) {
 
@@ -45,6 +56,16 @@ YUI.add('yahoo_hybrid_app_nav_phone', function (Y, NAME) {
                     ac.done({slots: slots}, meta);
                 });
             });
+        },
+
+        /*
+         * This funciton does nothing but a show the loading page.
+         * 
+         * Once running on the client it then invokes "index" and populates
+         * the page at runtime.
+         */
+        loader: function (ac) {
+            ac.done({}, 'loader');
         }
 
     };

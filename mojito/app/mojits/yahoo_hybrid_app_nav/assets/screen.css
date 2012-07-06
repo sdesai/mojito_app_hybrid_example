@@ -1,5 +1,23 @@
+
+html {
+    background: #fff;
+}
+
+/* Loader Screen */
+
+.nav-loader {
+    display: none;
+    height: 4em;
+    color: #eee;
+    font-size: 300%;
+    text-align: center;
+    background: url(./spinner.gif) no-repeat center;
+}
+
+/* Main Content */
+
 .nav-content {
-    background: #eee url(./bg-grid.jpeg);
+    background: url(./bg-grid.jpeg);
     /* Stop the link from being shown as selected */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-touch-callout: none;
