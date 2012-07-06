@@ -25,7 +25,7 @@ YUI.add('newsfeedappbinderloader', function (Y, NAME) {
             backgroundAnim = new Y.Anim({
                 node: 'html',
                 to: {
-                    backgroundColor: '#333'
+                    backgroundColor: '#000'
                 }
             });
 
