@@ -30,6 +30,7 @@ YUI.add('newsfeedappbinderjit', function (Y, NAME) {
                 handler.detach();
                 self.mp.invoke('runJit', {params: params}, function (err, html) {
                     node.replace(html || err);
+                    Y.fire('more-data');
                 });
             });
         }

@@ -1,17 +1,19 @@
 
 html {
-    background: #fff;
+    background: #000;
 }
 
-/* Loader Screen */
+/* Loader Screens */
 
-.nav-loader {
-    display: none;
-    height: 4em;
+.nav-loader, .jit-loader{
+    padding: 3em 0 1em 0;
     color: #eee;
     font-size: 300%;
     text-align: center;
-    background: url(./spinner.gif) no-repeat center;
+    background: url(./spinner.gif) no-repeat bottom;
+}
+.jit-loader {
+    color: #333;
 }
 
 /* Main Content */
