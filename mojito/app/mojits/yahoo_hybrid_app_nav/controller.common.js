@@ -71,6 +71,9 @@ YUI.add('yahoo_hybrid_app_nav', function (Y, NAME) {
                         };
                     });
 
+                    // Should not be the fullpath
+                    ac.assets.preLoadImage('/yahoo.hybrid.app_nav/assets/bg-grid.jpeg');
+
                     ac.done({slots: slots}, meta);
                 });
             });
