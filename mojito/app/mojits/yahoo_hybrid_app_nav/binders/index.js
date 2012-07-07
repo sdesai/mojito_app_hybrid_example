@@ -205,8 +205,8 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
             horizSwiper.pages.on("indexChange", function (e) {
 
-                var lastPage = e.prevVal,
-                    currPage = e.newVal,
+                var lastPage = parseInt(e.prevVal, 10),
+                    currPage = parseInt(e.newVal, 10),
                     newContainer;
 
                 vertSwiper.get("boundingBox").get("parentNode").append(CACHED_VERT_CONTENT[lastPage]);
@@ -221,6 +221,13 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
                 onChange(self.titles, currPage);
 
+                // Let the DOM update and then tell the next
+                // view to load if it's not loaded.
+                setTimeout(function () {
+                    Y.fire('run-jit-for-screen' + (currPage));
+                    Y.fire('run-jit-for-screen' + (currPage + 1));
+                    Y.fire('run-jit-for-screen' + (currPage - 1));
+                }, 0);
             });
 
             Y.on('more-data', function () {
@@ -228,6 +235,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             });
 
             Y.on('scroll-to', function (position) {
+
                 horizSwiper.pages.scrollTo(position, '0.5', 'ease-in');
 
                 /*

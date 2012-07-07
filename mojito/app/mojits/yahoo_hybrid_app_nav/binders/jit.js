@@ -19,23 +19,22 @@ YUI.add('newsfeedappbinderjit', function (Y, NAME) {
         bind: function (node) {
 
             var self = this,
+                handler,
                 params = {
                     body: {
                         config: Y.JSON.parse(node.getAttribute('data-jit'))
                     }
                 };
 
-            // Temp HACK to test late loading
-            setTimeout(function () {
+            handler = Y.on('run-jit-for-screen' + params.body.config.screenId, function () {
+                handler.detach();
                 self.mp.invoke('runJit', {params: params}, function (err, html) {
-                    node.replace(html);
+                    node.replace(html || err);
                 });
-            }, 1000);
-
-
+            });
         }
     };
 
 }, '0.0.1', {
-    requires: ['mojito-client', 'node', 'anim']
+    requires: ['mojito-client']
 });

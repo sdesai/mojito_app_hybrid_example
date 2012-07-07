@@ -34,6 +34,8 @@ YUI.add('yahoo_hybrid_app_nav', function (Y, NAME) {
                 // Add the screens as composite children
                 Y.Array.each(screens, function (screen, id) {
 
+                    screen.screenId = id;
+
                     // Here we use the JIT loader for future screens
                     if (id < jitStart) {
                         cfg.children['screen' + id] = screen;
