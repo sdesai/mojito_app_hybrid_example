@@ -6,6 +6,7 @@
         "shareYUIInstance": true,
         "config": {
             "deploy": true,
+            "title": "News Headlines",
             "child": {
                 "type": "yahoo.hybrid.app_nav",
                 "action": "index"

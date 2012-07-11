@@ -5,20 +5,19 @@
         "shareYUIInstance": true,
 
         "staticHandling": {
-            "prefix": "mojito_app_hybrid_example",
+            "-prefix": "mojito_app_hybrid_example/tablet",
+            "prefix": "",
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojtio"
         },
-        "-log":{
-            "client":{
-                "level":" debug",
-                "yui": true,
-                "timestamp": false
+        "log": {
+            "client": {
+                "level": "error",
+                "yui": false
             },
-            "server":{
-                "level": "debug",
-                "yui": true,
-                "timestamp": true
+            "server": {
+                "level": "info",
+                "yui": false
             }
         },
         "builds": {
