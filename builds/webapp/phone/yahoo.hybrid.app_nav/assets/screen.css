@@ -1,0 +1,62 @@
+
+html {
+    background: #fff;
+}
+
+/* Loader Screens */
+
+.nav-loader, .jit-loader{
+    padding: 3em 0 1em 0;
+    color: #eee;
+    font-size: 300%;
+    text-align: center;
+    background: url(./spinner.gif) no-repeat bottom;
+}
+.jit-loader {
+    color: #333;
+}
+
+/* Main Content */
+
+.nav-content {
+    background: url(./bg-grid.jpeg);
+    /* Stop the link from being shown as selected */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.horizontal {
+    white-space: nowrap;
+    font-family: 'Lato', sans-serif;
+}
+.titles{
+    white-space: nowrap;
+    background: #000;
+    text-align: center;
+}
+.titles div {
+    display: inline-block;
+    padding: 0.8em;
+}
+.titles a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+}
+.titles .current {
+    padding-top: 0.6em;
+    border-bottom: 0.6em solid green;
+}
+.titles .current a{
+    color: #fff;
+}
+.screen {
+    white-space: normal;
+    display: inline-block;
+    vertical-align: text-top;
+    overflow: hidden;
+}

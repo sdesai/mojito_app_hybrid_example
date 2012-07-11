@@ -1,0 +1,29 @@
+# Make phone example
+
+rm -r ./builds/webapp/phone*
+
+cd ./mojito/app
+mojito build html5app --context device:phone ../../builds/webapp/phone
+
+cd ../../builds/webapp/phone
+rm -r LazyLoad
+rm -r daliProxy
+rm cache.manifest
+rm index.js
+
+# Go Home
+
+cd ../../../
+
+# Make tablet example
+
+rm -r ./builds/webapp/tablet*
+
+cd ./mojito/app
+mojito build html5app --context device:tablet ../../builds/webapp/tablet
+
+cd ../../builds/webapp/tablet
+rm -r LazyLoad
+rm -r daliProxy
+rm cache.manifest
+rm index.

@@ -1,0 +1,24 @@
+
+.newsfeed li {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 25%;
+}
+
+.newsfeed li .card {
+    margin: 0.5em;
+}
+
+.newsfeed li:nth-child(3n-1) .card {
+    margin: 0.5em;
+}
+
+.newsfeed li:nth-child(4n-4) .card {
+    margin: 0.5em 0.5em 0.5em 1em;
+}
+
+.newsfeed li:nth-child(4n) .card {
+    margin: 0.5em 1em 0.5em 0.5em;
+}
