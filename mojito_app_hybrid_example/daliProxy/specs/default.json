@@ -3,8 +3,8 @@
     "id": "daliProxy",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342026160680_12",
-    "guid": "yui_3_5_1_3_1342026160680_12",
+    "instanceId": "yui_3_5_1_3_1342027252164_9",
+    "guid": "yui_3_5_1_3_1342027252164_9",
     "modelYUIModuleNames": {
         "yahoo_hybrid_app_usermodel": true
     },
@@ -22,8 +22,8 @@
         "shareYUIInstance": true,
         "staticHandling": {
             "prefix": "mojito_app_hybrid_example",
-            "appName": "yahoo.hybrid.app",
-            "frameworkName": "yahoo.hybrid.mojtio"
+            "appName": "yahoo_hybrid_app",
+            "frameworkName": "yahoo_hybrid_mojtio"
         },
         "-log": {
             "client": {
@@ -41,7 +41,7 @@
     "base": "daliProxy",
     "actions": [],
     "models": {
-        "user": "/mojito_app_hybrid_example/yahoo.hybrid.app/models/user.common.js"
+        "user": "/mojito_app_hybrid_example/yahoo_hybrid_app/models/user.common.js"
     },
     "views": {},
     "yui": {
