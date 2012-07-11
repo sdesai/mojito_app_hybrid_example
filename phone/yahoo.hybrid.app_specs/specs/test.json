@@ -17,8 +17,8 @@
     },
     "id": "yahoo.hybrid.app_specs:test",
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342034638441_12",
-    "guid": "yui_3_5_1_3_1342034638441_12",
+    "instanceId": "yui_3_5_1_3_1342036121154_11",
+    "guid": "yui_3_5_1_3_1342036121154_11",
     "modelYUIModuleNames": {
         "yahoo_hybrid_app_usermodel": true
     },
@@ -36,19 +36,18 @@
         "shareYUIInstance": true,
         "staticHandling": {
             "prefix": "mojito_app_hybrid_example/phone",
+            "-prefix": "",
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojtio"
         },
-        "-log": {
+        "log": {
             "client": {
-                "level": " debug",
-                "yui": true,
-                "timestamp": false
+                "level": "error",
+                "yui": false
             },
             "server": {
-                "level": "debug",
-                "yui": true,
-                "timestamp": true
+                "level": "info",
+                "yui": false
             }
         },
         "builds": {
@@ -85,7 +84,7 @@
         "requires": [],
         "langs": {},
         "sorted": [],
-        "sortedPaths": {}
+            "sortedPaths": {}
     },
     "definition": {
         "yui": {
