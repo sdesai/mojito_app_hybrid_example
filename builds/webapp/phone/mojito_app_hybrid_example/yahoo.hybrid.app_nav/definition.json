@@ -20,8 +20,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342029678380_11",
-    "guid": "yui_3_5_1_3_1342029678380_11",
+    "instanceId": "yui_3_5_1_3_1342030085977_8",
+    "guid": "yui_3_5_1_3_1342030085977_8",
     "actions": [],
     "models": {
         "user": "/mojito_app_hybrid_example/yahoo.hybrid.app/models/user.common.js"
@@ -343,7 +343,7 @@
             "mojito-output-adapter-addon",
             "json-stringify",
             "mojito-view-renderer",
-                "mojito-util",
+            "mojito-util",
             "array-extras",
             "mojito-url-addon",
             "mojito-route-maker",
@@ -429,7 +429,7 @@
             "mojito-output-adapter-addon",
             "querystring-parse",
             "mojito-route-maker",
-                "mojito-url-addon",
+            "mojito-url-addon",
             "mojito-assets-addon",
             "cookie",
             "mojito-cookie-addon",

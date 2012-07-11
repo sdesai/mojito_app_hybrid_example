@@ -59,6 +59,8 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
                 var srceen = e.currentTarget.getAttribute('data-screen');
 
+                e.preventDefault();
+
                 /*
                  * Update the user before we do anything
                  */
