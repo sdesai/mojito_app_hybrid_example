@@ -2,7 +2,7 @@
 
 ## See it in Action
 
-Here is an example of a News Headline Application for either a [Phone](http://capecodehq.github.com/mojito_app_hybrid_example/phone) or a [Tablet](http://capecodehq.github.com/mojito_app_hybrid_example/tablet). Both are built with [Mojito](https://github.com/yahoo/mojito/) run 100% in the client browser and are served via Github Pages.
+Here is an example of a News Headline Application for either a [Phone](http://capecodehq.github.com/mojito_app_hybrid_example/phone) or a [Tablet](http://capecodehq.github.com/mojito_app_hybrid_example/tablet). Both are built with [Mojito](https://github.com/yahoo/mojito/) , run 100% in the browser and are served via Github Pages.
 
 ## Getting Up and Running
 
