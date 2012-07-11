@@ -24,7 +24,8 @@
         "builds": {
             "html5app": {
                 "urls": [
-                    "/mojito_app_hybrid_example/index.html"
+                    "/mojito_app_hybrid_example/tablet/index.html",
+                    "/mojito_app_hybrid_example/phone/index.html"
                 ]
             }
         }

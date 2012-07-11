@@ -1,13 +1,46 @@
 # Make tablet example for gh-pages
 
+# Must be either "tablet" or "phone".
+# Important: The Mojito project HAS to be changed for this to work due to a bug!
+
+# For "tablet";
+#
+# "staticHandling": {
+#     "prefix": "mojito_app_hybrid_example/tablet",
+#     "appName": "yahoo.hybrid.app",
+#     "frameworkName": "yahoo.hybrid.mojtio"
+# }
+
+# For "phone";
+#
+# "staticHandling": {
+#     "prefix": "mojito_app_hybrid_example/phone",
+#     "appName": "yahoo.hybrid.app",
+#     "frameworkName": "yahoo.hybrid.mojtio"
+# }
+
+if [[ -z "$1" ]]; then
+    echo "You must provide either 'tablet' or 'phone'"
+    exit 0
+fi
+
+type=$1
+
 cd ./mojito/app
-mojito build html5app --context device:tablet ../../../mojito_app_hybrid_example_gh_pages
+mojito build html5app --context device:$type ../../../mojito_app_hybrid_example_gh_pages
 
 cd ../../../mojito_app_hybrid_example_gh_pages
-rm -r ./mojito_app_hybrid_example/LazyLoad
-rm -r ./mojito_app_hybrid_example/daliProxy
+
+# Clean up before me move files around
+
+rm -r ./mojito_app_hybrid_example/$type/LazyLoad
+rm -r ./mojito_app_hybrid_example/$type/daliProxy
 rm ./cache.manifest
 rm ./index.js
+rm ./index.html
+rm -r ./$type/*
 
-cp -r ./mojito_app_hybrid_example/* ./
+# Now copy in the new files
+
+cp -r ./mojito_app_hybrid_example/$type ./
 rm -r ./mojito_app_hybrid_example
