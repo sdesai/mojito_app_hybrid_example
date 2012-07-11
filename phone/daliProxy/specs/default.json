@@ -1,28 +1,13 @@
 {
-    "type": "yahoo.hybrid.app_specs",
+    "type": "DaliProxy",
+    "id": "daliProxy",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342032392903_8",
-    "guid": "yui_3_5_1_3_1342032392903_8",
-    "actions": [],
-    "models": {
-        "user": "/mojito_app_hybrid_example/yahoo.hybrid.app/models/user.common.js"
-    },
+    "instanceId": "yui_3_5_1_3_1342031826358_8",
+    "guid": "yui_3_5_1_3_1342031826358_8",
     "modelYUIModuleNames": {
         "yahoo_hybrid_app_usermodel": true
     },
-    "views": {},
-    "yui": {
-        "config": {
-            "modules": {}
-        },
-        "requires": [],
-        "langs": {},
-        "sorted": [],
-        "sortedPaths": {}
-    },
-    "definition": {},
-    "defaults": {},
     "appConfig": {
         "mojitsDirs": [
             "mojits"
@@ -36,7 +21,7 @@
         },
         "shareYUIInstance": true,
         "staticHandling": {
-            "prefix": "mojito_app_hybrid_example",
+            "prefix": "mojito_app_hybrid_example/phone",
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojtio"
         },
@@ -55,9 +40,27 @@
         "builds": {
             "html5app": {
                 "urls": [
-                    "/mojito_app_hybrid_example/index.html"
+                    "/mojito_app_hybrid_example/index.html",
+                    "/mojito_app_hybrid_example/phone/index.html"
                 ]
             }
         }
-    }
+    },
+    "base": "daliProxy",
+    "actions": [],
+    "models": {
+        "user": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app/models/user.common.js"
+    },
+    "views": {},
+    "yui": {
+        "config": {
+            "modules": {}
+        },
+        "requires": [],
+        "langs": {},
+        "sorted": [],
+        "sortedPaths": {}
+    },
+    "definition": {},
+    "defaults": {}
 }
