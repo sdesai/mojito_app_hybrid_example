@@ -1,12 +1,12 @@
 {
-    "type": "yahoo.hybrid.app_specs",
+    "type": "DaliProxy",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342025580062_10",
-    "guid": "yui_3_5_1_3_1342025580062_10",
+    "instanceId": "yui_3_5_1_3_1342026160680_15",
+    "guid": "yui_3_5_1_3_1342026160680_15",
     "actions": [],
     "models": {
-        "user": "/yahoo.hybrid.app/models/user.common.js"
+        "user": "/mojito_app_hybrid_example/yahoo.hybrid.app/models/user.common.js"
     },
     "modelYUIModuleNames": {
         "yahoo_hybrid_app_usermodel": true
@@ -36,7 +36,7 @@
         },
         "shareYUIInstance": true,
         "staticHandling": {
-            "prefix": "",
+            "prefix": "mojito_app_hybrid_example",
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojtio"
         },

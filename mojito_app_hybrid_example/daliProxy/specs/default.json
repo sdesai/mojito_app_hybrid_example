@@ -1,0 +1,58 @@
+{
+    "type": "DaliProxy",
+    "id": "daliProxy",
+    "config": {},
+    "action": "index",
+    "instanceId": "yui_3_5_1_3_1342026160680_12",
+    "guid": "yui_3_5_1_3_1342026160680_12",
+    "modelYUIModuleNames": {
+        "yahoo_hybrid_app_usermodel": true
+    },
+    "appConfig": {
+        "mojitsDirs": [
+            "mojits"
+        ],
+        "routesFiles": [
+            "routes.json"
+        ],
+        "tunnelPrefix": "/tunnel",
+        "yui": {
+            "dependencyCalculations": "precomputed"
+        },
+        "shareYUIInstance": true,
+        "staticHandling": {
+            "prefix": "mojito_app_hybrid_example",
+            "appName": "yahoo.hybrid.app",
+            "frameworkName": "yahoo.hybrid.mojtio"
+        },
+        "-log": {
+            "client": {
+                "level": " debug",
+                "yui": true,
+                "timestamp": false
+            },
+            "server": {
+                "level": "debug",
+                "yui": true,
+                "timestamp": true
+            }
+        }
+    },
+    "base": "daliProxy",
+    "actions": [],
+    "models": {
+        "user": "/mojito_app_hybrid_example/yahoo.hybrid.app/models/user.common.js"
+    },
+    "views": {},
+    "yui": {
+        "config": {
+            "modules": {}
+        },
+        "requires": [],
+        "langs": {},
+        "sorted": [],
+        "sortedPaths": {}
+    },
+    "definition": {},
+    "defaults": {}
+}
