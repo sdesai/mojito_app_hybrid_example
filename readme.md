@@ -2,7 +2,7 @@
 
 ## See it in Action
 
-Here is an example of a [Hybrid Application](http://capecodehq.github.com/mojito_app_hybrid_example/) built with [Mojito](https://github.com/yahoo/mojito/) and served via Github Pages.
+Here is an example of a [News Headline Application](http://capecodehq.github.com/mojito_app_hybrid_example/) built with [Mojito](https://github.com/yahoo/mojito/) and served via Github Pages.
 
 ## Getting Up and Running
 
