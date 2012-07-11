@@ -25,6 +25,7 @@
                 "top": {
                     "blob": [
                         "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
+                        "<link rel=\"apple-touch-icon\" href=\"./yahoo.hybrid.app_nav/assets/apple-app-icon.png\"/>",
                         "<meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\"/>",
                         "<style>html {background: #000;}</style>"
                     ]
@@ -43,6 +44,7 @@
                 "top": {
                     "blob": [
                         "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
+                        "<link rel=\"apple-touch-icon\" href=\"./yahoo.hybrid.app_nav/assets/apple-app-icon.png\"/>",
                         "<meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\"/>",
                         "<style>html {background: #000;}</style>"
                     ]
