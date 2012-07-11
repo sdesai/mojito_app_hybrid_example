@@ -4,10 +4,12 @@
     "config": {
         "deploy": true,
         "child": {
-            "type": "yahoo.hybrid.newsfeed"
+            "type": "yahoo.hybrid.app_nav",
+            "action": "index"
         },
         "assets": {
             "top": {
+                "blob": [],
                 "css": [
                     "http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css",
                     "http://yui.yahooapis.com/3.5.1/build/cssfonts/cssfonts-min.css"
@@ -15,10 +17,10 @@
             }
         }
     },
-    "id": "yahoo.hybrid.app_specs:test",
+    "id": "yahoo.hybrid.app_specs",
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342027252164_13",
-    "guid": "yui_3_5_1_3_1342027252164_13",
+    "instanceId": "yui_3_5_1_3_1342029117179_10",
+    "guid": "yui_3_5_1_3_1342029117179_10",
     "modelYUIModuleNames": {
         "yahoo_hybrid_app_usermodel": true
     },
@@ -36,8 +38,8 @@
         "shareYUIInstance": true,
         "staticHandling": {
             "prefix": "mojito_app_hybrid_example",
-            "appName": "yahoo_hybrid_app",
-            "frameworkName": "yahoo_hybrid_mojtio"
+            "appName": "yahoo.hybrid.app",
+            "frameworkName": "yahoo.hybrid.mojtio"
         },
         "-log": {
             "client": {
@@ -50,12 +52,19 @@
                 "yui": true,
                 "timestamp": true
             }
+        },
+        "builds": {
+            "html5app": {
+                "urls": [
+                    "/mojito_app_hybrid_example/index.html"
+                ]
+            }
         }
     },
-    "base": "yahoo.hybrid.app_specs:test",
+    "base": "yahoo.hybrid.app_specs",
     "actions": [],
     "models": {
-        "user": "/mojito_app_hybrid_example/yahoo_hybrid_app/models/user.common.js"
+        "user": "/mojito_app_hybrid_example/yahoo.hybrid.app/models/user.common.js"
     },
     "views": {
         "index": {
@@ -66,14 +75,14 @@
         "config": {
             "modules": {
                 "mojito-mu": {
-                    "fullpath": "/mojito_app_hybrid_example/yahoo_hybrid_mojtio/addons/view-engines/mu.client.js",
+                    "fullpath": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js",
                     "requires": [
                         "mojito-util",
                         "io-base"
                     ]
                 }
             }
-            },
+        },
         "requires": [],
         "langs": {},
         "sorted": [],
