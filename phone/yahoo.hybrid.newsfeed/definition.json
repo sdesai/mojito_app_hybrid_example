@@ -31,8 +31,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342036121154_15",
-    "guid": "yui_3_5_1_3_1342036121154_15",
+    "instanceId": "yui_3_5_1_3_1342041166667_13",
+    "guid": "yui_3_5_1_3_1342041166667_13",
     "actions": [],
     "models": {
         "user": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app/models/user.common.js",

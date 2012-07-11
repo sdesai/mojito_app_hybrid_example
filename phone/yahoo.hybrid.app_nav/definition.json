@@ -10,6 +10,7 @@
                 ],
                 "blob": [
                     "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
+                    "<link rel=\"apple-touch-icon\" href=\"./yahoo.hybrid.app_nav/assets/apple-app-icon.png\"/>",
                     "<meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\"/>",
                     "<style>html {background: #000;}</style>"
                 ]
@@ -20,8 +21,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342036121154_9",
-    "guid": "yui_3_5_1_3_1342036121154_9",
+    "instanceId": "yui_3_5_1_3_1342041166667_8",
+    "guid": "yui_3_5_1_3_1342041166667_8",
     "actions": [],
     "models": {
         "user": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app/models/user.common.js"
@@ -68,7 +69,7 @@
                 "mojito-url-addon": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/addons/ac/url.common.js",
                 "mojito-assets-addon": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/addons/ac/assets.common.js",
                 "cookie": "http://yui.yahooapis.com/3.5.1/build/cookie/cookie-min.js",
-                    "mojito-cookie-addon": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/addons/ac/cookie.client.js",
+                "mojito-cookie-addon": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/addons/ac/cookie.client.js",
                 "mojito-params-addon": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/addons/ac/params.common.js",
                 "mojito-composite-addon": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/addons/ac/composite.common.js",
                 "mojito-action-context": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/autoload/action-context.common.js",
@@ -80,7 +81,7 @@
                 "breg": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/autoload/transport/beanregistry/registry.client-optional.js",
                 "dali-bean": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/autoload/transport/beanregistry/dali_bean.client-optional.js",
                 "dali-transport-base": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/autoload/transport/transport.client-optional.js",
-                    "request-handler": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/autoload/transport/request_handler.client-optional.js",
+                "request-handler": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/autoload/transport/request_handler.client-optional.js",
                 "simple-request-formatter": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/autoload/transport/request_formatter.client-optional.js",
                 "json-parse": "http://yui.yahooapis.com/3.5.1/build/json-parse/json-parse-min.js",
                 "requestor": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/autoload/transport/requestor.client-optional.js",
@@ -297,7 +298,7 @@
                         "mojito",
                         "yahoo_hybrid_app_usermodel",
                         "mojito_mojit_addon_shared_model"
-                        ]
+                    ]
                 },
                 "mojito-mu": {
                     "fullpath": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js",
@@ -419,7 +420,7 @@
             "event-custom-base",
             "intl-base",
             "event-custom-complex",
-            "intl",
+                "intl",
             "querystring-stringify-simple",
             "mojito-config-addon",
             "json-stringify",
@@ -440,7 +441,7 @@
             "mojito-resource-store-adapter",
             "mojito-dispatcher",
             "io-base",
-                "io-nodejs",
+            "io-nodejs",
             "features",
             "dom-core",
             "dom-base",
@@ -622,16 +623,17 @@
             "jit": 2,
             "assets": {
                 "top": {
-                        "css": [
+                    "css": [
                         "http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css",
                         "./screen.css"
                     ],
                     "blob": [
                         "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
+                        "<link rel=\"apple-touch-icon\" href=\"./yahoo.hybrid.app_nav/assets/apple-app-icon.png\"/>",
                         "<meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\"/>",
                         "<style>html {background: #000;}</style>"
                     ]
-                    }
+                }
             },
             "child": {
                 "action": "loader"
