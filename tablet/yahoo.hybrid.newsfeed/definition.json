@@ -31,12 +31,12 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342032392903_11",
-    "guid": "yui_3_5_1_3_1342032392903_11",
+    "instanceId": "yui_3_5_1_3_1342033709031_12",
+    "guid": "yui_3_5_1_3_1342033709031_12",
     "actions": [],
     "models": {
-        "user": "/mojito_app_hybrid_example/yahoo.hybrid.app/models/user.common.js",
-        "newsfeed": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/models/newsfeed.common.js"
+        "user": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app/models/user.common.js",
+        "newsfeed": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/models/newsfeed.common.js"
     },
     "modelYUIModuleNames": {
         "yahoo_hybrid_app_usermodel": true,
@@ -44,8 +44,8 @@
     },
     "views": {
         "index": {
-            "binder-url": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/binders/index.js",
-            "binder-path": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/binders/index.js",
+            "binder-url": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/binders/index.js",
+            "binder-path": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/binders/index.js",
             "binder-module": "newsfeedbinderindex",
             "binder-yui-sorted": {
                 "yui-base": "http://yui.yahooapis.com/3.5.1/build/yui-base/yui-base-min.js",
@@ -65,44 +65,44 @@
                 "node-base": "http://yui.yahooapis.com/3.5.1/build/node-base/node-base-min.js",
                 "event-base": "http://yui.yahooapis.com/3.5.1/build/event-base/event-base-min.js",
                 "event-delegate": "http://yui.yahooapis.com/3.5.1/build/event-delegate/event-delegate-min.js",
-                "mojito-perf": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/perf.client.js",
-                "mojito": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/mojito.common.js",
-                "mojito-logger": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/logger.common.js",
+                "mojito-perf": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/perf.client.js",
+                "mojito": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/mojito.common.js",
+                "mojito-logger": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/logger.common.js",
                 "get": "http://yui.yahooapis.com/3.5.1/build/get/get-min.js",
-                "mojito-loader": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/loader.common.js",
-                "mojito-config-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/config.common.js",
+                "mojito-loader": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/loader.common.js",
+                "mojito-config-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/config.common.js",
                 "json-stringify": "http://yui.yahooapis.com/3.5.1/build/json-stringify/json-stringify-min.js",
-                "mojito-view-renderer": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/view-renderer.common.js",
+                "mojito-view-renderer": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/view-renderer.common.js",
                 "array-extras": "http://yui.yahooapis.com/3.5.1/build/array-extras/array-extras-min.js",
-                "mojito-util": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/util.common.js",
-                "mojito-output-adapter-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/output-adapter.common.js",
+                "mojito-util": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/util.common.js",
+                "mojito-output-adapter-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/output-adapter.common.js",
                 "querystring-parse": "http://yui.yahooapis.com/3.5.1/build/querystring-parse/querystring-parse-min.js",
-                "mojito-route-maker": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/route-maker.common.js",
-                "mojito-url-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/url.common.js",
-                "mojito-assets-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/assets.common.js",
+                "mojito-route-maker": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/route-maker.common.js",
+                "mojito-url-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/url.common.js",
+                "mojito-assets-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/assets.common.js",
                 "cookie": "http://yui.yahooapis.com/3.5.1/build/cookie/cookie-min.js",
-                "mojito-cookie-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/cookie.client.js",
-                "mojito-params-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/params.common.js",
-                "mojito-composite-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/composite.common.js",
-                "mojito-action-context": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/action-context.common.js",
-                "mojito-controller-context": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/controller-context.common.js",
-                "mojito-resource-store-adapter": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/resource-store-adapter.common.js",
-                "mojito-dispatcher": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/dispatch.common.js",
-                "mojito-client-store": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/store.client.js",
-                "mojito-mojit-proxy": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/mojit-proxy.client.js",
-                "breg": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/beanregistry/registry.client-optional.js",
-                "dali-bean": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/beanregistry/dali_bean.client-optional.js",
-                "dali-transport-base": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/transport.client-optional.js",
-                "request-handler": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/request_handler.client-optional.js",
-                "simple-request-formatter": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/request_formatter.client-optional.js",
+                "mojito-cookie-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/cookie.client.js",
+                "mojito-params-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/params.common.js",
+                "mojito-composite-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/composite.common.js",
+                "mojito-action-context": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/action-context.common.js",
+                "mojito-controller-context": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/controller-context.common.js",
+                "mojito-resource-store-adapter": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/resource-store-adapter.common.js",
+                "mojito-dispatcher": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/dispatch.common.js",
+                "mojito-client-store": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/store.client.js",
+                "mojito-mojit-proxy": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/mojit-proxy.client.js",
+                "breg": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/beanregistry/registry.client-optional.js",
+                "dali-bean": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/beanregistry/dali_bean.client-optional.js",
+                "dali-transport-base": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/transport.client-optional.js",
+                "request-handler": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/request_handler.client-optional.js",
+                "simple-request-formatter": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/request_formatter.client-optional.js",
                 "json-parse": "http://yui.yahooapis.com/3.5.1/build/json-parse/json-parse-min.js",
-                "    requestor": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/requestor.client-optional.js",
-                "io-facade": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/io_facade.client-optional.js",
-                "response-formatter": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/response_formatter.client-optional.js",
-                "response-processor": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/response_processor.client-optional.js",
-                "mojito-tunnel-client": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/tunnel.client-optional.js",
-                "mojito-output-handler": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/output-handler.client.js",
-                "mojito-client": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/mojito-client.client.js",
+                "requestor": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/requestor.client-optional.js",
+                "io-facade": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/io_facade.client-optional.js",
+                "response-formatter": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/response_formatter.client-optional.js",
+                "response-processor": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/response_processor.client-optional.js",
+                "mojito-tunnel-client": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/tunnel.client-optional.js",
+                "mojito-output-handler": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/output-handler.client.js",
+                "mojito-client": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/mojito-client.client.js",
                 "node-event-delegate": "http://yui.yahooapis.com/3.5.1/build/node-event-delegate/node-event-delegate-min.js",
                 "pluginhost-base": "http://yui.yahooapis.com/3.5.1/build/pluginhost-base/pluginhost-base-min.js",
                 "pluginhost-config": "http://yui.yahooapis.com/3.5.1/build/pluginhost-config/pluginhost-config-min.js",
@@ -116,14 +116,14 @@
                 "event-synthetic": "http://yui.yahooapis.com/3.5.1/build/event-synthetic/event-synthetic-min.js",
                 "event-move": "http://yui.yahooapis.com/3.5.1/build/event-move/event-move-min.js",
                 "event-mousewheel": "http://yui.yahooapis.com/3.5.1/build/event-mousewheel/event-mousewheel-min.js",
-                "newsfeedbinderindex": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/binders/index.js",
-                "mojito-mu": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js"
+                "newsfeedbinderindex": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/binders/index.js",
+                "mojito-mu": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js"
             },
-            "content-path": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/views/index.mu.html",
+            "content-path": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/views/index.mu.html",
             "engine": "mu"
         },
         "feed": {
-            "content-path": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/views/feed.mu.html",
+            "content-path": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/views/feed.mu.html",
             "engine": "mu"
         }
     },
@@ -131,7 +131,7 @@
         "config": {
             "modules": {
                 "newsfeedbinderindex": {
-                    "fullpath": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/binders/index.js",
+                    "fullpath": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/binders/index.js",
                     "requires": [
                         "mojito-client",
                         "node",
@@ -140,20 +140,20 @@
                     ]
                 },
                 "newsfeed": {
-                    "fullpath": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/controller.common.js",
+                    "fullpath": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/controller.common.js",
                     "requires": [
                         "mojito",
                         "mojito_mojit_addon_shared_model"
                     ]
                 },
                 "newsfeedmodel": {
-                    "fullpath": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/models/newsfeed.common.js",
+                    "fullpath": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/models/newsfeed.common.js",
                     "requires": [
                         "yql"
                     ]
                 },
                 "mojito-mu": {
-                    "fullpath": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js",
+                    "fullpath": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js",
                     "requires": [
                         "mojito-util",
                         "io-base"
@@ -257,7 +257,7 @@
             "array-extras",
             "mojito-util",
             "mojito-output-adapter-addon",
-            "querystring-parse",
+                "querystring-parse",
             "mojito-route-maker",
             "mojito-url-addon",
             "mojito-assets-addon",
@@ -321,8 +321,8 @@
             "mojito-mu"
         ],
         "sortedPaths": {
-            "mojito-perf": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/perf.client.js",
-            "mojito": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/mojito.common.js",
+            "mojito-perf": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/perf.client.js",
+            "mojito": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/mojito.common.js",
             "yui-base": "http://yui.yahooapis.com/3.5.1/build/yui-base/yui-base-min.js",
             "oop": "http://yui.yahooapis.com/3.5.1/build/oop/oop-min.js",
             "event-custom-base": "http://yui.yahooapis.com/3.5.1/build/event-custom-base/event-custom-base-min.js",
@@ -330,24 +330,24 @@
             "event-custom-complex": "http://yui.yahooapis.com/3.5.1/build/event-custom-complex/event-custom-complex-min.js",
             "intl": "http://yui.yahooapis.com/3.5.1/build/intl/intl-min.js",
             "querystring-stringify-simple": "http://yui.yahooapis.com/3.5.1/build/querystring-stringify-simple/querystring-stringify-simple-min.js",
-            "mojito-config-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/config.common.js",
+            "mojito-config-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/config.common.js",
             "json-stringify": "http://yui.yahooapis.com/3.5.1/build/json-stringify/json-stringify-min.js",
-            "mojito-view-renderer": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/view-renderer.common.js",
+            "mojito-view-renderer": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/view-renderer.common.js",
             "array-extras": "http://yui.yahooapis.com/3.5.1/build/array-extras/array-extras-min.js",
-            "mojito-util": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/util.common.js",
-            "mojito-output-adapter-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/output-adapter.common.js",
+            "mojito-util": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/util.common.js",
+            "mojito-output-adapter-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/output-adapter.common.js",
             "querystring-parse": "http://yui.yahooapis.com/3.5.1/build/querystring-parse/querystring-parse-min.js",
-            "mojito-route-maker": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/route-maker.common.js",
-            "mojito-url-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/url.common.js",
-            "mojito-assets-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/assets.common.js",
+            "mojito-route-maker": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/route-maker.common.js",
+            "mojito-url-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/url.common.js",
+            "mojito-assets-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/assets.common.js",
             "cookie": "http://yui.yahooapis.com/3.5.1/build/cookie/cookie-min.js",
-            "mojito-cookie-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/cookie.client.js",
-            "mojito-params-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/params.common.js",
-            "mojito-composite-addon": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/ac/composite.common.js",
-            "mojito-action-context": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/action-context.common.js",
-            "mojito-controller-context": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/controller-context.common.js",
-            "mojito-resource-store-adapter": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/resource-store-adapter.common.js",
-            "mojito-dispatcher": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/dispatch.common.js",
+            "mojito-cookie-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/cookie.client.js",
+            "mojito-params-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/params.common.js",
+            "mojito-composite-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/composite.common.js",
+            "mojito-action-context": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/action-context.common.js",
+            "mojito-controller-context": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/controller-context.common.js",
+            "mojito-resource-store-adapter": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/resource-store-adapter.common.js",
+            "mojito-dispatcher": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/dispatch.common.js",
             "io-base": "http://yui.yahooapis.com/3.5.1/build/io-base/io-base-min.js",
             "features": "http://yui.yahooapis.com/3.5.1/build/features/features-min.js",
             "dom-core": "http://yui.yahooapis.com/3.5.1/build/dom-core/dom-core-min.js",
@@ -358,24 +358,24 @@
             "node-base": "http://yui.yahooapis.com/3.5.1/build/node-base/node-base-min.js",
             "event-base": "http://yui.yahooapis.com/3.5.1/build/event-base/event-base-min.js",
             "event-delegate": "http://yui.yahooapis.com/3.5.1/build/event-delegate/event-delegate-min.js",
-            "mojito-logger": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/logger.common.js",
+            "mojito-logger": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/logger.common.js",
             "get": "http://yui.yahooapis.com/3.5.1/build/get/get-min.js",
-            "mojito-loader": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/loader.common.js",
-            "mojito-client-store": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/store.client.js",
-            "mojito-mojit-proxy": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/mojit-proxy.client.js",
-            "breg": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/beanregistry/registry.client-optional.js",
-            "dali-bean": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/beanregistry/dali_bean.client-optional.js",
-            "dali-transport-base": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/transport.client-optional.js",
-            "request-handler": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/request_handler.client-optional.js",
-            "simple-request-formatter": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/request_formatter.client-optional.js",
+            "mojito-loader": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/loader.common.js",
+            "mojito-client-store": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/store.client.js",
+                "mojito-mojit-proxy": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/mojit-proxy.client.js",
+            "breg": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/beanregistry/registry.client-optional.js",
+            "dali-bean": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/beanregistry/dali_bean.client-optional.js",
+            "dali-transport-base": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/transport.client-optional.js",
+            "request-handler": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/request_handler.client-optional.js",
+            "simple-request-formatter": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/request_formatter.client-optional.js",
             "json-parse": "http://yui.yahooapis.com/3.5.1/build/json-parse/json-parse-min.js",
-            "    requestor": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/requestor.client-optional.js",
-            "io-facade": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/io_facade.client-optional.js",
-            "response-formatter": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/response_formatter.client-optional.js",
-            "response-processor": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/transport/response_processor.client-optional.js",
-            "mojito-tunnel-client": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/tunnel.client-optional.js",
-            "mojito-output-handler": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/output-handler.client.js",
-            "mojito-client": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/autoload/mojito-client.client.js",
+            "requestor": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/requestor.client-optional.js",
+            "io-facade": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/io_facade.client-optional.js",
+            "response-formatter": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/response_formatter.client-optional.js",
+            "response-processor": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/transport/response_processor.client-optional.js",
+            "mojito-tunnel-client": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/tunnel.client-optional.js",
+            "mojito-output-handler": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/output-handler.client.js",
+            "mojito-client": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/mojito-client.client.js",
             "node-event-delegate": "http://yui.yahooapis.com/3.5.1/build/node-event-delegate/node-event-delegate-min.js",
             "pluginhost-base": "http://yui.yahooapis.com/3.5.1/build/pluginhost-base/pluginhost-base-min.js",
             "pluginhost-config": "http://yui.yahooapis.com/3.5.1/build/pluginhost-config/pluginhost-config-min.js",
@@ -389,17 +389,17 @@
             "event-synthetic": "http://yui.yahooapis.com/3.5.1/build/event-synthetic/event-synthetic-min.js",
             "event-move": "http://yui.yahooapis.com/3.5.1/build/event-move/event-move-min.js",
             "event-mousewheel": "http://yui.yahooapis.com/3.5.1/build/event-mousewheel/event-mousewheel-min.js",
-            "newsfeedbinderindex": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/binders/index.js",
-            "mojito_mojit_addon_shared_model": "/mojito_app_hybrid_example/yahoo.hybrid.app/addons/ac/shared_model_addon.client.js",
-            "newsfeed": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/controller.common.js",
+            "newsfeedbinderindex": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/binders/index.js",
+            "mojito_mojit_addon_shared_model": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app/addons/ac/shared_model_addon.client.js",
+            "newsfeed": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/controller.common.js",
             "jsonp": "http://yui.yahooapis.com/3.5.1/build/jsonp/jsonp-min.js",
             "jsonp-url": "http://yui.yahooapis.com/3.5.1/build/jsonp-url/jsonp-url-min.js",
-                "yql": "http://yui.yahooapis.com/3.5.1/build/yql/yql-min.js",
-            "newsfeedmodel": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/models/newsfeed.common.js",
-            "mojito-mu": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js"
+            "yql": "http://yui.yahooapis.com/3.5.1/build/yql/yql-min.js",
+            "newsfeedmodel": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/models/newsfeed.common.js",
+            "mojito-mu": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js"
         }
     },
-    "assetsRoot": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/assets",
+    "assetsRoot": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/assets",
     "definition": {},
     "defaults": {
         "config": {
@@ -434,7 +434,7 @@
         }
     },
     "controllerModuleName": "newsfeed",
-    "controller": "/mojito_app_hybrid_example/yahoo.hybrid.newsfeed/controller.common.js",
+    "controller": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.newsfeed/controller.common.js",
     "appConfig": {
         "mojitsDirs": [
             "mojits"
@@ -448,7 +448,7 @@
         },
         "shareYUIInstance": true,
         "staticHandling": {
-            "prefix": "mojito_app_hybrid_example",
+            "prefix": "mojito_app_hybrid_example/tablet",
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojtio"
         },
@@ -467,7 +467,8 @@
         "builds": {
             "html5app": {
                 "urls": [
-                    "/mojito_app_hybrid_example/index.html"
+                    "/mojito_app_hybrid_example/tablet/index.html",
+                    "/mojito_app_hybrid_example/phone/index.html"
                 ]
             }
         }

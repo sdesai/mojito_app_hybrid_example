@@ -20,8 +20,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342031826358_9",
-    "guid": "yui_3_5_1_3_1342031826358_9",
+    "instanceId": "yui_3_5_1_3_1342033758147_8",
+    "guid": "yui_3_5_1_3_1342033758147_8",
     "actions": [],
     "models": {
         "user": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app/models/user.common.js"
@@ -672,7 +672,7 @@
         "builds": {
             "html5app": {
                 "urls": [
-                    "/mojito_app_hybrid_example/index.html",
+                    "/mojito_app_hybrid_example/tablet/index.html",
                     "/mojito_app_hybrid_example/phone/index.html"
                 ]
             }

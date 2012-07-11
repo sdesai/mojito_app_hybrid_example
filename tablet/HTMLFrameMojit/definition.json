@@ -2,13 +2,13 @@
     "type": "HTMLFrameMojit",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342032392903_15",
-    "guid": "yui_3_5_1_3_1342032392903_15",
+    "instanceId": "yui_3_5_1_3_1342033709031_14",
+    "guid": "yui_3_5_1_3_1342033709031_14",
     "actions": [],
     "models": {
-        "user": "/mojito_app_hybrid_example/yahoo.hybrid.app/models/user.common.js"
+        "user": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app/models/user.common.js"
     },
-    "    modelYUIModuleNames": {
+    "modelYUIModuleNames": {
         "yahoo_hybrid_app_usermodel": true
     },
     "views": {
@@ -20,7 +20,7 @@
         "config": {
             "modules": {
                 "mojito-mu": {
-                    "fullpath": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js",
+                    "fullpath": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js",
                     "requires": [
                         "mojito-util",
                         "io-base"
@@ -52,7 +52,7 @@
         },
         "shareYUIInstance": true,
         "staticHandling": {
-            "prefix": "mojito_app_hybrid_example",
+            "prefix": "mojito_app_hybrid_example/tablet",
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojtio"
         },
@@ -71,7 +71,8 @@
         "builds": {
             "html5app": {
                 "urls": [
-                    "/mojito_app_hybrid_example/index.html"
+                    "/mojito_app_hybrid_example/tablet/index.html",
+                    "/mojito_app_hybrid_example/phone/index.html"
                 ]
             }
         }
