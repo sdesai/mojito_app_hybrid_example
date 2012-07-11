@@ -1,5 +1,9 @@
 # Mojito Application - Hybrid Example
 
+## See it in Action
+
+Here is an example of a [http://capecodehq.github.com/mojito_app_hybrid_example/](Hybrid Appliction) built with [Mojito](https://github.com/yahoo/mojito/) and served via Github Pages.
+
 ## Getting Up and Running
 
 First clone this repo.
