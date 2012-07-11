@@ -1,0 +1,79 @@
+{
+    "type": "HTMLFrameMojit",
+    "config": {},
+    "action": "index",
+    "instanceId": "yui_3_5_1_3_1342029681308_15",
+    "guid": "yui_3_5_1_3_1342029681308_15",
+    "actions": [],
+    "models": {
+        "user": "/mojito_app_hybrid_example/yahoo.hybrid.app/models/user.common.js"
+    },
+    "    modelYUIModuleNames": {
+        "yahoo_hybrid_app_usermodel": true
+    },
+    "views": {
+        "index": {
+            "engine": "mu"
+        }
+    },
+    "yui": {
+        "config": {
+            "modules": {
+                "mojito-mu": {
+                    "fullpath": "/mojito_app_hybrid_example/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js",
+                    "requires": [
+                        "mojito-util",
+                        "io-base"
+                    ]
+                }
+            }
+        },
+        "requires": [],
+        "langs": {},
+        "sorted": [],
+        "sortedPaths": {}
+    },
+    "definition": {
+        "yui": {
+            "sharedYUIInstance": true
+        }
+    },
+    "defaults": {},
+    "appConfig": {
+        "mojitsDirs": [
+            "mojits"
+        ],
+        "routesFiles": [
+            "routes.json"
+        ],
+        "tunnelPrefix": "/tunnel",
+        "yui": {
+            "dependencyCalculations": "precomputed"
+        },
+        "shareYUIInstance": true,
+        "staticHandling": {
+            "prefix": "mojito_app_hybrid_example",
+            "appName": "yahoo.hybrid.app",
+            "frameworkName": "yahoo.hybrid.mojtio"
+        },
+        "-log": {
+            "client": {
+                "level": " debug",
+                "yui": true,
+                "timestamp": false
+            },
+            "server": {
+                "level": "debug",
+                "yui": true,
+                "timestamp": true
+            }
+        },
+        "builds": {
+            "html5app": {
+                "urls": [
+                    "/mojito_app_hybrid_example/index.html"
+                ]
+            }
+        }
+    }
+}

@@ -6,10 +6,10 @@ cd ./mojito/app
 mojito build html5app --context device:phone ../../builds/webapp/phone
 
 cd ../../builds/webapp/phone
-rm -r LazyLoad
-rm -r daliProxy
-rm cache.manifest
-rm index.js
+rm -r ./LazyLoad
+rm -r ./daliProxy
+rm ./cache.manifest
+rm ./index.js
 
 # Go Home
 
@@ -23,7 +23,7 @@ cd ./mojito/app
 mojito build html5app --context device:tablet ../../builds/webapp/tablet
 
 cd ../../builds/webapp/tablet
-rm -r LazyLoad
-rm -r daliProxy
-rm cache.manifest
-rm index.
+rm -r ./LazyLoad
+rm -r ./daliProxy
+rm ./cache.manifest
+rm ./index.js

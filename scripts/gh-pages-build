@@ -1,0 +1,13 @@
+# Make tablet example for gh-pages
+
+cd ./mojito/app
+mojito build html5app --context device:tablet ../../../mojito_app_hybrid_example_gh_pages
+
+cd ../../../mojito_app_hybrid_example_gh_pages
+rm -r ./mojito_app_hybrid_example/LazyLoad
+rm -r ./mojito_app_hybrid_example/daliProxy
+rm ./cache.manifest
+rm ./index.js
+
+cp -r ./mojito_app_hybrid_example/* ./
+rm -r ./mojito_app_hybrid_example

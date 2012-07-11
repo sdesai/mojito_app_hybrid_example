@@ -7,13 +7,12 @@
             "call": "yahoo.hybrid.app_specs.index"
         },
 
-        "default_test": {
-            "path": "/test",
-            "call": "yahoo.hybrid.app_specs:test.index"
-        },
-
         "default_index": {
             "path": "/index.html",
+            "call": "yahoo.hybrid.app_specs.index"
+        },
+        "for_gh_pages_example": {
+            "path": "/mojito_app_hybrid_example/index.html",
             "call": "yahoo.hybrid.app_specs.index"
         }
     },
