@@ -19,7 +19,7 @@ html {
 /* Main Content */
 
 .nav-content {
-    background: url(./bg-grid.jpeg);
+    background: #eee url(./bg-grid.jpeg);
     /* Stop the link from being shown as selected */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-touch-callout: none;
@@ -28,6 +28,9 @@ html {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    /* Trying to remove flicker in scroll */
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
 }
 .horizontal {
     white-space: nowrap;
@@ -59,4 +62,8 @@ html {
     display: inline-block;
     vertical-align: text-top;
     overflow: hidden;
+}
+.screen .frame {
+    /* Trying to remove flicker in scroll */
+    -webkit-backface-visibility: hidden;
 }

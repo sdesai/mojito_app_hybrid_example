@@ -27,6 +27,15 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 return false;
             };
             document.addEventListener('touchmove', preventDefaultScroll, false);
+
+            // Detect whether device supports orientationchange event, otherwise fall back to
+            // the resize event.
+            var supportsOrientationChange = "onorientationchange" in window,
+                orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+            window.addEventListener(orientationEvent, function() {
+                alert('HOLY ROTATING SCREENS BATMAN:' + window.orientation + " " + screen.width);
+            }, false);
         },
 
         bind: function (node) {
@@ -207,29 +216,36 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
             horizSwiper.pages.on("indexChange", function (e) {
 
-                var lastPage = parseInt(e.prevVal, 10),
-                    currPage = parseInt(e.newVal, 10),
-                    newContainer;
+//                horizSwiper.once("scrollEnd", function () {
 
-                vertSwiper.get("boundingBox").get("parentNode").append(CACHED_VERT_CONTENT[lastPage]);
-                vertSwiper.get("contentBox").append(CACHED_VERT_CONTENT[currPage]);
+                    setTimeout(function () {
 
-                newContainer = node.one("#screen" + currPage + " .frame");
-                newContainer.insert(vertSwiper.get("boundingBox"));
+                        var lastPage = parseInt(e.prevVal, 10),
+                            currPage = parseInt(e.newVal, 10),
+                            newContainer;
 
-                vertSwiper.syncUI();
+                        vertSwiper.get("boundingBox").get("parentNode").append(CACHED_VERT_CONTENT[lastPage]);
+                        vertSwiper.get("contentBox").append(CACHED_VERT_CONTENT[currPage]);
 
-                vertSwiper.scrollTo(0, 0); // re-set the scrollview to the top
+                        newContainer = node.one("#screen" + currPage + " .frame");
+                        newContainer.insert(vertSwiper.get("boundingBox"));
 
-                onChange(self.titles, currPage);
+                        vertSwiper.scrollTo(0, 0); // re-set the scrollview to the top
 
-                // Let the DOM update and then tell the next
-                // view to load if it's not loaded.
-                setTimeout(function () {
-                    Y.fire('run-jit-for-screen' + (currPage));
-                    Y.fire('run-jit-for-screen' + (currPage + 1));
-                    Y.fire('run-jit-for-screen' + (currPage - 1));
-                }, 0);
+                        vertSwiper.syncUI();
+
+                        onChange(self.titles, currPage);
+
+                        // Let the DOM update and then tell the next
+                        // view to load if it's not loaded.
+                        setTimeout(function () {
+                            Y.fire('run-jit-for-screen' + (currPage));
+                            Y.fire('run-jit-for-screen' + (currPage + 1));
+                            Y.fire('run-jit-for-screen' + (currPage - 1));
+                        }, 0);
+
+                    }, 0);
+//                });
             });
 
             Y.on('more-data', function () {
