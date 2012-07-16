@@ -28,9 +28,6 @@ html {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    /* Trying to remove flicker in scroll */
-    -webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden;
 }
 .horizontal {
     white-space: nowrap;
@@ -62,8 +59,4 @@ html {
     display: inline-block;
     vertical-align: text-top;
     overflow: hidden;
-}
-.screen .frame {
-    /* Trying to remove flicker in scroll */
-    -webkit-backface-visibility: hidden;
 }

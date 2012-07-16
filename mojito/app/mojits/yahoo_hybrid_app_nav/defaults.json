@@ -51,5 +51,31 @@
                 }
             }
         }
+    },
+    {
+        "settings": [ "device:iphone" ],
+
+        "config": {
+            "assets": {
+                "bottom": {
+                    "css": [
+                        "./apple.css"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "settings": [ "device:ipad" ],
+
+        "config": {
+            "assets": {
+                "bottom": {
+                    "css": [
+                        "./apple.css"
+                    ]
+                }
+            }
+        }
     }
 ]

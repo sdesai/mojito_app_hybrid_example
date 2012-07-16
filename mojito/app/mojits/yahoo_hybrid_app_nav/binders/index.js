@@ -34,7 +34,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 
             window.addEventListener(orientationEvent, function() {
-                alert('HOLY ROTATING SCREENS BATMAN:' + window.orientation + " " + screen.width);
+//                alert('HOLY ROTATING SCREENS BATMAN:' + window.orientation + " " + screen.width);
             }, false);
         },
 
