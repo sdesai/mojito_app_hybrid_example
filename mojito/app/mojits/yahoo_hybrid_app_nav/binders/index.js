@@ -14,6 +14,10 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
         init: function (mp) {
 
+            var preventDefaultScroll,
+                supportsOrientationChange,
+                orientationEvent;
+
             this.mp = mp;
             this.titles = null;
             this.scrollable = null;
@@ -21,7 +25,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             this.width = NaN;
 
             /* This code prevents users from dragging the page */
-            var preventDefaultScroll = function (event) {
+            preventDefaultScroll = function (event) {
                 event.preventDefault();
                 window.scroll(0, 0);
                 return false;
@@ -30,10 +34,10 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
             // Detect whether device supports orientationchange event, otherwise fall back to
             // the resize event.
-            var supportsOrientationChange = "onorientationchange" in window,
-                orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+            supportsOrientationChange = typeof window.onorientationchange !== 'undefined';
+            orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 
-            window.addEventListener(orientationEvent, function() {
+            window.addEventListener(orientationEvent, function () {
 //                alert('HOLY ROTATING SCREENS BATMAN:' + window.orientation + " " + screen.width);
             }, false);
         },
@@ -216,36 +220,32 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
             horizSwiper.pages.on("indexChange", function (e) {
 
-//                horizSwiper.once("scrollEnd", function () {
+                // Let the DOM update before we do anything more
+                setTimeout(function () {
+                    var lastPage = parseInt(e.prevVal, 10),
+                        currPage = parseInt(e.newVal, 10),
+                        newContainer;
 
+                    vertSwiper.get("boundingBox").get("parentNode").append(CACHED_VERT_CONTENT[lastPage]);
+                    vertSwiper.get("contentBox").append(CACHED_VERT_CONTENT[currPage]);
+
+                    newContainer = node.one("#screen" + currPage + " .frame");
+                    newContainer.insert(vertSwiper.get("boundingBox"));
+
+                    vertSwiper.scrollTo(0, 0); // re-set the scrollview to the top
+
+                    vertSwiper.syncUI();
+
+                    onChange(self.titles, currPage);
+
+                    // Let the DOM update and then tell the next
+                    // view to load if it's not loaded.
                     setTimeout(function () {
-
-                        var lastPage = parseInt(e.prevVal, 10),
-                            currPage = parseInt(e.newVal, 10),
-                            newContainer;
-
-                        vertSwiper.get("boundingBox").get("parentNode").append(CACHED_VERT_CONTENT[lastPage]);
-                        vertSwiper.get("contentBox").append(CACHED_VERT_CONTENT[currPage]);
-
-                        newContainer = node.one("#screen" + currPage + " .frame");
-                        newContainer.insert(vertSwiper.get("boundingBox"));
-
-                        vertSwiper.scrollTo(0, 0); // re-set the scrollview to the top
-
-                        vertSwiper.syncUI();
-
-                        onChange(self.titles, currPage);
-
-                        // Let the DOM update and then tell the next
-                        // view to load if it's not loaded.
-                        setTimeout(function () {
-                            Y.fire('run-jit-for-screen' + (currPage));
-                            Y.fire('run-jit-for-screen' + (currPage + 1));
-                            Y.fire('run-jit-for-screen' + (currPage - 1));
-                        }, 0);
-
+                        Y.fire('run-jit-for-screen' + (currPage));
+                        Y.fire('run-jit-for-screen' + (currPage + 1));
+                        Y.fire('run-jit-for-screen' + (currPage - 1));
                     }, 0);
-//                });
+                });
             });
 
             Y.on('more-data', function () {
