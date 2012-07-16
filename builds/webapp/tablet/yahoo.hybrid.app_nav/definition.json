@@ -21,8 +21,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342041202974_10",
-    "guid": "yui_3_5_1_3_1342041202974_10",
+    "instanceId": "yui_3_5_1_3_1342478383969_10",
+    "guid": "yui_3_5_1_3_1342478383969_10",
     "actions": [],
     "models": {
         "user": "/yahoo.hybrid.app/models/user.common.js"
