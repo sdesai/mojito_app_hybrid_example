@@ -5,6 +5,7 @@
         "shareYUIInstance": true,
 
         "staticHandling": {
+            "-prefix": "mojito_app_hybrid_example/phone",
             "-prefix": "mojito_app_hybrid_example/tablet",
             "prefix": "",
             "appName": "yahoo.hybrid.app",

@@ -21,8 +21,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342478381643_9",
-    "guid": "yui_3_5_1_3_1342478381643_9",
+    "instanceId": "yui_3_5_1_3_1342481574471_10",
+    "guid": "yui_3_5_1_3_1342481574471_10",
     "actions": [],
     "models": {
         "user": "/yahoo.hybrid.app/models/user.common.js"
@@ -256,7 +256,7 @@
                 "requestor": "/yahoo.hybrid.mojtio/autoload/transport/requestor.client-optional.js",
                 "io-facade": "/yahoo.hybrid.mojtio/autoload/transport/io_facade.client-optional.js",
                 "response-formatter": "/yahoo.hybrid.mojtio/autoload/transport/response_formatter.client-optional.js",
-                    "response-processor": "/yahoo.hybrid.mojtio/autoload/transport/response_processor.client-optional.js",
+                "response-processor": "/yahoo.hybrid.mojtio/autoload/transport/response_processor.client-optional.js",
                 "mojito-tunnel-client": "/yahoo.hybrid.mojtio/autoload/tunnel.client-optional.js",
                 "mojito-output-handler": "/yahoo.hybrid.mojtio/autoload/output-handler.client.js",
                 "mojito-client": "/yahoo.hybrid.mojtio/autoload/mojito-client.client.js",
@@ -386,7 +386,7 @@
             "skin-sam-widget-base",
             "attribute-base",
             "attribute-core",
-                "attribute-events",
+            "attribute-events",
             "attribute-extras",
             "attribute-complex",
             "base-base",

@@ -2,8 +2,8 @@
     "type": "yahoo.hybrid.app_specs",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342478381643_10",
-    "guid": "yui_3_5_1_3_1342478381643_10",
+    "instanceId": "yui_3_5_1_3_1342481574471_9",
+    "guid": "yui_3_5_1_3_1342481574471_9",
     "actions": [],
     "models": {
         "user": "/yahoo.hybrid.app/models/user.common.js"

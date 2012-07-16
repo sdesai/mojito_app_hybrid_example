@@ -20,7 +20,10 @@
 # }
 
 if [[ -z "$1" ]]; then
-    echo "You must provide either 'tablet' or 'phone'"
+    echo ""
+    echo "You must update 'application.json' to use this command."
+    echo "You must provide an argument of either 'tablet' or 'phone'."
+    echo ""
     exit 0
 fi
 
