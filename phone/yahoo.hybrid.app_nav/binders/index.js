@@ -4,7 +4,7 @@
 
 /*jslint nomen: true */
 
-/*global YUI: true, window: true, document: true*/
+/*global YUI: true, window: true, document: true, navigator: true*/
 
 'use strict';
 
@@ -40,6 +40,17 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             window.addEventListener(orientationEvent, function () {
 //                alert('HOLY ROTATING SCREENS BATMAN:' + window.orientation + " " + screen.width);
             }, false);
+
+            /* Bug fix for apple CSS3 flicker when scroll */
+            if (navigator.vendor.slice(0, 5) === 'Apple') {
+                Y.one('head').append('<style>' +
+                        '.horizontal, .screen, .vertical, .content li {' +
+                        '-webkit-transition-duration: 0;' +
+                        '-webkit-transform: translate3d(0,0,0);' +
+                        '}' +
+                        '</style>'
+                    );
+            }
         },
 
         bind: function (node) {

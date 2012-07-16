@@ -6,8 +6,7 @@
             "top": {
                 "css": [
                     "http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css",
-                    "./screen.css",
-                    "./apple.css"
+                    "./screen.css"
                 ],
                 "blob": [
                     "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
@@ -22,8 +21,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342480112343_9",
-    "guid": "yui_3_5_1_3_1342480112343_9",
+    "instanceId": "yui_3_5_1_3_1342481541119_9",
+    "guid": "yui_3_5_1_3_1342481541119_9",
     "actions": [],
     "models": {
         "user": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app/models/user.common.js"
@@ -168,7 +167,7 @@
                 "array-extras": "http://yui.yahooapis.com/3.5.1/build/array-extras/array-extras-min.js",
                 "mojito-util": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/autoload/util.common.js",
                 "mojito-output-adapter-addon": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/addons/ac/output-adapter.common.js",
-                    "querystring-parse": "http://yui.yahooapis.com/3.5.1/build/querystring-parse/querystring-parse-min.js",
+                "querystring-parse": "http://yui.yahooapis.com/3.5.1/build/querystring-parse/querystring-parse-min.js",
                 "mojito-route-maker": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/autoload/route-maker.common.js",
                 "mojito-url-addon": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/addons/ac/url.common.js",
                 "mojito-assets-addon": "/mojito_app_hybrid_example/phone/yahoo.hybrid.mojtio/addons/ac/assets.common.js",
@@ -277,7 +276,7 @@
                         "mojito-client",
                         "node",
                         "scrollview-base",
-                            "scrollview-paginator",
+                        "scrollview-paginator",
                         "scrollview-scrollbars"
                     ]
                 },
@@ -421,7 +420,7 @@
             "event-custom-base",
             "intl-base",
             "event-custom-complex",
-            "intl",
+                "intl",
             "querystring-stringify-simple",
             "mojito-config-addon",
             "json-stringify",
@@ -584,7 +583,7 @@
             "skin-sam-widget-base": "http://yui.yahooapis.com/3.5.1/build/widget-base/assets/skins/sam/widget-base.css",
             "attribute-core": "http://yui.yahooapis.com/3.5.1/build/attribute-core/attribute-core-min.js",
             "attribute-events": "http://yui.yahooapis.com/3.5.1/build/attribute-events/attribute-events-min.js",
-                "attribute-extras": "http://yui.yahooapis.com/3.5.1/build/attribute-extras/attribute-extras-min.js",
+            "attribute-extras": "http://yui.yahooapis.com/3.5.1/build/attribute-extras/attribute-extras-min.js",
             "attribute-base": "http://yui.yahooapis.com/3.5.1/build/attribute-base/attribute-base-min.js",
             "attribute-complex": "http://yui.yahooapis.com/3.5.1/build/attribute-complex/attribute-complex-min.js",
             "base-core": "http://yui.yahooapis.com/3.5.1/build/base-core/base-core-min.js",
@@ -626,8 +625,7 @@
                 "top": {
                     "css": [
                         "http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css",
-                        "./screen.css",
-                        "./apple.css"
+                        "./screen.css"
                     ],
                     "blob": [
                         "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",

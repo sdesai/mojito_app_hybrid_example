@@ -6,8 +6,7 @@
             "top": {
                 "css": [
                     "http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css",
-                    "./screen.css",
-                    "./apple.css"
+                    "./screen.css"
                 ],
                 "blob": [
                     "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
@@ -22,8 +21,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342480124981_9",
-    "guid": "yui_3_5_1_3_1342480124981_9",
+    "instanceId": "yui_3_5_1_3_1342481553159_10",
+    "guid": "yui_3_5_1_3_1342481553159_10",
     "actions": [],
     "models": {
         "user": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app/models/user.common.js"
@@ -57,7 +56,7 @@
                 "mojito-perf": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/perf.client.js",
                 "mojito": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/mojito.common.js",
                 "mojito-logger": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/logger.common.js",
-                    "get": "http://yui.yahooapis.com/3.5.1/build/get/get-min.js",
+                "get": "http://yui.yahooapis.com/3.5.1/build/get/get-min.js",
                 "mojito-loader": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/loader.common.js",
                 "mojito-config-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/config.common.js",
                 "json-stringify": "http://yui.yahooapis.com/3.5.1/build/json-stringify/json-stringify-min.js",
@@ -102,7 +101,7 @@
                 "node-screen": "http://yui.yahooapis.com/3.5.1/build/node-screen/node-screen-min.js",
                 "node-style": "http://yui.yahooapis.com/3.5.1/build/node-style/node-style-min.js",
                 "skin-sam-scrollview-base": "http://yui.yahooapis.com/3.5.1/build/scrollview-base/assets/skins/sam/scrollview-base.css",
-                    "skin-sam-widget-base": "http://yui.yahooapis.com/3.5.1/build/widget-base/assets/skins/sam/widget-base.css",
+                "skin-sam-widget-base": "http://yui.yahooapis.com/3.5.1/build/widget-base/assets/skins/sam/widget-base.css",
                 "attribute-core": "http://yui.yahooapis.com/3.5.1/build/attribute-core/attribute-core-min.js",
                 "attribute-events": "http://yui.yahooapis.com/3.5.1/build/attribute-events/attribute-events-min.js",
                 "attribute-extras": "http://yui.yahooapis.com/3.5.1/build/attribute-extras/attribute-extras-min.js",
@@ -329,7 +328,7 @@
             "io-nodejs",
             "event-delegate",
             "node-base",
-            "event-base",
+                "event-base",
             "node-core",
             "dom-core",
             "features",
@@ -455,7 +454,7 @@
             "mojito-logger",
             "get",
             "mojito-loader",
-            "mojito-client-store",
+                "mojito-client-store",
             "mojito-mojit-proxy",
             "breg",
             "dali-bean",
@@ -465,7 +464,7 @@
             "json-parse",
             "requestor",
             "io-facade",
-            "response-formatter",
+                "response-formatter",
             "response-processor",
             "mojito-tunnel-client",
             "mojito-output-handler",
@@ -610,7 +609,7 @@
             "scrollview-scrollbars": "http://yui.yahooapis.com/3.5.1/build/scrollview-scrollbars/scrollview-scrollbars-min.js",
             "newsfeedappbinderindex": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app_nav/binders/index.js",
             "newsfeedappbinderjit": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app_nav/binders/jit.js",
-            "newsfeedappbinderloader": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app_nav/binders/loader.js",
+                "newsfeedappbinderloader": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app_nav/binders/loader.js",
             "yahoo_hybrid_app_usermodel": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app/models/user.common.js",
             "mojito_mojit_addon_shared_model": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app/addons/ac/shared_model_addon.client.js",
             "yahoo_hybrid_app_nav": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app_nav/controller.common.js",
@@ -626,8 +625,7 @@
                 "top": {
                     "css": [
                         "http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css",
-                        "./screen.css",
-                        "./apple.css"
+                        "./screen.css"
                     ],
                     "blob": [
                         "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
