@@ -21,8 +21,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342041166667_8",
-    "guid": "yui_3_5_1_3_1342041166667_8",
+    "instanceId": "yui_3_5_1_3_1342478793053_11",
+    "guid": "yui_3_5_1_3_1342478793053_11",
     "actions": [],
     "models": {
         "user": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app/models/user.common.js"
@@ -35,7 +35,7 @@
             "binder-url": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app_nav/binders/index.js",
             "binder-path": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app_nav/binders/index.js",
             "binder-module": "newsfeedappbinderindex",
-            "binder-yui-sorted": {
+                "binder-yui-sorted": {
                 "yui-base": "http://yui.yahooapis.com/3.5.1/build/yui-base/yui-base-min.js",
                 "oop": "http://yui.yahooapis.com/3.5.1/build/oop/oop-min.js",
                 "event-custom-base": "http://yui.yahooapis.com/3.5.1/build/event-custom-base/event-custom-base-min.js",
@@ -420,7 +420,7 @@
             "event-custom-base",
             "intl-base",
             "event-custom-complex",
-                "intl",
+            "intl",
             "querystring-stringify-simple",
             "mojito-config-addon",
             "json-stringify",

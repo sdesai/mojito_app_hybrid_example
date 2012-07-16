@@ -2,8 +2,8 @@
     "type": "yahoo.hybrid.app_specs",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342041166667_11",
-    "guid": "yui_3_5_1_3_1342041166667_11",
+    "instanceId": "yui_3_5_1_3_1342478793053_10",
+    "guid": "yui_3_5_1_3_1342478793053_10",
     "actions": [],
     "models": {
         "user": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app/models/user.common.js"
