@@ -2,8 +2,8 @@
     "type": "yahoo.hybrid.app_specs",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342479478113_13",
-    "guid": "yui_3_5_1_3_1342479478113_13",
+    "instanceId": "yui_3_5_1_3_1342480124981_8",
+    "guid": "yui_3_5_1_3_1342480124981_8",
     "actions": [],
     "models": {
         "user": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app/models/user.common.js"
@@ -36,8 +36,8 @@
         },
         "shareYUIInstance": true,
         "staticHandling": {
-            "prefix": "mojito_app_hybrid_example/tablet",
             "-prefix": "",
+            "prefix": "mojito_app_hybrid_example/tablet",
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojtio"
         },

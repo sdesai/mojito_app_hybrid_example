@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssfonts/cssfonts-min.css"/>
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css"/>
 <link rel="stylesheet" type="text/css" href="/mojito_app_hybrid_example/tablet/yahoo.hybrid.app_nav/assets/screen.css"/>
+<link rel="stylesheet" type="text/css" href="/mojito_app_hybrid_example/tablet/yahoo.hybrid.app_nav/assets/apple.css"/>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="apple-touch-icon" href="./yahoo.hybrid.app_nav/assets/apple-app-icon.png"/>
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
@@ -20,7 +21,7 @@
 </head>
 <body>
     
-<div id="yui_3_5_1_37_1342479478113_7" class="nav-loader">
+<div id="yui_3_5_1_37_1342480124981_7" class="nav-loader">
     Loading
 </div>
 
@@ -76,7 +77,7 @@
     "tz": ""
   },
   "binderMap": {
-    "yui_3_5_1_37_1342479478113_7": {
+    "yui_3_5_1_37_1342480124981_7": {
       "action": "index",
       "config": {
         "jit": 2,
@@ -84,9 +85,7 @@
           "top": {
             "css": [
               "http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css",
-              "./screen.css"
-            ],
-            "bottom": [
+              "./screen.css",
               "./apple.css"
             ],
             "blob": [
@@ -102,9 +101,9 @@
         }
       },
       "type": "yahoo.hybrid.app_nav",
-      "viewId": "yui_3_5_1_37_1342479478113_7",
-      "guid": "yui_3_5_1_33_1342479478113_11",
-      "instanceId": "yui_3_5_1_33_1342479478113_11",
+      "viewId": "yui_3_5_1_37_1342480124981_7",
+      "guid": "yui_3_5_1_33_1342480124981_11",
+      "instanceId": "yui_3_5_1_33_1342480124981_11",
       "name": "newsfeedappbinderloader",
       "needs": {
         "yui-base": "http://yui.yahooapis.com/3.5.1/build/yui-base/yui-base-min.js",
@@ -122,15 +121,15 @@
         "selector": "http://yui.yahooapis.com/3.5.1/build/selector/selector-min.js",
         "node-core": "http://yui.yahooapis.com/3.5.1/build/node-core/node-core-min.js",
         "node-base": "http://yui.yahooapis.com/3.5.1/build/node-base/node-base-min.js",
-          "event-base": "http://yui.yahooapis.com/3.5.1/build/event-base/event-base-min.js",
+        "event-base": "http://yui.yahooapis.com/3.5.1/build/event-base/event-base-min.js",
         "event-delegate": "http://yui.yahooapis.com/3.5.1/build/event-delegate/event-delegate-min.js",
         "mojito-perf": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/perf.client.js",
-        "mojito": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/mojito.common.js",
+          "mojito": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/mojito.common.js",
         "mojito-logger": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/logger.common.js",
         "get": "http://yui.yahooapis.com/3.5.1/build/get/get-min.js",
         "mojito-loader": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/loader.common.js",
         "mojito-config-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/config.common.js",
-          "json-stringify": "http://yui.yahooapis.com/3.5.1/build/json-stringify/json-stringify-min.js",
+        "json-stringify": "http://yui.yahooapis.com/3.5.1/build/json-stringify/json-stringify-min.js",
         "mojito-view-renderer": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/view-renderer.common.js",
         "array-extras": "http://yui.yahooapis.com/3.5.1/build/array-extras/array-extras-min.js",
         "mojito-util": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/util.common.js",
@@ -174,8 +173,8 @@
     },
     "shareYUIInstance": true,
     "staticHandling": {
-      "prefix": "mojito_app_hybrid_example/tablet",
       "-prefix": "",
+      "prefix": "mojito_app_hybrid_example/tablet",
       "appName": "yahoo.hybrid.app",
       "frameworkName": "yahoo.hybrid.mojtio"
     },
@@ -217,7 +216,7 @@
     "default_index": {
       "path": "/index.html",
       "call": "yahoo.hybrid.app_specs.index",
-        "name": "default_index",
+      "name": "default_index",
       "verbs": {
         "GET": true
       },
