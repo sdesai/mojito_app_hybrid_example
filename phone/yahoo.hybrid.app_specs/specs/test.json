@@ -17,8 +17,8 @@
     },
     "id": "yahoo.hybrid.app_specs:test",
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342478793053_8",
-    "guid": "yui_3_5_1_3_1342478793053_8",
+    "instanceId": "yui_3_5_1_3_1342479464623_11",
+    "guid": "yui_3_5_1_3_1342479464623_11",
     "modelYUIModuleNames": {
         "yahoo_hybrid_app_usermodel": true
     },
@@ -84,7 +84,7 @@
         "requires": [],
         "langs": {},
         "sorted": [],
-        "sortedPaths": {}
+            "sortedPaths": {}
     },
     "definition": {
         "yui": {

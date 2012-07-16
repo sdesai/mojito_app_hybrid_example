@@ -20,8 +20,8 @@
     },
     "id": "yahoo.hybrid.app_specs",
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342478793053_9",
-    "guid": "yui_3_5_1_3_1342478793053_9",
+    "instanceId": "yui_3_5_1_3_1342479464623_12",
+    "guid": "yui_3_5_1_3_1342479464623_12",
     "modelYUIModuleNames": {
         "yahoo_hybrid_app_usermodel": true
     },
@@ -40,7 +40,7 @@
         "staticHandling": {
             "prefix": "mojito_app_hybrid_example/phone",
             "-prefix": "",
-            "appName": "yahoo.hybrid.app",
+                "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojtio"
         },
         "log": {

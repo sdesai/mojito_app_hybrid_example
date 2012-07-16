@@ -8,6 +8,9 @@
                     "http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css",
                     "./screen.css"
                 ],
+                "bottom": [
+                    "./apple.css"
+                ],
                 "blob": [
                     "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
                     "<link rel=\"apple-touch-icon\" href=\"./yahoo.hybrid.app_nav/assets/apple-app-icon.png\"/>",
@@ -21,8 +24,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342478793053_11",
-    "guid": "yui_3_5_1_3_1342478793053_11",
+    "instanceId": "yui_3_5_1_3_1342479464623_8",
+    "guid": "yui_3_5_1_3_1342479464623_8",
     "actions": [],
     "models": {
         "user": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app/models/user.common.js"
@@ -35,7 +38,7 @@
             "binder-url": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app_nav/binders/index.js",
             "binder-path": "/mojito_app_hybrid_example/phone/yahoo.hybrid.app_nav/binders/index.js",
             "binder-module": "newsfeedappbinderindex",
-                "binder-yui-sorted": {
+            "binder-yui-sorted": {
                 "yui-base": "http://yui.yahooapis.com/3.5.1/build/yui-base/yui-base-min.js",
                 "oop": "http://yui.yahooapis.com/3.5.1/build/oop/oop-min.js",
                 "event-custom-base": "http://yui.yahooapis.com/3.5.1/build/event-custom-base/event-custom-base-min.js",
@@ -368,7 +371,7 @@
             "requestor",
             "json-parse",
             "io-facade",
-            "response-formatter",
+                "response-formatter",
             "response-processor",
             "mojito-output-handler",
             "node-event-delegate",
@@ -626,6 +629,9 @@
                     "css": [
                         "http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css",
                         "./screen.css"
+                    ],
+                    "bottom": [
+                        "./apple.css"
                     ],
                     "blob": [
                         "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
