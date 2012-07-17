@@ -2,8 +2,8 @@
     "type": "HTMLFrameMojit",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342481576618_15",
-    "guid": "yui_3_5_1_3_1342481576618_15",
+    "instanceId": "yui_3_5_1_3_1342550811424_16",
+    "guid": "yui_3_5_1_3_1342550811424_16",
     "actions": [],
     "models": {
         "user": "/yahoo.hybrid.app/models/user.common.js"

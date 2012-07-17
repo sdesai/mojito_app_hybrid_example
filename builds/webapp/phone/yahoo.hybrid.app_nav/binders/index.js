@@ -14,15 +14,15 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
         init: function (mp) {
 
-            var preventDefaultScroll,
-                supportsOrientationChange,
-                orientationEvent;
+            var preventDefaultScroll;
 
             this.mp = mp;
             this.titles = null;
             this.scrollable = null;
             this.height = NaN;
             this.width = NaN;
+            this.horizSwiper = null;
+            this.vertSwiper = null;
 
             /* This code prevents users from dragging the page */
             preventDefaultScroll = function (event) {
@@ -31,15 +31,6 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 return false;
             };
             document.addEventListener('touchmove', preventDefaultScroll, false);
-
-            // Detect whether device supports orientationchange event, otherwise fall back to
-            // the resize event.
-            supportsOrientationChange = typeof window.onorientationchange !== 'undefined';
-            orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
-
-            window.addEventListener(orientationEvent, function () {
-//                alert('HOLY ROTATING SCREENS BATMAN:' + window.orientation + " " + screen.width);
-            }, false);
 
             /* Bug fix for apple CSS3 flicker when scroll */
             if (navigator.vendor.slice(0, 5) === 'Apple') {
@@ -55,7 +46,10 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
         bind: function (node) {
 
-            var self = this;
+            var self = this,
+                supportsOrientationChange,
+                orientationEvent,
+                resizeFunc;
 
             self.titles = node.one('.titles');
             self.scrollable = node.one('.horizontal');
@@ -64,13 +58,6 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
              * Add a scrollview to the screens
              */
             self.setScreenSize(node, function () {
-
-                // Now tell all the children what width they should be
-                node.all('.screen').each(function (item) {
-                    item.setStyle('width', (self.width) + 'px');
-                    item.setStyle('height', (self.height) + 'px');
-                });
-
                 self.addScrollviews(node, self.changeTitle, function () {
                     Y.log('Scrollviews added');
                 });
@@ -95,6 +82,24 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 }, 0);
 
             }, 'a');
+
+            /*
+             * Listen for screen size changes
+             *
+             * Detect whether device supports orientationchange event, otherwise fall back to the resize event.
+             */
+            supportsOrientationChange = typeof window.onorientationchange !== 'undefined';
+            orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+            resizeFunc = function () {
+                self.setScreenSize(node, function () {
+                    self.horizSwiper.set('width', self.width);
+                    self.vertSwiper.set('height', self.height);
+                    Y.one(window).once(orientationEvent, resizeFunc);
+                });
+            };
+
+            Y.one(window).once(orientationEvent, resizeFunc);
         },
 
         setScreenSize: function (node, cb) {
@@ -109,6 +114,12 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
             self.scrollable.setStyle('height', (self.height) + 'px');
 
+            // Now tell all the children what width they should be
+            node.all('.screen').each(function (item) {
+                item.setStyle('width', (self.width) + 'px');
+                item.setStyle('height', (self.height) + 'px');
+            });
+
             cb();
         },
 
@@ -121,8 +132,8 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
         addScrollviews: function (node, onChange, cb) {
 
             var self = this,
-                horizSwiper,
-                vertSwiper,
+//                horizSwiper = this.horizSwiper,
+//                vertSwiper = this.vertSwiper,
                 startX,
                 startY,
                 screens,
@@ -156,7 +167,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 };
             }
 
-            horizSwiper = new Y.ScrollView({
+            self.horizSwiper = new Y.ScrollView({
                 srcNode: this.scrollable,
                 width: this.width,
                 bounce: false,
@@ -168,13 +179,13 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             });
 
             // Add pages
-            horizSwiper.plug(Y.Plugin.ScrollViewPaginator, {
+            self.horizSwiper.plug(Y.Plugin.ScrollViewPaginator, {
                 selector: '.screen'
             });
 
-            horizSwiper.render();
+            self.horizSwiper.render();
 
-            vertSwiper = new Y.ScrollView({
+            self.vertSwiper = new Y.ScrollView({
                 srcNode: ".vertical",
                 height: this.height,
                 bounce: false,
@@ -185,27 +196,27 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 }
             });
 
-            overrideGMS(vertSwiper, function (e) {
+            overrideGMS(self.vertSwiper, function (e) {
                 startX = e.pageX;
                 startY = e.pageY;
             });
 
-            overrideGM(vertSwiper, function (e) {
-                if (!horizSwiper.get("disabled") && (Math.abs(e.pageX - startX) < Math.abs(e.pageY - startY))) {
-                    horizSwiper.set("disabled", true);
+            overrideGM(self.vertSwiper, function (e) {
+                if (!self.horizSwiper.get("disabled") && (Math.abs(e.pageX - startX) < Math.abs(e.pageY - startY))) {
+                    self.horizSwiper.set("disabled", true);
                 }
             });
 
-            overrideGME(vertSwiper, function (e) {
-                horizSwiper.set("disabled", false);
-                vertSwiper.set("disabled", false);
+            overrideGME(self.vertSwiper, function (e) {
+                self.horizSwiper.set("disabled", false);
+                self.vertSwiper.set("disabled", false);
             });
 
-            vertContentArea = vertSwiper.get("contentBox");
+            vertContentArea = self.vertSwiper.get("contentBox");
 
             vertContentArea.delegate("click", function (e) {
                 // Prevent links from navigating as part of a scroll gesture
-                if (Math.abs(vertSwiper.lastScrolledAmt) > 2) {
+                if (Math.abs(self.vertSwiper.lastScrolledAmt) > 2) {
                     e.preventDefault();
                 }
             }, "a");
@@ -216,10 +227,10 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             }, "a");
 
             // Add Scrollbars
-//            vertSwiper.plug(Y.Plugin.ScrollViewScrollbars);
-//            vertSwiper.scrollbars.show();
+            self.vertSwiper.plug(Y.Plugin.ScrollViewScrollbars);
+            self.vertSwiper.scrollbars.show();
 
-            vertSwiper.render();
+            self.vertSwiper.render();
 
             // Here we grab all the screens and cache them
             screens = node.all(".screen");
@@ -229,7 +240,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                 CACHED_VERT_CONTENT.push(node.one(".content"));
             });
 
-            horizSwiper.pages.on("indexChange", function (e) {
+            self.horizSwiper.pages.on("indexChange", function (e) {
 
                 // Let the DOM update before we do anything more
                 setTimeout(function () {
@@ -237,15 +248,15 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
                         currPage = parseInt(e.newVal, 10),
                         newContainer;
 
-                    vertSwiper.get("boundingBox").get("parentNode").append(CACHED_VERT_CONTENT[lastPage]);
-                    vertSwiper.get("contentBox").append(CACHED_VERT_CONTENT[currPage]);
+                    self.vertSwiper.get("boundingBox").get("parentNode").append(CACHED_VERT_CONTENT[lastPage]);
+                    self.vertSwiper.get("contentBox").append(CACHED_VERT_CONTENT[currPage]);
 
                     newContainer = node.one("#screen" + currPage + " .frame");
-                    newContainer.insert(vertSwiper.get("boundingBox"));
+                    newContainer.insert(self.vertSwiper.get("boundingBox"));
 
-                    vertSwiper.scrollTo(0, 0); // re-set the scrollview to the top
+                    self.vertSwiper.scrollTo(0, 0); // re-set the scrollview to the top
 
-                    vertSwiper.syncUI();
+                    self.vertSwiper.syncUI();
 
                     onChange(self.titles, currPage);
 
@@ -260,17 +271,17 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             });
 
             Y.on('more-data', function () {
-                vertSwiper.syncUI();
+                self.vertSwiper.syncUI();
             });
 
             Y.on('scroll-to', function (position) {
 
-                horizSwiper.pages.scrollTo(position, '0.5', 'ease-in');
+                self.horizSwiper.pages.scrollTo(position, '0.5', 'ease-in');
 
                 /*
                  * This is required to trigger the "indexChange" event.
                  */
-                horizSwiper.pages.set('index', position);
+                self.horizSwiper.pages.set('index', position);
             });
 
             cb();
@@ -278,5 +289,5 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
     };
 
 }, '0.0.1', {
-    requires: ['mojito-client', 'node', 'scrollview-base', 'scrollview-paginator', 'scrollview-scrollbars']
+    requires: ['mojito-client', 'node', 'scrollview', 'scrollview-paginator', 'scrollview-scrollbars']
 });
