@@ -21,8 +21,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342550849465_8",
-    "guid": "yui_3_5_1_3_1342550849465_8",
+    "instanceId": "yui_3_5_1_3_1342551571564_11",
+    "guid": "yui_3_5_1_3_1342551571564_11",
     "actions": [],
     "models": {
         "user": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app/models/user.common.js"
@@ -160,7 +160,7 @@
                 "mojito-perf": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/perf.client.js",
                 "mojito": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/mojito.common.js",
                 "mojito-logger": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/logger.common.js",
-                "get": "http://yui.yahooapis.com/3.5.1/build/get/get-min.js",
+                    "get": "http://yui.yahooapis.com/3.5.1/build/get/get-min.js",
                 "mojito-loader": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/autoload/loader.common.js",
                 "mojito-config-addon": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.mojtio/addons/ac/config.common.js",
                 "json-stringify": "http://yui.yahooapis.com/3.5.1/build/json-stringify/json-stringify-min.js",
@@ -279,14 +279,14 @@
                         "scrollview",
                         "scrollview-paginator",
                         "scrollview-scrollbars"
-                        ]
+                    ]
                 },
                 "newsfeedappbinderjit": {
                     "fullpath": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app_nav/binders/jit.js",
                     "requires": [
                         "mojito-client"
                     ]
-                    },
+                },
                 "newsfeedappbinderloader": {
                     "fullpath": "/mojito_app_hybrid_example/tablet/yahoo.hybrid.app_nav/binders/loader.js",
                     "requires": [
@@ -403,7 +403,7 @@
             "event-flick",
             "event-touch",
             "event-move",
-                "event-mousewheel",
+            "event-mousewheel",
             "transition",
             "transition-timer",
             "scrollview-scrollbars",
@@ -471,7 +471,7 @@
             "mojito-tunnel-client",
             "mojito-output-handler",
             "mojito-client",
-                "node-event-delegate",
+            "node-event-delegate",
             "pluginhost-base",
             "pluginhost-config",
             "node-pluginhost",
@@ -604,7 +604,7 @@
             "event-move": "http://yui.yahooapis.com/3.5.1/build/event-move/event-move-min.js",
             "event-mousewheel": "http://yui.yahooapis.com/3.5.1/build/event-mousewheel/event-mousewheel-min.js",
             "transition": "http://yui.yahooapis.com/3.5.1/build/transition/transition-min.js",
-                "transition-timer": "http://yui.yahooapis.com/3.5.1/build/transition-timer/transition-timer-min.js",
+            "transition-timer": "http://yui.yahooapis.com/3.5.1/build/transition-timer/transition-timer-min.js",
             "scrollview-base": "http://yui.yahooapis.com/3.5.1/build/scrollview-base/scrollview-base-min.js",
             "skin-sam-scrollview-scrollbars": "http://yui.yahooapis.com/3.5.1/build/scrollview-scrollbars/assets/skins/sam/scrollview-scrollbars.css",
             "plugin": "http://yui.yahooapis.com/3.5.1/build/plugin/plugin-min.js",
@@ -666,7 +666,7 @@
         },
         "log": {
             "client": {
-                "level": "error",
+                    "level": "error",
                 "yui": false
             },
             "server": {
