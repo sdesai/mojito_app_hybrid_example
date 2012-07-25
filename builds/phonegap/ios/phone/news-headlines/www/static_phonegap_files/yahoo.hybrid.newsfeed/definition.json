@@ -1,0 +1,225 @@
+{
+    "type": "yahoo.hybrid.newsfeed",
+    "config": {
+        "limit": 6,
+        "feedId": "topstories",
+        "assets": {
+            "top": {
+                "css": [
+                    "http://fonts.googleapis.com/css?family=Lato:300,700",
+                    "./phone.css"
+                ]
+            }
+        },
+        "feeds": {
+            "topstories": {
+                "title": "Top Stories",
+                "query": "select title, description, link, pubDate from rss where url='http://rss.news.yahoo.com/rss/topstories'"
+            },
+            "tech": {
+                "title": "Tech",
+                "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/tech'"
+            },
+            "business": {
+                "title": "Business",
+                "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/business'"
+            },
+            "stock-markets": {
+                "title": "Stock Markets",
+                "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/stock-markets'"
+            }
+        }
+    },
+    "action": "index",
+    "instanceId": "yui_3_4_1_1_1342651577483_17",
+    "guid": "yui_3_4_1_1_1342651577483_17",
+    "actions": [],
+    "models": {
+        "user": "./static_phonegap_files/yahoo.hybrid.app/models/user.common.js",
+        "newsfeed": "./static_phonegap_files/yahoo.hybrid.newsfeed/models/newsfeed.common.js"
+    },
+    "modelYUIModuleNames": {
+        "yahoo_hybrid_app_usermodel": true,
+        "newsfeedmodel": true
+    },
+    "views": {
+        "index": {
+            "binder-url": "./static_phonegap_files/yahoo.hybrid.newsfeed/binders/index.js",
+            "binder-path": "./static_phonegap_files/yahoo.hybrid.newsfeed/binders/index.js",
+            "binder-module": "newsfeedbinderindex",
+            "binder-yui-sorted": {
+                "newsfeedbinderindex": "./static_phonegap_files/yahoo.hybrid.newsfeed/binders/index.js",
+                "mojito-client": "./static_phonegap_files/yahoo.hybrid.mojito/autoload/mojito-client.client.js",
+                "mojito-mu": "./static_phonegap_files/yahoo.hybrid.mojito/addons/view-engines/mu.client.js"
+            },
+            "content-path": "./static_phonegap_files/yahoo.hybrid.newsfeed/views/index.mu.html",
+            "engine": "mu"
+        },
+        "feed": {
+            "content-path": "./static_phonegap_files/yahoo.hybrid.newsfeed/views/feed.mu.html",
+            "engine": "mu"
+        }
+    },
+    "yui": {
+        "config": {
+            "modules": {
+                "newsfeedbinderindex": {
+                    "fullpath": "./static_phonegap_files/yahoo.hybrid.newsfeed/binders/index.js",
+                    "requires": [
+                        "mojito-client",
+                        "node",
+                        "event-move",
+                        "event-mousewheel"
+                    ]
+                },
+                "newsfeed": {
+                    "fullpath": "./static_phonegap_files/yahoo.hybrid.newsfeed/controller.common.js",
+                    "requires": [
+                        "mojito",
+                        "mojito_mojit_addon_shared_model"
+                    ]
+                },
+                "newsfeedmodel": {
+                    "fullpath": "./static_phonegap_files/yahoo.hybrid.newsfeed/models/newsfeed.common.js",
+                    "requires": [
+                        "yql"
+                    ]
+                },
+                "mojito-mu": {
+                    "fullpath": "./static_phonegap_files/yahoo.hybrid.mojito/addons/view-engines/mu.client.js",
+                    "requires": [
+                        "mojito-util",
+                        "io-base"
+                    ]
+                }
+            }
+        },
+        "requires": [
+            "mojito_mojit_addon_shared_model",
+            "yahoo_hybrid_app_usermodel",
+            "mojito-analytics-addon",
+            "mojito-assets-addon",
+            "mojito-composite-addon",
+            "mojito-config-addon",
+            "mojito-cookie-addon",
+            "mojito-i13n-addon",
+            "mojito-intl-addon",
+            "mojito-meta-addon",
+            "mojito-output-adapter-addon",
+            "mojito-params-addon",
+            "mojito-partial-addon",
+            "mojito-url-addon",
+            "mojito-action-context",
+            "mojito-controller-context",
+            "mojito-dispatcher",
+            "mojito-loader",
+            "mojito-logger",
+            "mojito-mojit-proxy",
+            "mojito-client",
+            "mojito-test",
+            "mojito",
+            "mojito-output-handler",
+            "mojito-perf",
+            "mojito-resource-store-adapter",
+            "mojito-rest-lib",
+            "mojito-route-maker",
+            "mojito-client-store",
+            "dali-bean",
+            "bean-performance-watcher",
+            "breg",
+            "io-facade",
+            "simple-request-formatter",
+            "request-handler",
+            "requestor",
+            "response-formatter",
+            "response-processor",
+            "dali-transport-base",
+            "transport-utils",
+            "mojito-tunnel-client",
+            "mojito-util",
+            "mojito-view-renderer",
+            "newsfeedbinderindex",
+            "newsfeed",
+            "newsfeedmodel",
+            "mojito-mu"
+        ],
+        "langs": {}
+    },
+    "assetsRoot": "./static_phonegap_files/yahoo.hybrid.newsfeed/assets",
+    "definition": {},
+    "defaults": {
+        "config": {
+            "limit": 6,
+            "feedId": "topstories",
+            "assets": {
+                "top": {
+                    "css": [
+                        "http://fonts.googleapis.com/css?family=Lato:300,700",
+                        "./phone.css"
+                    ]
+                }
+            },
+            "feeds": {
+                "topstories": {
+                    "title": "Top Stories",
+                    "query": "select title, description, link, pubDate from rss where url='http://rss.news.yahoo.com/rss/topstories'"
+                },
+                "tech": {
+                    "title": "Tech",
+                    "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/tech'"
+                },
+                "business": {
+                    "title": "Business",
+                    "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/business'"
+                },
+                "stock-markets": {
+                    "title": "Stock Markets",
+                    "query": "select title, description, link, pubDate from rss where url='http://news.yahoo.com/rss/stock-markets'"
+                }
+            }
+        }
+    },
+    "controllerModuleName": "newsfeed",
+    "controller": "./static_phonegap_files/yahoo.hybrid.newsfeed/controller.common.js",
+    "appConfig": {
+        "mojitsDirs": [
+            "mojits"
+        ],
+        "routesFiles": [
+            "routes.json"
+        ],
+        "tunnelPrefix": "/tunnel",
+        "yui": {
+            "dependencyCalculations": "ondemand",
+            "base": "./static_phonegap_files/yahoo.libs.yui/assets/",
+            "url": "./static_phonegap_files/yahoo.libs.yui/assets/yui/yui-min.js",
+            "loader": "loader/loader-min.js"
+        },
+        "shareYUIInstance": true,
+        "staticHandling": {
+            "-prefix": "",
+            "prefix": "static_phonegap_files",
+            "appName": "yahoo.hybrid.app",
+            "frameworkName": "yahoo.hybrid.mojito"
+        },
+        "-log": {
+            "client": {
+                "level": "error",
+                "yui": false
+            },
+            "server": {
+                "level": "info",
+                "yui": false
+            }
+        },
+        "builds": {
+            "html5app": {
+                "urls": [
+                    "/mojito_app_hybrid_example/tablet/index.html",
+                    "/mojito_app_hybrid_example/phone/index.html"
+                ]
+            }
+        },
+        "pathToRoot": ""
+    }
+}

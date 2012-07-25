@@ -7,11 +7,12 @@
         "staticHandling": {
             "-prefix": "mojito_app_hybrid_example/phone",
             "-prefix": "mojito_app_hybrid_example/tablet",
-            "prefix": "",
+            "prefix": "static_phonegap_files",
+            "-prefix": "",
             "appName": "yahoo.hybrid.app",
-            "frameworkName": "yahoo.hybrid.mojtio"
+            "frameworkName": "yahoo.hybrid.mojito"
         },
-        "log": {
+        "-log": {
             "client": {
                 "level": "error",
                 "yui": false
@@ -34,6 +35,18 @@
         "settings": [ "environment:development" ],
         "staticHandling": {
             "forceUpdate": true
+        }
+    },
+    {
+        "settings": [ "environment:prod-native" ],
+
+        "pathToRoot": "",
+
+        "yui": {
+            "dependencyCalculations" : "ondemand",
+            "base": "/$$staticHandling.prefix$$/yahoo.libs.yui/assets/",
+            "url": "$$yui.base$$yui/yui-min.js",
+            "loader": "loader/loader-min.js"
         }
     }
 ]

@@ -36,6 +36,7 @@ cd ../../../mojito_app_hybrid_example_gh_pages
 
 # Clean up before me move files around
 
+rm -r ./mojito_app_hybrid_example/$type/HTMLFrameMojit
 rm -r ./mojito_app_hybrid_example/$type/LazyLoad
 rm -r ./mojito_app_hybrid_example/$type/daliProxy
 rm ./cache.manifest

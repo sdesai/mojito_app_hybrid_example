@@ -9,6 +9,9 @@
                     "css": [
                         "http://yui.yahooapis.com/3.5.1/build/cssgrids/grids-min.css",
                         "./screen.css"
+                    ],
+                    "js": [
+                        "./cordova-1.9.0.js"
                     ]
                 }
             }

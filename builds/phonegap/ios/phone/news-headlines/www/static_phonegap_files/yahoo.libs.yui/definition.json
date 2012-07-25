@@ -1,0 +1,110 @@
+{
+    "type": "yahoo.libs.yui",
+    "config": {},
+    "action": "index",
+    "instanceId": "yui_3_4_1_1_1342651577483_16",
+    "guid": "yui_3_4_1_1_1342651577483_16",
+    "actions": [],
+    "models": {
+        "user": "./static_phonegap_files/yahoo.hybrid.app/models/user.common.js"
+    },
+    "modelYUIModuleNames": {
+        "yahoo_hybrid_app_usermodel": true
+    },
+    "views": {},
+    "yui": {
+        "config": {
+            "modules": {}
+        },
+        "requires": [
+            "mojito_mojit_addon_shared_model",
+            "yahoo_hybrid_app_usermodel",
+            "mojito-analytics-addon",
+            "mojito-assets-addon",
+            "mojito-composite-addon",
+            "mojito-config-addon",
+            "mojito-cookie-addon",
+            "mojito-i13n-addon",
+            "mojito-intl-addon",
+            "mojito-meta-addon",
+            "mojito-output-adapter-addon",
+            "mojito-params-addon",
+            "mojito-partial-addon",
+            "mojito-url-addon",
+            "mojito-action-context",
+            "mojito-controller-context",
+            "mojito-dispatcher",
+            "mojito-loader",
+            "mojito-logger",
+            "mojito-mojit-proxy",
+            "mojito-client",
+            "mojito-test",
+            "mojito",
+            "mojito-output-handler",
+            "mojito-perf",
+            "mojito-resource-store-adapter",
+            "mojito-rest-lib",
+            "mojito-route-maker",
+            "mojito-client-store",
+            "dali-bean",
+            "bean-performance-watcher",
+            "breg",
+            "io-facade",
+            "simple-request-formatter",
+            "request-handler",
+            "requestor",
+            "response-formatter",
+            "response-processor",
+            "dali-transport-base",
+            "transport-utils",
+            "mojito-tunnel-client",
+            "mojito-util",
+            "mojito-view-renderer"
+        ],
+        "langs": {}
+    },
+    "assetsRoot": "./static_phonegap_files/yahoo.libs.yui/assets",
+    "definition": {},
+    "defaults": {},
+    "appConfig": {
+        "mojitsDirs": [
+            "mojits"
+        ],
+        "routesFiles": [
+            "routes.json"
+        ],
+        "tunnelPrefix": "/tunnel",
+        "yui": {
+            "dependencyCalculations": "ondemand",
+            "base": "./static_phonegap_files/yahoo.libs.yui/assets/",
+            "url": "./static_phonegap_files/yahoo.libs.yui/assets/yui/yui-min.js",
+            "loader": "loader/loader-min.js"
+        },
+        "shareYUIInstance": true,
+        "staticHandling": {
+            "-prefix": "",
+            "prefix": "static_phonegap_files",
+            "appName": "yahoo.hybrid.app",
+            "frameworkName": "yahoo.hybrid.mojito"
+        },
+        "-log": {
+            "client": {
+                "level": "error",
+                "yui": false
+            },
+            "server": {
+                "level": "info",
+                "yui": false
+            }
+        },
+        "builds": {
+            "html5app": {
+                "urls": [
+                    "/mojito_app_hybrid_example/tablet/index.html",
+                    "/mojito_app_hybrid_example/phone/index.html"
+                ]
+            }
+        },
+        "pathToRoot": ""
+    }
+}

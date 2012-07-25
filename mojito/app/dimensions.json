@@ -35,7 +35,9 @@
                     },
                     "production": {
                         "stage": null,
-                        "prod": null
+                        "prod": {
+                            "prod-native": null
+                        }
                     }
                 }
             },

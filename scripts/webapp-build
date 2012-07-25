@@ -6,6 +6,7 @@ cd ./mojito/app
 mojito build html5app --context device:phone ../../builds/webapp/phone
 
 cd ../../builds/webapp/phone
+rm -r ./HTMLFrameMojit
 rm -r ./LazyLoad
 rm -r ./daliProxy
 rm ./cache.manifest
@@ -23,6 +24,7 @@ cd ./mojito/app
 mojito build html5app --context device:tablet ../../builds/webapp/tablet
 
 cd ../../builds/webapp/tablet
+rm -r ./HTMLFrameMojit
 rm -r ./LazyLoad
 rm -r ./daliProxy
 rm ./cache.manifest
