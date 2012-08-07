@@ -2,8 +2,8 @@
     "type": "yahoo.hybrid.app_specs",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_2_3_1344367023046_9",
-    "guid": "yui_3_5_1_2_3_1344367023046_9",
+    "instanceId": "yui_3_5_1_2_3_1344371501565_9",
+    "guid": "yui_3_5_1_2_3_1344371501565_9",
     "actions": [],
     "models": {
         "user": "./static_phonegap_files/yahoo.hybrid.app/models/user.common.js"

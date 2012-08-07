@@ -1,0 +1,25 @@
+# Make Android phone example
+
+echo "Building Android App"
+rm -r ./builds/phonegap/android/phone/assets/www*
+
+cd ./mojito/app
+mojito build html5app --context device:phone,environment:prod-native-android ../../builds/phonegap/android/phone/assets/www
+
+cd ../../builds/phonegap/android/phone/assets/www
+rm -r ./mojito_app_hybrid_example
+rm -r ./static_phonegap_files/HTMLFrameMojit
+rm -r ./static_phonegap_files/LazyLoad
+rm -r ./static_phonegap_files/daliProxy
+rm ./cache.manifest
+rm ./index.js
+
+echo "Convert URI's to relative URI"
+find ./ -type f | xargs sed -i '' 's%\/static_phonegap_files/%./static_phonegap_files/%'
+find ./ -type f | xargs sed -i '' 's%\../static_phonegap_files/%./static_phonegap_files/%'
+
+echo "Some buggy clean up"
+
+rm ./static_phonegap_files/yahoo.hybrid.mojito/addons/ac/i13n.common.js
+
+echo "Done."

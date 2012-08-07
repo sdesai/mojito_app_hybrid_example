@@ -36,7 +36,10 @@
                     "production": {
                         "stage": null,
                         "prod": {
-                            "prod-native": null
+                            "prod-native": {
+                                "prod-native-android": null,
+                                "prod-native-ios": null
+                            }
                         }
                     }
                 }

@@ -9,7 +9,7 @@
                     "./screen.css"
                 ],
                 "js": [
-                    "./cordova-1.9.0.js"
+                    "./ios/cordova-1.9.0.js"
                 ],
                 "blob": [
                     "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
@@ -24,8 +24,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_2_3_1344367023046_10",
-    "guid": "yui_3_5_1_2_3_1344367023046_10",
+    "instanceId": "yui_3_5_1_2_3_1344371501565_10",
+    "guid": "yui_3_5_1_2_3_1344371501565_10",
     "actions": [],
     "models": {
         "user": "./static_phonegap_files/yahoo.hybrid.app/models/user.common.js"
@@ -177,7 +177,7 @@
                         "./screen.css"
                     ],
                     "js": [
-                        "./cordova-1.9.0.js"
+                        "./ios/cordova-1.9.0.js"
                     ],
                     "blob": [
                         "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
