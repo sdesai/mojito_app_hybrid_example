@@ -7,8 +7,8 @@
         "staticHandling": {
             "-prefix": "mojito_app_hybrid_example/phone",
             "-prefix": "mojito_app_hybrid_example/tablet",
-            "prefix": "static_phonegap_files",
-            "-prefix": "",
+            "-prefix": "static_phonegap_files",
+            "prefix": "",
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojito"
         },
