@@ -13,15 +13,15 @@
                 "blob": [],
                 "css": [
                     "http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css",
-                        "http://yui.yahooapis.com/3.5.1/build/cssfonts/cssfonts-min.css"
+                    "http://yui.yahooapis.com/3.5.1/build/cssfonts/cssfonts-min.css"
                 ]
             }
         }
     },
     "id": "yahoo.hybrid.app_specs",
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342550811424_14",
-    "guid": "yui_3_5_1_3_1342550811424_14",
+    "instanceId": "yui_3_5_1_2_3_1344367708634_15",
+    "guid": "yui_3_5_1_2_3_1344367708634_15",
     "modelYUIModuleNames": {
         "yahoo_hybrid_app_usermodel": true
     },
@@ -38,12 +38,12 @@
         },
         "shareYUIInstance": true,
         "staticHandling": {
-            "-prefix": "mojito_app_hybrid_example/tablet",
+            "-prefix": "static_phonegap_files",
             "prefix": "",
             "appName": "yahoo.hybrid.app",
-            "frameworkName": "yahoo.hybrid.mojtio"
+            "frameworkName": "yahoo.hybrid.mojito"
         },
-        "log": {
+        "-log": {
             "client": {
                 "level": "error",
                 "yui": false
@@ -54,7 +54,7 @@
             }
         },
         "builds": {
-                "html5app": {
+            "html5app": {
                 "urls": [
                     "/mojito_app_hybrid_example/tablet/index.html",
                     "/mojito_app_hybrid_example/phone/index.html"
@@ -76,7 +76,7 @@
         "config": {
             "modules": {
                 "mojito-mu": {
-                    "fullpath": "/yahoo.hybrid.mojtio/addons/view-engines/mu.client.js",
+                    "fullpath": "/yahoo.hybrid.mojito/addons/view-engines/mu.client.js",
                     "requires": [
                         "mojito-util",
                         "io-base"

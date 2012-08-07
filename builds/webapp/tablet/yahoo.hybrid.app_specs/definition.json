@@ -2,8 +2,8 @@
     "type": "yahoo.hybrid.app_specs",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_3_1342550811424_10",
-    "guid": "yui_3_5_1_3_1342550811424_10",
+    "instanceId": "yui_3_5_1_2_3_1344367708634_8",
+    "guid": "yui_3_5_1_2_3_1344367708634_8",
     "actions": [],
     "models": {
         "user": "/yahoo.hybrid.app/models/user.common.js"
@@ -36,12 +36,12 @@
         },
         "shareYUIInstance": true,
         "staticHandling": {
-            "-prefix": "mojito_app_hybrid_example/tablet",
+            "-prefix": "static_phonegap_files",
             "prefix": "",
             "appName": "yahoo.hybrid.app",
-            "frameworkName": "yahoo.hybrid.mojtio"
+            "frameworkName": "yahoo.hybrid.mojito"
         },
-        "log": {
+        "-log": {
             "client": {
                 "level": "error",
                 "yui": false
@@ -52,7 +52,7 @@
             }
         },
         "builds": {
-                "html5app": {
+            "html5app": {
                 "urls": [
                     "/mojito_app_hybrid_example/tablet/index.html",
                     "/mojito_app_hybrid_example/phone/index.html"

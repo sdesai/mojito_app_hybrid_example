@@ -1,16 +1,16 @@
 {
     "name": "hybrid",
-    "description": "The Godfather Mojito Application",
+    "description": "Example Mojito Application",
     "version": "0.0.1",
     "author": {
         "name": "Ric Allinson",
         "email": "allinson@yahoo-inc.com"
     },
     "dependencies": {
-        "mojito": ">= 0.1.0"
+        "mojito": ">= 0.3.30"
     },
     "engines": {
-        "node": ">= 0.4.2 < 0.5.0"
+        "node": ">= 0.6.0 < 0.7.0"
     },
     "scripts": {
         "start": "mojito start"

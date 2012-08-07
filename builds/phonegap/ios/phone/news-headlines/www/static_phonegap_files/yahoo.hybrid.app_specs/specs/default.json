@@ -20,8 +20,8 @@
     },
     "id": "yahoo.hybrid.app_specs",
     "action": "index",
-    "instanceId": "yui_3_4_1_1_1344303431991_8",
-    "guid": "yui_3_4_1_1_1344303431991_8",
+    "instanceId": "yui_3_5_1_2_3_1344367023046_8",
+    "guid": "yui_3_5_1_2_3_1344367023046_8",
     "modelYUIModuleNames": {
         "yahoo_hybrid_app_usermodel": true
     },

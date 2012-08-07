@@ -1,0 +1,64 @@
+{
+    "type": "yahoo.libs.yui",
+    "config": {},
+    "action": "index",
+    "instanceId": "yui_3_5_1_2_3_1344367708634_12",
+    "guid": "yui_3_5_1_2_3_1344367708634_12",
+    "actions": [],
+    "models": {
+        "user": "/yahoo.hybrid.app/models/user.common.js"
+    },
+    "modelYUIModuleNames": {
+        "yahoo_hybrid_app_usermodel": true
+    },
+    "views": {},
+    "yui": {
+        "config": {
+            "modules": {}
+        },
+        "requires": [],
+        "langs": {},
+        "sorted": [],
+        "sortedPaths": {}
+    },
+    "assetsRoot": "/yahoo.libs.yui/assets",
+    "definition": {},
+    "defaults": {},
+    "appConfig": {
+        "mojitsDirs": [
+            "mojits"
+        ],
+        "routesFiles": [
+            "routes.json"
+        ],
+        "tunnelPrefix": "/tunnel",
+        "yui": {
+            "dependencyCalculations": "precomputed"
+        },
+        "shareYUIInstance": true,
+        "staticHandling": {
+            "-prefix": "static_phonegap_files",
+            "prefix": "",
+            "appName": "yahoo.hybrid.app",
+            "frameworkName": "yahoo.hybrid.mojito"
+        },
+        "-log": {
+            "client": {
+                "level": "error",
+                "yui": false
+            },
+            "server": {
+                "level": "info",
+                "yui": false
+            }
+        },
+        "builds": {
+            "html5app": {
+                "urls": [
+                    "/mojito_app_hybrid_example/tablet/index.html",
+                    "/mojito_app_hybrid_example/phone/index.html"
+                ]
+            }
+        }
+    }
+}

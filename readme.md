@@ -25,10 +25,13 @@ Now go to [http://localhost:8666/](http://localhost:8666/)
 You can view the URL from a desktop web browser, an iPad and an iPhone or Android phone.
 Each one will provide you with a slightly different experience that fits the device.
 
+## Patches
+
+_Note:_ The following depend on an as yet un-applied Mojito patchs [https://github.com/yahoo/mojito/pull/284](https://github.com/yahoo/mojito/pull/284), [https://github.com/yahoo/mojito/pull/287](https://github.com/yahoo/mojito/pull/287) and [https://github.com/yahoo/mojito/pull/358](https://github.com/yahoo/mojito/pull/358).
+
 ## Building Web Applications
 
 To build webapps for both "phone" and "tablet" run the following script.
-_Note:_ This command depends on an as yet un-applied Mojito patch [https://github.com/yahoo/mojito/pull/216](https://github.com/yahoo/mojito/pull/216).
 
 > ./scripts/webapp-build
 
@@ -45,3 +48,11 @@ or;
 
 And then going to [http://localhost:3000/index.html](http://localhost:3000/index.html) in a browser.
 _Note:_ Depending on the browser you are using you may have to force a reload of the URL to clear the cache.
+
+## Building for Phonegap
+
+To build a "phone" application for Phonegap run the following script.
+
+> ./scripts/phonegap-build
+
+The results can be found in "./builds/phonegap/[os]/phone".

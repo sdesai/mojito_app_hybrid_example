@@ -24,8 +24,8 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_4_1_1_1344303431991_10",
-    "guid": "yui_3_4_1_1_1344303431991_10",
+    "instanceId": "yui_3_5_1_2_3_1344367023046_10",
+    "guid": "yui_3_5_1_2_3_1344367023046_10",
     "actions": [],
     "models": {
         "user": "./static_phonegap_files/yahoo.hybrid.app/models/user.common.js"
