@@ -17,6 +17,10 @@ YUI.add('newsfeedappbinderloader', function (Y, NAME) {
         },
 
         bind: function (node) {
+
+//            Y.one('body').addClass('yui3-skin-sam');
+//            new Y.Console({ logSource: Y.Global }).render();
+
             this.mp.invoke('index', {}, function (err, html) {
 
                 if (err) {
@@ -31,5 +35,5 @@ YUI.add('newsfeedappbinderloader', function (Y, NAME) {
     };
 
 }, '0.0.1', {
-    requires: ['mojito-client']
+    requires: ['mojito-client'] //, 'console', 'overlay']
 });

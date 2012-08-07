@@ -17,6 +17,7 @@ YUI.add('newsfeedappbinderloader', function (Y, NAME) {
         },
 
         bind: function (node) {
+
             this.mp.invoke('index', {}, function (err, html) {
 
                 if (err) {

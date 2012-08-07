@@ -65,7 +65,7 @@ YUI.add('mojito-client-store', function(Y, NAME) {
         var onComplete = function(id, obj) {
             CACHE[url] = {};
             try {
-                CACHE[url] = JSON.parse(obj.responseText);
+                CACHE[url] = Y.JSON.parse(obj.responseText);
             } catch (err) {
                 flushQueue(url, err);
                 return;
@@ -149,12 +149,8 @@ YUI.add('mojito-client-store', function(Y, NAME) {
             // just fine.
             url = this.staticPrefix + '/' + typeName + '/specs/' + specName +
                 '.json';
-            url += '?' + Y.QueryString.stringify(context);
 
-            // this is mainly used by html5app
-            if (this.appConfig.pathToRoot) {
-                url = this.appConfig.pathToRoot + url;
-            }
+            url = this.buildUrl(url, context);
 
             // use the compiled version if there was one built
             if (isCompiled(ns, specName)) {
@@ -177,12 +173,8 @@ YUI.add('mojito-client-store', function(Y, NAME) {
             // The mojito-handler-tunnel will be able to handle this URL
             // just fine.
             var url = this.staticPrefix + '/' + type + '/definition.json';
-            url += '?' + Y.QueryString.stringify(context);
 
-            // this is mainly used by html5app
-            if (this.appConfig.pathToRoot) {
-                url = this.appConfig.pathToRoot + url;
-            }
+            url = this.buildUrl(url, context);
 
             retrieveFile(url, callback);
         },
@@ -191,7 +183,7 @@ YUI.add('mojito-client-store', function(Y, NAME) {
         /*
          * TODO: REVIEW RE [Issue 78]
          */
-        getAppConfig: function(context, name) {
+        getAppConfig: function(context) {
             return this.appConfig;
         },
 
@@ -201,10 +193,33 @@ YUI.add('mojito-client-store', function(Y, NAME) {
          */
         getRoutes: function() {
             return this.routes;
+        },
+
+        /*
+         * Checks the given URL and adds a context query string.
+         */
+        buildUrl: function (url, context) {
+
+            if (!context) {
+                context = {};
+            }
+
+            if (url.indexOf('/') !== 0) {
+                url = '/' + url;
+            }
+
+            // this is mainly used by html5app
+            if (this.appConfig.pathToRoot) {
+                url = this.appConfig.pathToRoot + url;
+            }
+
+            url += '?' + Y.QueryString.stringify(context);
+
+            return url;
         }
     };
 
-    Y.mojito.ResourceStore = ClientStore;
+    Y.namespace('mojito').ResourceStore = ClientStore;
 
 }, '0.1.0', {requires: [
     'mojito-util',
