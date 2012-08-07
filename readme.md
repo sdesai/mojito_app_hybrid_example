@@ -53,6 +53,10 @@ _Note:_ Depending on the browser you are using you may have to force a reload of
 
 To build a "phone" application for Phonegap run the following script.
 
-> ./scripts/phonegap-build
+> ./scripts/phonegap-android-build
 
-The results can be found in "./builds/phonegap/[os]/phone".
+or;
+
+> ./scripts/phonegap-ios-build
+
+The results can be found at "./builds/phonegap/[os]/phone".
