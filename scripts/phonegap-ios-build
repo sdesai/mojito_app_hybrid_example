@@ -10,7 +10,7 @@ cd ../../builds/phonegap/ios/phone/news-headlines/www
 rm -r ./mojito_app_hybrid_example
 rm -r ./static_phonegap_files/HTMLFrameMojit
 rm -r ./static_phonegap_files/LazyLoad
-rm -r ./static_phonegap_files/daliProxy
+rm -r ./static_phonegap_files/TunnelProxy
 rm ./cache.manifest
 rm ./index.js
 

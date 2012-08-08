@@ -39,6 +39,9 @@
                             "prod-native": {
                                 "prod-native-android": null,
                                 "prod-native-ios": null
+                            },
+                            "prod-webapp" : {
+                                "prod-webapp-gh-pages": null
                             }
                         }
                     }

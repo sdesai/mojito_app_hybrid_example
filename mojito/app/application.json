@@ -5,10 +5,7 @@
         "shareYUIInstance": true,
 
         "staticHandling": {
-            "-prefix": "mojito_app_hybrid_example/phone",
-            "-prefix": "mojito_app_hybrid_example/tablet",
-            "prefix": "static_phonegap_files",
-            "-prefix": "",
+            "prefix": "",
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojito"
         },
@@ -40,13 +37,43 @@
     {
         "settings": [ "environment:prod-native" ],
 
-        "pathToRoot": "",
+        "staticHandling": {
+            "prefix": "static_phonegap_files"
+        },
 
         "yui": {
             "dependencyCalculations" : "ondemand",
             "base": "/$$staticHandling.prefix$$/yahoo.libs.yui/assets/",
             "url": "$$yui.base$$yui/yui-min.js",
             "loader": "loader/loader-min.js"
+        }
+    },
+    {
+        "settings": [ "environment:prod-webapp-gh-pages", "device:phone" ],
+
+        "staticHandling": {
+            "prefix": "mojito_app_hybrid_example/phone"
+        },
+        "builds": {
+            "html5app": {
+                "urls": [
+                    "/mojito_app_hybrid_example/phone/index.html"
+                ]
+            }
+        }
+    },
+    {
+        "settings": [ "environment:prod-webapp-gh-pages", "device:tablet" ],
+
+        "staticHandling": {
+            "prefix": "mojito_app_hybrid_example/tablet"
+        },
+        "builds": {
+            "html5app": {
+                "urls": [
+                    "/mojito_app_hybrid_example/tablet/index.html"
+                ]
+            }
         }
     }
 ]

@@ -3,12 +3,12 @@
 rm -r ./builds/webapp/phone*
 
 cd ./mojito/app
-mojito build html5app --context device:phone ../../builds/webapp/phone
+mojito build html5app --context device:phone,environment:prod-webapp ../../builds/webapp/phone
 
 cd ../../builds/webapp/phone
 rm -r ./HTMLFrameMojit
 rm -r ./LazyLoad
-rm -r ./daliProxy
+rm -r ./TunnelProxy
 rm ./cache.manifest
 rm ./index.js
 
@@ -21,11 +21,11 @@ cd ../../../
 rm -r ./builds/webapp/tablet*
 
 cd ./mojito/app
-mojito build html5app --context device:tablet ../../builds/webapp/tablet
+mojito build html5app --context device:tablet,environment:prod-webapp ../../builds/webapp/tablet
 
 cd ../../builds/webapp/tablet
 rm -r ./HTMLFrameMojit
 rm -r ./LazyLoad
-rm -r ./daliProxy
+rm -r ./TunnelProxy
 rm ./cache.manifest
 rm ./index.js

@@ -27,7 +27,7 @@ Each one will provide you with a slightly different experience that fits the dev
 
 ## Patches
 
-_Note:_ The following depend on as yet un-applied Mojito patchs [https://github.com/yahoo/mojito/pull/284](https://github.com/yahoo/mojito/pull/284), [https://github.com/yahoo/mojito/pull/287](https://github.com/yahoo/mojito/pull/287) and [https://github.com/yahoo/mojito/pull/358](https://github.com/yahoo/mojito/pull/358).
+_Note:_ The following depend on as yet un-applied Mojito patchs [https://github.com/yahoo/mojito/pull/284](https://github.com/yahoo/mojito/pull/284), [https://github.com/yahoo/mojito/pull/287](https://github.com/yahoo/mojito/pull/287), [https://github.com/yahoo/mojito/pull/363/files](https://github.com/yahoo/mojito/pull/363/files) and [https://github.com/yahoo/mojito/pull/358](https://github.com/yahoo/mojito/pull/358).
 
 ## Building Web Applications
 
