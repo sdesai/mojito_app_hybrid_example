@@ -17,7 +17,15 @@ YUI.add('newsfeedappbinderloader', function (Y, NAME) {
         },
 
         bind: function (node) {
+
             this.mp.invoke('index', {}, function (err, html) {
+
+                if (err) {
+                    console.log(err || html || 'No data given.');
+                    alert('An error has occurred. Please reload the page and try again.');
+                    return;
+                }
+
                 node.replace(html);
             });
         }
