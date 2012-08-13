@@ -40,7 +40,7 @@ public class YChromeActivity extends RTActivity implements OnClickListener{
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         btnLy.setOrientation(LinearLayout.HORIZONTAL);
         
-        mainLy.addView(btnLy);
+//        mainLy.addView(btnLy);
         
         Button btn = new Button(this);
         btn.setText(STR_NAVIGATE_BACK);
