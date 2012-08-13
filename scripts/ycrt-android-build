@@ -1,0 +1,22 @@
+# Make Android tablet example
+
+echo "Building Android Tablet App"
+rm -r ./builds/ycrt/android/tablet/assets/packages*
+
+cd ./mojito/app
+mojito build html5app --context device:tablet,environment:prod-native-ycrt-android ../../builds/ycrt/android/tablet/assets/packages
+
+cd ../../builds/ycrt/android/tablet/assets/packages
+rm -r ./mojito_app_hybrid_example
+rm -r ./HTMLFrameMojit
+rm -r ./LazyLoad
+rm -r ./TunnelProxy
+rm ./cache.manifest
+rm ./index.js
+rm ./index.html
+
+echo "Some buggy clean up"
+
+rm ./yahoo.hybrid.mojito/addons/ac/i13n.common.js
+
+echo "Done."
