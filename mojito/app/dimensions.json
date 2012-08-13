@@ -37,8 +37,14 @@
                         "stage": null,
                         "prod": {
                             "prod-native": {
-                                "prod-native-android": null,
-                                "prod-native-ios": null
+                                "prod-native-phonegap": {
+                                    "prod-native-phonegap-ios": null,
+                                    "prod-native-phonegap-android": null
+                                },
+                                "prod-native-ycrt": {
+                                    "prod-native-ycrt-ios": null,
+                                    "prod-native-ycrt-android": null
+                                }
                             },
                             "prod-webapp" : {
                                 "prod-webapp-gh-pages": null

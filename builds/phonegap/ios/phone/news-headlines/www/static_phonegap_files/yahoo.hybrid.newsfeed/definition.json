@@ -1,13 +1,13 @@
 {
     "type": "yahoo.hybrid.newsfeed",
     "config": {
-        "limit": 6,
+        "limit": 10,
         "feedId": "topstories",
         "assets": {
             "top": {
                 "css": [
                     "http://fonts.googleapis.com/css?family=Lato:300,700",
-                    "./phone.css"
+                    "./tablet.css"
                 ]
             }
         },
@@ -31,7 +31,7 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_2_5_1344461850458_19897",
+    "instanceId": "yui_3_5_1_2_5_1344880274739_20650",
     "appConfig": {
         "mojitsDirs": [
             "mojits"
@@ -66,7 +66,8 @@
             "html5app": {
                 "urls": [
                     "/mojito_app_hybrid_example/tablet/index.html",
-                    "/mojito_app_hybrid_example/phone/index.html"
+                    "/mojito_app_hybrid_example/phone/index.html",
+                    "/yahoo.application.mojito_app_hybrid_example/index.html"
                 ]
             }
         }
@@ -96,13 +97,13 @@
     "definition": {},
     "defaults": {
         "config": {
-            "limit": 6,
+            "limit": 10,
             "feedId": "topstories",
             "assets": {
                 "top": {
                     "css": [
                         "http://fonts.googleapis.com/css?family=Lato:300,700",
-                        "./phone.css"
+                        "./tablet.css"
                     ]
                 }
             },

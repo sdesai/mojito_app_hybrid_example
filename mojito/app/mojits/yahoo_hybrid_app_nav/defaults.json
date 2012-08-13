@@ -15,7 +15,7 @@
         }
     },
     {
-        "settings": [ "environment:prod-native-android" ],
+        "settings": [ "environment:prod-native-phonegap-android" ],
 
         "config": {
             "assets": {
@@ -28,7 +28,7 @@
         }
     },
     {
-        "settings": [ "environment:prod-native-ios" ],
+        "settings": [ "environment:prod-native-phonegap-ios" ],
 
         "config": {
             "assets": {

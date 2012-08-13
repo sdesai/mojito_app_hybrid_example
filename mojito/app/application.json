@@ -23,7 +23,8 @@
             "html5app": {
                 "urls": [
                     "/mojito_app_hybrid_example/tablet/index.html",
-                    "/mojito_app_hybrid_example/phone/index.html"
+                    "/mojito_app_hybrid_example/phone/index.html",
+                    "/yahoo.application.mojito_app_hybrid_example/index.html"
                 ]
             }
         }
@@ -37,15 +38,29 @@
     {
         "settings": [ "environment:prod-native" ],
 
-        "staticHandling": {
-            "prefix": "static_phonegap_files"
-        },
-
         "yui": {
             "dependencyCalculations" : "ondemand",
             "base": "/$$staticHandling.prefix$$/yahoo.libs.yui/assets/",
             "url": "$$yui.base$$yui/yui-min.js",
             "loader": "loader/loader-min.js"
+        }
+    },
+    {
+        "settings": [ "environment:prod-native-phonegap" ],
+
+        "staticHandling": {
+            "prefix": "static_phonegap_files"
+        }
+    },
+    {
+        "settings": [ "environment:prod-native-ycrt" ],
+
+        "staticHandling": {
+            "prefix": ""
+        },
+
+        "yui": {
+            "base": "/yahoo.libs.yui/assets/"
         }
     },
     {

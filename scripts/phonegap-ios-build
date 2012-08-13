@@ -4,7 +4,7 @@ echo "Building iOS App"
 rm -r ./builds/phonegap/ios/phone/news-headlines/www*
 
 cd ./mojito/app
-mojito build html5app --context device:phone,environment:prod-native-ios ../../builds/phonegap/ios/phone/news-headlines/www
+mojito build html5app --context device:tablet,environment:prod-native-phonegap-ios ../../builds/phonegap/ios/phone/news-headlines/www
 
 cd ../../builds/phonegap/ios/phone/news-headlines/www
 rm -r ./mojito_app_hybrid_example

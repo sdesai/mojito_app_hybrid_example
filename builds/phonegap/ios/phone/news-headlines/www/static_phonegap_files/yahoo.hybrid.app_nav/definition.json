@@ -24,7 +24,7 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_2_5_1344461850458_20212",
+    "instanceId": "yui_3_5_1_2_5_1344880274739_20381",
     "appConfig": {
         "mojitsDirs": [
             "mojits"
@@ -59,7 +59,8 @@
             "html5app": {
                 "urls": [
                     "/mojito_app_hybrid_example/tablet/index.html",
-                    "/mojito_app_hybrid_example/phone/index.html"
+                    "/mojito_app_hybrid_example/phone/index.html",
+                    "/yahoo.application.mojito_app_hybrid_example/index.html"
                 ]
             }
         }

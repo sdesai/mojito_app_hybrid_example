@@ -15,7 +15,10 @@
 
 
 
-        
+        "for_ycrt_example": {
+            "path": "/yahoo.application.mojito_app_hybrid_example/index.html",
+            "call": "yahoo.hybrid.app_specs.index"
+        },
         "for_gh_pages_tablet_example": {
             "path": "/mojito_app_hybrid_example/tablet/index.html",
             "call": "yahoo.hybrid.app_specs.index"

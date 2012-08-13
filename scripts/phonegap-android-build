@@ -4,7 +4,7 @@ echo "Building Android App"
 rm -r ./builds/phonegap/android/phone/assets/www*
 
 cd ./mojito/app
-mojito build html5app --context device:phone,environment:prod-native-android ../../builds/phonegap/android/phone/assets/www
+mojito build html5app --context device:phone,environment:prod-native-phonegap-android ../../builds/phonegap/android/phone/assets/www
 
 cd ../../builds/phonegap/android/phone/assets/www
 rm -r ./mojito_app_hybrid_example
