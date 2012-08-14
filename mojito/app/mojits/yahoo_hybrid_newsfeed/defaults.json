@@ -3,7 +3,7 @@
         "settings": [ "master" ],
 
         "config": {
-            "limit": 13,
+            "limit": 12,
             "feedId": "topstories",
             "assets": {
                 "top": {
@@ -38,7 +38,6 @@
         "settings": [ "device:tablet" ],
 
         "config": {
-            "limit": 10,
             "assets": {
                 "top": {
                     "css": [
@@ -53,7 +52,6 @@
         "settings": [ "device:phone" ],
 
         "config": {
-            "limit": 6,
             "assets": {
                 "top": {
                     "css": [

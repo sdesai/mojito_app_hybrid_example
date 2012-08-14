@@ -1,7 +1,7 @@
 {
     "type": "yahoo.hybrid.newsfeed",
     "config": {
-        "limit": 10,
+        "limit": 12,
         "feedId": "topstories",
         "assets": {
             "top": {
@@ -31,7 +31,7 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_2_5_1344876628151_20586",
+    "instanceId": "yui_3_5_1_2_5_1344959679824_20524",
     "appConfig": {
         "mojitsDirs": [
             "mojits"
@@ -97,7 +97,7 @@
     "definition": {},
     "defaults": {
         "config": {
-            "limit": 10,
+            "limit": 12,
             "feedId": "topstories",
             "assets": {
                 "top": {

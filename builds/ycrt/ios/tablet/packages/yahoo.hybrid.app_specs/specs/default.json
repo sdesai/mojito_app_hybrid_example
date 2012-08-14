@@ -20,7 +20,7 @@
     },
     "id": "yahoo.hybrid.app_specs",
     "action": "index",
-    "instanceId": "yui_3_5_1_2_5_1344876628151_20400",
+    "instanceId": "yui_3_5_1_2_5_1344959679824_20400",
     "appConfig": {
         "mojitsDirs": [
             "mojits"

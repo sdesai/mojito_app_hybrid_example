@@ -93,7 +93,7 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
 
             resizeFunc = function () {
                 self.setScreenSize(node, function () {
-                    self.horizSwiper.set('width', self.width);
+                    // self.horizSwiper.set('width', self.width);
                     self.vertSwiper.set('height', self.height);
                     Y.one(window).once(orientationEvent, resizeFunc);
                 });
@@ -129,11 +129,34 @@ YUI.add('newsfeedappbinderindex', function (Y, NAME) {
             titles.get('children').item(currPage).addClass('current');
         },
 
+        _addScrollviews: function (node, onChange, cb) {
+
+            var self = this;
+
+            self.vertSwiper = new Y.ScrollView({
+                srcNode: ".vertical",
+                height: this.height,
+                bounce: false
+                // flick: {
+                //     minDistance: 40,
+                //     minVelocity: 0.5,
+                //     axis: "y"
+                // }
+            });
+
+            self.vertSwiper.plug(Y.Plugin.ScrollViewScrollbars);
+            self.vertSwiper.scrollbars.show();
+
+            self.vertSwiper.render();
+
+            Y.on('more-data', function () {
+                self.vertSwiper.syncUI();
+            });
+        },
+
         addScrollviews: function (node, onChange, cb) {
 
             var self = this,
-//                horizSwiper = this.horizSwiper,
-//                vertSwiper = this.vertSwiper,
                 startX,
                 startY,
                 screens,

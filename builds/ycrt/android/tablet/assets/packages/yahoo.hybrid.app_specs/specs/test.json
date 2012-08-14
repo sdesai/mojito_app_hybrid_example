@@ -17,7 +17,7 @@
     },
     "id": "yahoo.hybrid.app_specs:test",
     "action": "index",
-    "instanceId": "yui_3_5_1_2_5_1344887115673_20400",
+    "instanceId": "yui_3_5_1_2_5_1344959702844_20292",
     "appConfig": {
         "mojitsDirs": [
             "mojits"

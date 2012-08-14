@@ -1,12 +1,12 @@
-# Make Android phone example
+# Make Android tablet example
 
 echo "Building Android App"
-rm -r ./builds/phonegap/android/phone/assets/www*
+rm -r ./builds/phonegap/android/tablet/assets/www*
 
 cd ./mojito/app
-mojito build html5app --context device:phone,environment:prod-native-phonegap-android ../../builds/phonegap/android/phone/assets/www
+mojito build html5app --context device:tablet,environment:prod-native-phonegap-android ../../builds/phonegap/android/tablet/assets/www
 
-cd ../../builds/phonegap/android/phone/assets/www
+cd ../../builds/phonegap/android/tablet/assets/www
 rm -r ./mojito_app_hybrid_example
 rm -r ./static_phonegap_files/HTMLFrameMojit
 rm -r ./static_phonegap_files/LazyLoad
