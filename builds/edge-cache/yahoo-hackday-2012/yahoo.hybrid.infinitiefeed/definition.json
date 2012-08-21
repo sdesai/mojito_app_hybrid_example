@@ -34,6 +34,15 @@
             }
         },
         "feeds": {
+            "letteredlottage": {
+                "title": "The Lettered Cottage",
+                "group": "Homes",
+                "id": "letteredlottage",
+                "url": "http://feeds.feedburner.com/TheLetteredCottage?format=xml",
+                "query": "select title, description, link, pubDate from rss where url='http://feeds.feedburner.com/TheLetteredCottage?format=xml'",
+                "type": "yahoo.hybrid.newsfeed",
+                "action": "index"
+            },
             "yahootopstory": {
                 "title": "Yahoo! Top Story",
                 "group": "U.S.",
@@ -730,7 +739,7 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_2_6_1345528651809_20255",
+    "instanceId": "yui_3_5_1_2_6_1345530113505_19979",
     "appConfig": {
         "mojitsDirs": [
             "mojits"
@@ -983,6 +992,15 @@
                 }
             },
             "feeds": {
+                "letteredlottage": {
+                    "title": "The Lettered Cottage",
+                    "group": "Homes",
+                    "id": "letteredlottage",
+                    "url": "http://feeds.feedburner.com/TheLetteredCottage?format=xml",
+                    "query": "select title, description, link, pubDate from rss where url='http://feeds.feedburner.com/TheLetteredCottage?format=xml'",
+                    "type": "yahoo.hybrid.newsfeed",
+                    "action": "index"
+                },
                 "yahootopstory": {
                     "title": "Yahoo! Top Story",
                     "group": "U.S.",
