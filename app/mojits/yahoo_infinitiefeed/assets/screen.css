@@ -25,6 +25,10 @@
     line-height: 1.5em;
 }
 
+.placeholder {
+	border: 1px dashed #ccc;
+}
+
 .card h3 a {
 	display: block;
 	color: #024A68;
@@ -175,14 +179,6 @@
 	text-align: center;
 	color: #aaa;
 	padding: 1em 0 2em 0;
-}
-
-.footer .test{
-	position: absolute;
-	top: -20em;
-	width: 100%;
-	/*border: 1em solid red;*/
-	z-index: 10000;
 }
 
 .footer a {

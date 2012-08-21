@@ -8,32 +8,35 @@
 
 YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
 
-    // Dirty
-    var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/i) ? true : false ),
-        urlsOnPage = {},
-        titlesOnPage = {};
+    var urlsOnPage = {},
+        titlesOnPage = {},
+        idleSince = new Date().getTime();
 
-    var idleSince = new Date().getTime();
-
-    function isScrolledIntoView(node) {
+    function hasScrolledIntoView(node, padding) {
 
         var docViewTop,
             docViewBottom,
             elemTop,
             elemBottom;
 
+        if (!padding) {
+            padding = 0;
+        }
+
         docViewTop = Y.one('body').get('scrollTop') || document.documentElement.scrollTop;
         docViewBottom = docViewTop + node.get('winHeight');
 
-        elemTop = node.getY(); // pad to pre-load
-        elemBottom = elemTop + parseInt(node.getStyle('height'), 10);
+        elemTop = node.getY();
 
-        // Y.log("Viewport: " + docViewTop + "x" + docViewBottom + " Node: " + elemTop + "x" + elemBottom);
+        // Y.log(docViewBottom + " ? " + elemTop, "error");
 
-        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        return docViewBottom > (elemTop - padding);
     }
 
-    function isOverflowed(el){
+    /*
+        Check if the given element has overflowed
+    */
+    function isOverflowed(el) {
 
         var curOverflow = el.style.overflow;
 
@@ -48,60 +51,54 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
     }
 
     /*
-        HACK of DIRTY DRIT
-
-        This whole idea need more work
+        Stores the items title and url to be checked by any future calls
     */
-    function resizeItemText(node) {
+    function isUnique(item) {
 
-        var reRun = false;
+        var href = item.one("a").get("href"),
+            title = item.one("a").get("text").toLowerCase().replace(/[^a-z]/g, "");
 
-        node.all("li .card").each(function (element) {
-
-            var img = element.one("img");
-
-            // If we have a large image we are in signle col mode
-            // and don't need to resize the text.
-                
-            if (!element.hasClass("resized")) {
-
-                if (img && parseInt(img.getStyle("width")) > 140) {
-                    return;
-                }
-
-                if (isOverflowed(element.getDOMNode())) {
-                    if (!element.hasClass("small-text")) {
-                        element.addClass("small-text");
-                        reRun = true;
-                    } else {
-                        element.addClass("hide-text");
-                        element.addClass("resized");
-                    }
-                } else {
-                    element.addClass("resized");
-                }
-            }
-        });
-
-        if (reRun) {
-            resizeItemText(node);
+        if (urlsOnPage[href] || titlesOnPage[title]) {
+            return false;
         }
+
+        urlsOnPage[href] = true;
+        titlesOnPage[title] = true;
+
+        return true;
     }
 
-    function cacheOnPageKeys(node) {
-        // HACK: store the urls so we can hide any dupes later!
-        node.all("li").each(function (li) {
-            var href = li.one("a").get("href"),
-                title = li.one("a").get("text").toLowerCase().replace(/[^a-z]/g, "");
-            urlsOnPage[href] = true;
-            titlesOnPage[title] = true;
-        });
-    }
-
-    function clearOnPageKeys() {
+    /*
+        Clears any data stored when calling isUnique()
+    */
+    function resetIsUnique() {
         // Clear what we have
         urlsOnPage = {};
         titlesOnPage = {};
+    }
+
+    /*
+        Fixes the layout for items where the text overflowing
+    */
+    function layoutItemContent(item) {
+        var node = item.one(".card").getDOMNode();
+
+        // A bit of a hack so we don't run this 
+        // code if we are in full width mode
+        // which is less than 500px
+        if (item.get('winWidth') < 500) {
+            return;
+        }
+
+        // If the text has overflowed
+        if (isOverflowed(node)) {
+            // Make the text smaller
+            item.addClass("small-text");
+            // If it still over flows just hide it
+            if (isOverflowed(node)) {
+                item.addClass("hide-text");
+            }
+        }
     }
 
     Y.namespace('mojito.binders')[NAME] = {
@@ -117,16 +114,22 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
         bind: function (node) {
 
             var self = this,
-                footer = node.one('.footer .test'),
+                footer = node.one('.footer'),
                 loading = false,
-                offset = 0,
-                listener,
-                listenOn = ["gesturemovestart", "mousewheel", "onscroll"];
+                listener;
 
+            /*
+                The main listener for scrolling events.
+                This code loads the new content as the user gets to the bottom of the page.
+            */
             listener = function (e) {
 
-                var moveTime = new Date().getTime();
+                var moveTime = new Date().getTime(),
+                    offset = 0;
 
+                /*
+                    If it been n minutes since the last interaction tell someone
+                */
                 if (moveTime - idleSince > self.timeout) {
                     // This will be picked up by "yahoo_infinite_nav"
                     Y.fire("infinite_nav:reload");
@@ -134,13 +137,16 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
 
                 idleSince = moveTime;
 
-                if (loading === false && isScrolledIntoView(footer)) {
+                /*
+                    If we are near the bottom of the page load more content
+                */
+                if (loading === false && hasScrolledIntoView(footer, 1000)) {
 
                     loading = true; // Stop anyone else from coming in here
 
                     offset = node.one('ul').get('children').size() + 1;
 
-                    if (self.lastOffset < offset) { // TODO: or some time has passed
+                    if (self.lastOffset < offset) {
 
                         self.lastOffset = offset;
 
@@ -153,84 +159,87 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
                 }
             };
 
-            node.on(listenOn, listener);
+            setInterval(listener, 100);
 
             node.one(".refresh").on("click", function () {
                 // We are clearing the page so remove all current data
-                clearOnPageKeys();
+                resetIsUnique();
                 // This will be picked up by "yahoo_infinite_nav"
                 Y.fire("infinite_nav:refresh");
             });
 
-            // Check if any items need smaller text and fix them
-            resizeItemText(node);
-
-            cacheOnPageKeys(node);
+            // For any items on the page store their uniqueness and fix their layouts
+            node.all("ul li").each(function (item) {
+                layoutItemContent(item);
+                isUnique(item);
+            });
         },
 
         loadContent: function (node, offset, callback) {
 
-            var footer,
+            var self = this,
                 params = {
                     body: {
                         offset: offset
                     }
                 };
 
-            footer = node.one('.footer');
-            footer.addClass('spinner');
+            self.mp.invoke('feed', {params: params}, function (err, html) {
 
-            if (node.all('ul li').size() <= this.limit) {
-                clearOnPageKeys();
-                cacheOnPageKeys(node);
-            }
-
-            this.mp.invoke('feed', {params: params}, function (err, html) {
-
-                var newLi;
+                var items;
 
                 if (!html) {
                     callback();
                 } else {
 
-                    newLi = Y.Node.create(html);
+                    /*
+                        Check if we have reset the page
+                    */
+                    if (node.all('ul li').size() <= self.limit) {
+                        // Clear all we knew, it's a new world!
+                        resetIsUnique();
+                        // For any items on the page store their uniqueness
+                        node.all("ul li").each(function (item) {
+                            isUnique(item);
+                        });
+                    }
 
-                    // Set up our new items to be hidden
-                    newLi.all("li").addClass("to-fade-in");
-                    newLi.all("li").setStyle("opacity", "0");
+                    // Create the items
+                    items = Y.Node.create(html);
 
-                    // HACK: hide any dupes bitch!
-                    newLi.all("li").each(function (li) {
-
-                        var href = li.one("a").get("href"),
-                            title = li.one("a").get("text").toLowerCase().replace(/[^a-z]/g, "");
-
-                        if (!urlsOnPage[href] && !titlesOnPage[title]) {
-                            urlsOnPage[href] = true;
-                            titlesOnPage[title] = true;
-                            // Add them to the DOM
-                            node.one('ul').append(li);
+                    /*
+                        In this loop we set up the items as needed
+                    */
+                    items.all("li").each(function (item) {
+                        if (isUnique(item)) {
+                            // Make the items invisible so we can fade them in all sexy
+                            item.setStyle("opacity", "0");
+                            item.addClass("new");
                         } else {
-                            // Y.log(title + " - " + Y.Object.size(titlesOnPage), "error");
-                            // Y.log(href + " - " + Y.Object.size(urlsOnPage), "error");
+                            item.remove();
                         }
                     });
 
-                    // Check if any items need smaller text and fix them
-                    // TODO: Do this per-node item not all of them!
-                    resizeItemText(node);
+                    // Add our new items to the page
+                    node.one("ul").append(items);
 
-                    // Now make them all visable with a transition
-                    // It seems iOS does not do the transition while the screen is scrolling
-                    if (!iOS) {
-                        node.all("li.to-fade-in").show(true);
-                    }
+                    /*
+                        In this loop make them visible
+                    */
+                    node.all("ul li.new").each(function (item) {
+                        // Get the text sized right (we can only do this once hte item is on the DOM)
+                        layoutItemContent(item);
+                        setTimeout(function () {
+                            // Now show the item to the world
+                            item.show(true);
+                            item.removeClass("new");
+                        }, 200);
+                            
+                    });
 
-                    // Now remove our marker so they don't get effected next time
-                    node.all("li.to-fade-in").setStyle("opacity", null);
-                    node.all("li.to-fade-in").removeClass("to-fade-in");
-
-                    // Used to allow CSS to take effect before we go on
+                    /*
+                        Used to allow CSS to take effect before we go on
+                    */
                     setTimeout(function () {
                         callback();
                     }, 0);
