@@ -3,6 +3,12 @@
 	FB Hack
 */
 
+.fb-like {
+	height: 2em;
+	overflow: hidden;
+	display: inline-block;
+}
+
 .fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {
 	display: none !important;
 }
@@ -16,7 +22,7 @@
 }
 
 .feed li {
-	position: relative;
+	/*position: relative;*/
 	vertical-align: top;
 	display: inline-block;
 	width: 100%;
@@ -59,10 +65,6 @@
 	color: #BF7C30;
 	padding: 0.5em 0 0 0;
 	font-size: 90%;
-}
-
-.card .fb-like {
-	height: 2em;
 }
 
 .small-text .body{

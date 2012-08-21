@@ -10,7 +10,7 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
 
     var urlsOnPage = {},
         titlesOnPage = {},
-        idleSince = new Date().getTime();
+        doFaceBook = false;
 
     function hasScrolledIntoView(node, padding) {
 
@@ -105,6 +105,30 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
         }
     }
 
+    function hasScrolled(before) {
+
+        var current = Y.one('body').get('scrollTop') || document.documentElement.scrollTop;
+
+        if (current === before) {
+            return false;
+        }
+
+        return true;
+    }
+
+    function triggerFacebook(position) {
+        if (!doFaceBook) {
+            return;
+        }
+
+        // If we haven't scroll quickly call FB before we scroll again!
+        if (!hasScrolled(position)) {
+            if (typeof FB !== 'undefined' && FB.XFBML && typeof FB.XFBML.parse === 'function') {
+                FB.XFBML.parse();
+            }
+        }
+    }
+
     Y.namespace('mojito.binders')[NAME] = {
 
         lastOffset: 0,
@@ -112,34 +136,25 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
         init: function (mp) {
             this.mp = mp;
             this.limit = this.mp.config.limit || 2;
-            this.timeout = this.mp.config.timeout || 300000; // 5 minutes
+            this.timeout = parseInt(this.mp.config.timeout, 10) || 300000; // 5 minutes
         },
 
         bind: function (node) {
 
             var self = this,
                 loading = false,
-                listener;
-
+                listener,
+                timeout,
+                lastMoveTime,
+                lastPosition;
             /*
                 The main listener for scrolling events.
                 This code loads the new content as the user gets to the bottom of the page.
             */
             listener = function () {
 
-                var moveTime = new Date().getTime(),
-                    footer = node.one('.footer'),
+                var footer = node.one('.footer'), // this happens here incase it was killed and remade.
                     offset = 0;
-
-                /*
-                    If it been n minutes since the last interaction tell someone
-                */
-                if (moveTime - idleSince > self.timeout) {
-                    // This will be picked up by "yahoo_infinite_nav"
-                    Y.fire("infinite_nav:reload");
-                }
-
-                idleSince = moveTime;
 
                 /*
                     If we are near the bottom of the page load more content
@@ -147,6 +162,8 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
                 if (loading === false && footer && hasScrolledIntoView(footer, 1000)) {
 
                     loading = true; // Stop anyone else from coming in here
+
+                    lastMoveTime = new Date().getTime(); // The user has done something so up date the move time;
 
                     offset = node.one('ul').get('children').size() + 1;
 
@@ -161,9 +178,29 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
                         loading = false;
                     }
                 }
+
+                /*
+                    FB adds too much overhead and and makes the page jerky
+                */
+
+                // This will add the FB buttons
+                // triggerFacebook(lastPosition);
+
+                // Set the last position before we leave the loop
+                lastPosition = Y.one('body').get('scrollTop') || document.documentElement.scrollTop;
             };
 
             setInterval(listener, 100);
+
+            /*
+                If its been n msec since the last interaction tell someone
+            */
+            setInterval(function () {
+                if (new Date().getTime() - lastMoveTime > self.timeout) {
+                    // This will be picked up by "yahoo_infinite_nav"
+                    Y.fire("infinite_nav:reload");
+                }
+            }, self.timeout);
 
             node.one(".refresh").on("click", function () {
                 // We are clearing the page so remove all current data
@@ -250,11 +287,9 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
                     });
 
                     /*
-                        TODO: I don't like this here. Must be moved to a page level event
+                        With it all done we can add facebook stuff
                     */
-                    if (typeof FB !== 'undefined' && FB.XFBML && typeof FB.XFBML.parse === 'function') {
-                        FB.XFBML.parse();
-                    }
+                    doFaceBook = true;
 
                     /*
                         Used to allow CSS to take effect before we go on

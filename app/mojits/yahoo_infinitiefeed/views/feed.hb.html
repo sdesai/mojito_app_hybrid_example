@@ -3,8 +3,12 @@
         {{#images}}
         <img src="{{src}}" alt="{{title}}">
         {{/images}}
-        <!-- <div class="fb-like" data-href="{{url}}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="lucida grande"></div> -->
-        <fb:like data-href="{{url}}" send="false" layout="button_count" width="100" show_faces="false" action="recommend" font="lucida grande"></fb:like>
+        <!--
+        FB Makes the CSS jump about. Need to find out why?
+        <div class="fb-like">
+            <fb:like data-href="{{url}}" send="false" layout="button_count" width="100" show_faces="false" action="recommend" font="lucida grande"></fb:like>
+        </div>
+        -->
         <h3>
             <a href="{{url}}" target="_open">{{title}}</a>
         </h3>

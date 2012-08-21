@@ -2,7 +2,7 @@
     "type": "yahoo.hybrid.infinitiefeed",
     "config": {
         "limit": 6,
-        "timeout": 300000,
+        "timeout": 120000,
         "feedIds": [
             {
                 "feedId": "yahootopstory"
@@ -739,7 +739,7 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_2_6_1345566871325_20132",
+    "instanceId": "yui_3_5_1_2_6_1345583396360_20052",
     "appConfig": {
         "mojitsDirs": [
             "mojits"
@@ -960,7 +960,7 @@
     "defaults": {
         "config": {
             "limit": 6,
-            "timeout": 300000,
+            "timeout": 120000,
             "feedIds": [
                 {
                     "feedId": "yahootopstory"
