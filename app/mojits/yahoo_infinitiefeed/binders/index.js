@@ -250,6 +250,13 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
                     });
 
                     /*
+                        TODO: I don't like this here. Must be moved to a page level event
+                    */
+                    if (FB && FB.XFBML && typeof FB.XFBML.parse === 'function') {
+                        FB.XFBML.parse();
+                    }
+
+                    /*
                         Used to allow CSS to take effect before we go on
                     */
                     setTimeout(function () {

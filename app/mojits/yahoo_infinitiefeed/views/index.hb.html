@@ -1,4 +1,12 @@
 <div id="{{mojit_view_id}}" class="feed">
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=419299938090209";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <ul>{{{feed}}}</ul>
     <div class="footer">
     	<a href="#refresh" class="refresh">Refresh your Y!</a>
