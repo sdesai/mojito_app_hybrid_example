@@ -3,7 +3,8 @@
         {{#images}}
         <img src="{{src}}" alt="{{title}}">
         {{/images}}
-        <div class="fb-like" data-href="{{url}}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="lucida grande"></div>
+        <!-- <div class="fb-like" data-href="{{url}}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="lucida grande"></div> -->
+        <fb:like data-href="{{url}}" send="false" layout="button_count" width="100" show_faces="false" action="recommend" font="lucida grande"></fb:like>
         <h3>
             <a href="{{url}}" target="_open">{{title}}</a>
         </h3>
