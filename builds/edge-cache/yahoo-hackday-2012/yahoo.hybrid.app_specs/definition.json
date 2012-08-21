@@ -2,7 +2,7 @@
     "type": "yahoo.hybrid.app_specs",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_2_6_1345511925706_19896",
+    "instanceId": "yui_3_5_1_2_6_1345528651809_20072",
     "appConfig": {
         "mojitsDirs": [
             "mojits"
@@ -31,7 +31,11 @@
         "log": {
             "client": {
                 "level": "error",
-                "yui": false
+                "yui": true
+            },
+            "server": {
+                "level": "error",
+                "yui": true
             }
         }
     },

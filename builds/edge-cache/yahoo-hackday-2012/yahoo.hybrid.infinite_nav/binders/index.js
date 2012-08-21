@@ -34,28 +34,24 @@ YUI.add('yahoo_infinite_nav_binder_index', function (Y, NAME) {
                     self.showAction("selectors", node.one(".bd"));
 
                     // Hide all links
-                    button.ancestor().all("a").each(function (link) {
-                        link.hide(true);
+                    button.ancestor("div.hd").all("a").each(function (link) {
+                        link.setStyle("opacity", "0");
                     });
 
-                    setTimeout(function () {
-                        button.set("text", "Done");
-                        button.show(true);
-                    }, 500);
+                    button.set("text", "Done");
+                    button.show(true);
 
                 } else {
 
-                    button.hide(true);
+                    button.setStyle("opacity", "0");
 
                     self.showAction("topics", node.one(".bd"));
 
-                    setTimeout(function () {
-                        button.set("text", "Topics");
-                        // Show all links
-                        button.ancestor().all("a").each(function (link) {
-                            link.show(true);
-                        });
-                    }, 500);
+                    button.set("text", "Topics");
+                    // Show all links
+                    button.ancestor("div.hd").all("a").each(function (link) {
+                        link.show(true);
+                    });
                 }
 
             });

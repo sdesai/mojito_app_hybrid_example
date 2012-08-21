@@ -20,7 +20,11 @@
         "log": {
             "client": {
                 "level": "error",
-                "yui": false
+                "yui": true
+            },
+            "server": {
+                "level": "error",
+                "yui": true
             }
         }
     },

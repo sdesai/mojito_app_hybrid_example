@@ -730,7 +730,7 @@
         }
     },
     "action": "index",
-    "instanceId": "yui_3_5_1_2_6_1345511925706_20106",
+    "instanceId": "yui_3_5_1_2_6_1345528651809_20255",
     "appConfig": {
         "mojitsDirs": [
             "mojits"
@@ -759,7 +759,11 @@
         "log": {
             "client": {
                 "level": "error",
-                "yui": false
+                "yui": true
+            },
+            "server": {
+                "level": "error",
+                "yui": true
             }
         }
     },

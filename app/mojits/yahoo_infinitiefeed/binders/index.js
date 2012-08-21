@@ -28,6 +28,10 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
 
         elemTop = node.getY();
 
+        if (elemTop <= 0) {
+            return false;
+        }
+
         // Y.log(docViewBottom + " ? " + elemTop, "error");
 
         return docViewBottom > (elemTop - padding);
@@ -114,7 +118,6 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
         bind: function (node) {
 
             var self = this,
-                footer = node.one('.footer'),
                 loading = false,
                 listener;
 
@@ -122,9 +125,10 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
                 The main listener for scrolling events.
                 This code loads the new content as the user gets to the bottom of the page.
             */
-            listener = function (e) {
+            listener = function () {
 
                 var moveTime = new Date().getTime(),
+                    footer = node.one('.footer'),
                     offset = 0;
 
                 /*
@@ -140,7 +144,7 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
                 /*
                     If we are near the bottom of the page load more content
                 */
-                if (loading === false && hasScrolledIntoView(footer, 1000)) {
+                if (loading === false && footer && hasScrolledIntoView(footer, 1000)) {
 
                     loading = true; // Stop anyone else from coming in here
 
@@ -206,6 +210,14 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
 
                     // Create the items
                     items = Y.Node.create(html);
+
+                    /*
+                        We may not have any items to add if they were all removed
+                    */
+                    if (!items) {
+                        callback();
+                        return;
+                    }
 
                     /*
                         In this loop we set up the items as needed
