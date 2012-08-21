@@ -1,0 +1,19 @@
+{{#items}}<li>
+    <div class="card{{#images}} card-has-image{{/images}}">
+        {{#images}}
+        <img src="{{src}}" alt="{{title}}">
+        {{/images}}
+        <h3>
+            <a href="{{url}}" target="_open">{{title}}</a>
+        </h3>
+        <div class="body">
+            {{body}}
+        </div>
+        <div class="date">
+            {{date}} - <h4>{{group}}</h4>
+        </div>
+        <div class="tools">
+            <!--<a href="#remove">X</a>-->
+        </div>
+    </div>
+</li>{{/items}}

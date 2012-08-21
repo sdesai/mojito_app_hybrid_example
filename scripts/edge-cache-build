@@ -1,0 +1,25 @@
+# Make example for gh-pages
+
+rm -rf ./builds/edge-cache*
+
+cd ./app
+./node_modules/mojito/bin/mojito build html5app --context environment:prod-webapp ../builds/edge-cache
+
+cd ../builds/edge-cache
+
+# Clean up before me move files around
+
+rm -rf ./yahoo.application.mojito_app_hybrid_example
+
+# Clean up before me move files around
+
+rm -r ./yahoo-hackday-2012/yahoo-hackday-2012/
+rm -r ./yahoo-hackday-2012/HTMLFrameMojit/
+rm -r ./yahoo-hackday-2012/LazyLoad/
+rm -r ./yahoo-hackday-2012/TunnelProxy/
+rm ./cache.manifest
+rm ./index.js
+
+echo "Convert URI's to relative URI"
+find ./ -type f | xargs sed -i '' 's%\/yahoo-hackday-2012/%./yahoo-hackday-2012/%'
+find ./ -type f | xargs sed -i '' 's%\../yahoo-hackday-2012/%./yahoo-hackday-2012/%'
