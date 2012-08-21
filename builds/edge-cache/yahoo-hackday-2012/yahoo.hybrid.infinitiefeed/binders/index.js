@@ -252,7 +252,7 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
                     /*
                         TODO: I don't like this here. Must be moved to a page level event
                     */
-                    if (FB && FB.XFBML && typeof FB.XFBML.parse === 'function') {
+                    if (typeof FB !== 'undefined' && FB.XFBML && typeof FB.XFBML.parse === 'function') {
                         FB.XFBML.parse();
                     }
 
