@@ -3,10 +3,10 @@
 echo "Building iOS Tablet App"
 rm -r ./builds/ycrt/ios/tablet/packages*
 
-cd ./mojito/app
-mojito build html5app --context device:tablet,environment:prod-native-ycrt-ios ../../builds/ycrt/ios/tablet/packages
+cd ./app
+./node_modules/mojito/bin/mojito build html5app --context environment:prod-native-ycrt-ios ../builds/ycrt/ios/tablet/packages
 
-cd ../../builds/ycrt/ios/tablet/packages
+cd ../builds/ycrt/ios/tablet/packages
 rm -r ./mojito_app_hybrid_example
 rm -r ./HTMLFrameMojit
 rm -r ./LazyLoad

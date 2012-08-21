@@ -189,11 +189,20 @@ YUI.add('mojito-output-adapter-addon', function(Y, NAME) {
                 (instance.id || '@' + instance.type) + '"', 'info', NAME);
 
             contentPath = mojitView['content-path'];
-            // this is mainly used by html5app
+
+            /*
+             * This is mainly used by the build step "html5app" (is this true)?
+             *
+             * Only apply the "pathToRoot" if the "contentPath" is not relative.
+             * This is tested by checking if the first char of "contentPath" is
+             * a period i.e.
+             *
+             *  ./path/to/template.mu.html
+             *  ../path/to/template.hb.html
+             */
             if (this.app.config.pathToRoot && contentPath[0] !== '.') {
                 contentPath = this.app.config.pathToRoot + contentPath;
             }
-
 
             renderer = new Y.mojito.ViewRenderer(
                 mojitView.engine,
@@ -346,7 +355,7 @@ YUI.add('mojito-output-adapter-addon', function(Y, NAME) {
         ac.error = error;
     }
 
-    Y.namespace('mojito.addons.ac').core = Addon;
+    Y.mojito.addons.ac.core = Addon;
 
 }, '0.1.0', {requires: [
     'json-stringify',

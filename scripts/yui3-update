@@ -1,4 +1,0 @@
-echo "Copy YUI3 into a Mojit"
-
-rm -r ./mojito/app/mojits/yahoo_libs_yui3/assets/*
-cp -r ../yui3/build/* ./mojito/app/mojits/yahoo_libs_yui3/assets

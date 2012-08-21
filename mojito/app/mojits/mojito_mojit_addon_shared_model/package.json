@@ -1,9 +1,0 @@
-{
-    "name": "yahoo.hybrid.shared_model_addon",
-
-    "yahoo": {
-        "mojito": {
-            "version": "*"
-        }
-    }
-}

@@ -1,9 +1,0 @@
-{
-    "name": "yahoo.hybrid.app_nav",
-
-    "yahoo": {
-        "mojito": {
-            "version": "*"
-        }
-    }
-}

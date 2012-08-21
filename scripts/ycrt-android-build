@@ -3,10 +3,10 @@
 echo "Building Android Tablet App"
 rm -r ./builds/ycrt/android/tablet/assets/packages*
 
-cd ./mojito/app
-mojito build html5app --context device:tablet,environment:prod-native-ycrt-android ../../builds/ycrt/android/tablet/assets/packages
+cd ./app
+./node_modules/mojito/bin/mojito build html5app --context environment:prod-native-ycrt-android ../builds/ycrt/android/tablet/assets/packages
 
-cd ../../builds/ycrt/android/tablet/assets/packages
+cd ../builds/ycrt/android/tablet/assets/packages
 rm -r ./mojito_app_hybrid_example
 rm -r ./HTMLFrameMojit
 rm -r ./LazyLoad

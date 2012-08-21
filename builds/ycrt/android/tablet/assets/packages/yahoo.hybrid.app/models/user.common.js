@@ -8,51 +8,57 @@
 
 YUI.add('yahoo_hybrid_app_usermodel', function (Y, NAME) {
 
+    var users = new Y.CacheOffline();
+
     Y.mojito.models.user = {
 
         init: function (config) {
             this.cfg = config;
         },
 
+        setUser: function (userId, config) {
+            users.add(userId, Y.Array.unique(config));
+        },
+
+        getUser: function (userId) {
+
+            // If there is not cache
+            if (!users.retrieve(userId)) {
+                return [];
+            }
+
+            return users.retrieve(userId).response || [];
+        },
+
         getConfig: function (userId, callback) {
 
-            var cfg = [
-                    {
-                        "type": "yahoo.hybrid.newsfeed",
-                        "action": "index",
-                        "title": "Top Stories",
-                        "config": {
-                            "feedId": "topstories"
-                        }
-                    },
-                    {
-                        "type": "yahoo.hybrid.newsfeed",
-                        "action": "index",
-                        "title": "Tech",
-                        "config": {
-                            "feedId": "tech"
-                        }
-                    },
-                    {
-                        "type": "yahoo.hybrid.newsfeed",
-                        "action": "index",
-                        "title": "Business",
-                        "config": {
-                            "feedId": "business",
-                        }
-                    },
-                    {
-                        "type": "yahoo.hybrid.newsfeed",
-                        "action": "index",
-                        "title": "Stock Markets",
-                        "config": {
-                            "feedId": "stock-markets",
-                        }
-                    }
-                ];
+            callback(null, this.getUser(userId));
+        },
 
-            callback(null, cfg);
+        toggleFeed: function (userId, feedId, callback) {
+
+            var topics = this.getUser(userId),
+                removed = false;
+
+            Y.Array.each(topics, function (topic, index) {
+                if (topic.feedId === feedId) {
+                    delete topics[index];
+                    removed = true;
+                }
+            });
+
+            if (!removed) {
+                topics.push({
+                    feedId: feedId
+                });
+            }
+
+            this.setUser(userId, topics);
+
+            callback();
         }
     };
 
+}, "", {
+    requires: ["cache"]
 });

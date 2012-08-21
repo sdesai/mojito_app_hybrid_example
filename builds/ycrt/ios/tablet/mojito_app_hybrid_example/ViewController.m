@@ -25,6 +25,7 @@
 - (void)viewDidLoad
 {   // Do any additional setup after loading the view, typically from a nib.
     [super viewDidLoad];
+    self.webView.scrollView.bounces = NO;
     // Load the web view's content.
     NSURL *url = [NSURL URLWithString:@"ychromert://yahoo.com/yahoo.application.mojito_app_hybrid_example/index.html"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

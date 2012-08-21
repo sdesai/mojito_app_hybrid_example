@@ -25,9 +25,6 @@
 		932B385514E9F8DE001778C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932B383314E9F8DE001778C1 /* Foundation.framework */; };
 		932B385D14E9F8DE001778C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 932B385B14E9F8DE001778C1 /* InfoPlist.strings */; };
 		932B386014E9F8DE001778C1 /* mojito_app_hybrid_exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 932B385F14E9F8DE001778C1 /* mojito_app_hybrid_exampleTests.m */; };
-		932B387B14E9FABD001778C1 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 932B387814E9FABD001778C1 /* icon@2x.png */; };
-		932B387C14E9FABD001778C1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 932B387914E9FABD001778C1 /* icon.png */; };
-		932B387D14E9FABD001778C1 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 932B387A14E9FABD001778C1 /* icon-72.png */; };
 		932B388314E9FAE0001778C1 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 932B387F14E9FAE0001778C1 /* Default-Portrait.png */; };
 		932B388414E9FAE0001778C1 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 932B388014E9FAE0001778C1 /* Default-Landscape.png */; };
 		932B388514E9FAE0001778C1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 932B388114E9FAE0001778C1 /* Default@2x.png */; };
@@ -74,9 +71,6 @@
 		932B385C14E9F8DE001778C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		932B385E14E9F8DE001778C1 /* mojito_app_hybrid_exampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mojito_app_hybrid_exampleTests.h; sourceTree = "<group>"; };
 		932B385F14E9F8DE001778C1 /* mojito_app_hybrid_exampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mojito_app_hybrid_exampleTests.m; sourceTree = "<group>"; };
-		932B387814E9FABD001778C1 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/icons/icon@2x.png"; sourceTree = "<group>"; };
-		932B387914E9FABD001778C1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icons/icon.png; sourceTree = "<group>"; };
-		932B387A14E9FABD001778C1 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72.png"; path = "Resources/icons/icon-72.png"; sourceTree = "<group>"; };
 		932B387F14E9FAE0001778C1 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "Resources/splash/Default-Portrait.png"; sourceTree = "<group>"; };
 		932B388014E9FAE0001778C1 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "Resources/splash/Default-Landscape.png"; sourceTree = "<group>"; };
 		932B388114E9FAE0001778C1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/splash/Default@2x.png"; sourceTree = "<group>"; };
@@ -220,9 +214,6 @@
 		932B387714E9FAA8001778C1 /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				932B387814E9FABD001778C1 /* icon@2x.png */,
-				932B387914E9FABD001778C1 /* icon.png */,
-				932B387A14E9FABD001778C1 /* icon-72.png */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -312,9 +303,6 @@
 				932B383C14E9F8DE001778C1 /* InfoPlist.strings in Resources */,
 				932B384814E9F8DE001778C1 /* ViewController_iPhone.xib in Resources */,
 				932B384B14E9F8DE001778C1 /* ViewController_iPad.xib in Resources */,
-				932B387B14E9FABD001778C1 /* icon@2x.png in Resources */,
-				932B387C14E9FABD001778C1 /* icon.png in Resources */,
-				932B387D14E9FABD001778C1 /* icon-72.png in Resources */,
 				932B388314E9FAE0001778C1 /* Default-Portrait.png in Resources */,
 				932B388414E9FAE0001778C1 /* Default-Landscape.png in Resources */,
 				932B388514E9FAE0001778C1 /* Default@2x.png in Resources */,

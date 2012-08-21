@@ -3,24 +3,26 @@
     "shareYUIInstance": true,
     "config": {
         "deploy": true,
-        "title": "News Headlines",
+        "title": "Infinite Y!",
         "child": {
-            "type": "yahoo.hybrid.app_nav",
-            "action": "index"
+            "type": "yahoo.hybrid.infinite_nav"
         },
         "assets": {
             "top": {
-                "blob": [],
+                "blob": [
+                    "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
+                    "<link rel=\"apple-touch-icon\" href=\"./yahoo.hybrid.infinite_nav/assets/apple-app-icon.png\"/>",
+                    "<meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\"/>"
+                ],
                 "css": [
-                    "http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css",
-                    "http://yui.yahooapis.com/3.5.1/build/cssfonts/cssfonts-min.css"
+                    "http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css"
                 ]
             }
         }
     },
     "id": "yahoo.hybrid.app_specs",
     "action": "index",
-    "instanceId": "yui_3_5_1_2_5_1344959702844_20364",
+    "instanceId": "yui_3_5_1_2_6_1345504238521_21127",
     "appConfig": {
         "mojitsDirs": [
             "mojits"
@@ -41,23 +43,18 @@
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojito"
         },
-        "-log": {
-            "client": {
-                "level": "error",
-                "yui": false
-            },
-            "server": {
-                "level": "info",
-                "yui": false
-            }
-        },
         "builds": {
             "html5app": {
                 "urls": [
-                    "/mojito_app_hybrid_example/tablet/index.html",
-                    "/mojito_app_hybrid_example/phone/index.html",
+                    "/index.html",
                     "/yahoo.application.mojito_app_hybrid_example/index.html"
                 ]
+            }
+        },
+        "log": {
+            "client": {
+                "level": "error",
+                "yui": false
             }
         }
     },
@@ -66,7 +63,7 @@
     },
     "views": {
         "index": {
-            "engine": "mu"
+            "engine": "hb"
         }
     },
     "definition": {
@@ -86,7 +83,9 @@
                     "fullpath": "/yahoo.hybrid.app/addons/ac/shared_model_addon.client.js"
                 },
                 "yahoo_hybrid_app_usermodel": {
-                    "requires": [],
+                    "requires": [
+                        "cache"
+                    ],
                     "fullpath": "/yahoo.hybrid.app/models/user.common.js"
                 },
                 "mojito-analytics-addon": {
@@ -175,11 +174,18 @@
                 },
                 "mojito-url-addon": {
                     "requires": [
-                        "querystring-stringify-simple",
+                        "querystring",
                         "mojito-route-maker",
                         "mojito-util"
                     ],
                     "fullpath": "/yahoo.hybrid.mojito/addons/ac/url.common.js"
+                },
+                "mojito-hb": {
+                    "requires": [
+                        "io-base",
+                        "handlebars"
+                    ],
+                    "fullpath": "/yahoo.hybrid.mojito/addons/view-engines/hb.client.js"
                 },
                 "mojito-mu": {
                     "requires": [
@@ -196,7 +202,8 @@
                         "mojito-assets-addon",
                         "mojito-cookie-addon",
                         "mojito-params-addon",
-                        "mojito-composite-addon"
+                        "mojito-composite-addon",
+                        "mojito-perf"
                     ],
                     "fullpath": "/yahoo.hybrid.mojito/autoload/action-context.common.js"
                 },

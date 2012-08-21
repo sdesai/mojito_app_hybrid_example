@@ -2,7 +2,7 @@
     "type": "yahoo.libs.yui",
     "config": {},
     "action": "index",
-    "instanceId": "yui_3_5_1_2_5_1344959702844_20828",
+    "instanceId": "yui_3_5_1_2_6_1345504238521_21251",
     "appConfig": {
         "mojitsDirs": [
             "mojits"
@@ -23,23 +23,18 @@
             "appName": "yahoo.hybrid.app",
             "frameworkName": "yahoo.hybrid.mojito"
         },
-        "-log": {
-            "client": {
-                "level": "error",
-                "yui": false
-            },
-            "server": {
-                "level": "info",
-                "yui": false
-            }
-        },
         "builds": {
             "html5app": {
                 "urls": [
-                    "/mojito_app_hybrid_example/tablet/index.html",
-                    "/mojito_app_hybrid_example/phone/index.html",
+                    "/index.html",
                     "/yahoo.application.mojito_app_hybrid_example/index.html"
                 ]
+            }
+        },
+        "log": {
+            "client": {
+                "level": "error",
+                "yui": false
             }
         }
     },
@@ -60,7 +55,9 @@
                     "fullpath": "/yahoo.hybrid.app/addons/ac/shared_model_addon.client.js"
                 },
                 "yahoo_hybrid_app_usermodel": {
-                    "requires": [],
+                    "requires": [
+                        "cache"
+                    ],
                     "fullpath": "/yahoo.hybrid.app/models/user.common.js"
                 },
                 "mojito-analytics-addon": {
@@ -149,11 +146,18 @@
                 },
                 "mojito-url-addon": {
                     "requires": [
-                        "querystring-stringify-simple",
+                        "querystring",
                         "mojito-route-maker",
                         "mojito-util"
                     ],
                     "fullpath": "/yahoo.hybrid.mojito/addons/ac/url.common.js"
+                },
+                "mojito-hb": {
+                    "requires": [
+                        "io-base",
+                        "handlebars"
+                    ],
+                    "fullpath": "/yahoo.hybrid.mojito/addons/view-engines/hb.client.js"
                 },
                 "mojito-mu": {
                     "requires": [
@@ -170,7 +174,8 @@
                         "mojito-assets-addon",
                         "mojito-cookie-addon",
                         "mojito-params-addon",
-                        "mojito-composite-addon"
+                        "mojito-composite-addon",
+                        "mojito-perf"
                     ],
                     "fullpath": "/yahoo.hybrid.mojito/autoload/action-context.common.js"
                 },
