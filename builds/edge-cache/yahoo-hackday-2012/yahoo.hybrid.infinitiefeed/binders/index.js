@@ -105,6 +105,9 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
         }
     }
 
+    /*
+        Test if the page has moved from the before value.
+    */
     function hasScrolled(before) {
 
         var current = Y.one('body').get('scrollTop') || document.documentElement.scrollTop;
@@ -115,6 +118,10 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
 
         return true;
     }
+
+    /*
+        FB adds too much overhead and and makes the page jerky
+    */
 
     function triggerFacebook(position) {
         if (!doFaceBook) {
@@ -147,6 +154,7 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
                 timeout,
                 lastMoveTime,
                 lastPosition;
+
             /*
                 The main listener for scrolling events.
                 This code loads the new content as the user gets to the bottom of the page.
@@ -178,13 +186,6 @@ YUI.add('infinitie_feed_binder_index', function (Y, NAME) {
                         loading = false;
                     }
                 }
-
-                /*
-                    FB adds too much overhead and and makes the page jerky
-                */
-
-                // This will add the FB buttons
-                // triggerFacebook(lastPosition);
 
                 // Set the last position before we leave the loop
                 lastPosition = Y.one('body').get('scrollTop') || document.documentElement.scrollTop;
